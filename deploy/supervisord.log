@@ -1,0 +1,7 @@
+2023-09-23 10:22:06,928 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-23 10:22:06,944 INFO supervisord started with pid 1
+2023-09-23 10:22:07,955 INFO spawned: 'laravel-worker_00' with pid 7
+2023-09-23 10:22:08,962 INFO success: laravel-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-23 11:24:32,457 WARN received SIGTERM indicating exit request
+2023-09-23 11:24:32,474 INFO waiting for laravel-worker_00 to die
+2023-09-23 11:24:35,045 INFO stopped: laravel-worker_00 (exit status 0)

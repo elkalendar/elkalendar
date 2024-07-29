@@ -1,0 +1,514 @@
+[
+    {
+        "code": "AZ",
+        "name": "أذربيجان (l)"
+    },
+    {
+        "code": "AW",
+        "name": "أروبا (‪Aruba‬‏)"
+    },
+    {
+        "code": "ES",
+        "name": "إسبانيا (‪España‬‏)"
+    },
+    {
+        "code": "EE",
+        "name": "إستونيا (‪Eesti‬‏)"
+    },
+    {
+        "code": "SZ",
+        "name": "إسواتيني (‪Eswatini‬‏)"
+    },
+    {
+        "code": "AL",
+        "name": "ألبانيا (‪Shqipëri‬‏)"
+    },
+    {
+        "code": "AQ",
+        "name": "أنتاركتيكا (‪Antarctica‬‏)"
+    },
+    {
+        "code": "AD",
+        "name": "أندورا (‪Andorra‬‏)"
+    },
+    {
+        "code": "AO",
+        "name": "أنغولا (‪Angola‬‏)"
+    },
+    {
+        "code": "UY",
+        "name": "أورغواي (‪Uruguay‬‏)"
+    },
+    {
+        "code": "UG",
+        "name": "أوغندا (‪Uganda‬‏)"
+    },
+    {
+        "code": "IR",
+        "name": "إيران (ایران)"
+    },
+    {
+        "code": "IS",
+        "name": "آيسلندا (‪Ísland‬‏)"
+    },
+    {
+        "code": "AR",
+        "name": "الأرجنتين (‪Argentina‬‏)"
+    },
+    {
+        "code": "TF",
+        "name": "الأقاليم الجنوبية الفرنسية (‪Terres australes françaises‬‏)"
+    },
+    {
+        "code": "EC",
+        "name": "الإكوادور (‪Ecuador‬‏)"
+    },
+    {
+        "code": "BH",
+        "name": "البحرين"
+    },
+    {
+        "code": "PT",
+        "name": "البرتغال (‪Portugal‬‏)"
+    },
+    {
+        "code": "CZ",
+        "name": "التشيك (‪Česko‬‏)"
+    },
+    {
+        "code": "DZ",
+        "name": "الجزائر (‪Algeria‬‏)"
+    },
+    {
+        "code": "CV",
+        "name": "الرأس الأخضر (‪Kabu Verdi‬‏)"
+    },
+    {
+        "code": "SN",
+        "name": "السنغال (‪Senegaal‬‏)"
+    },
+    {
+        "code": "SE",
+        "name": "السويد (‪Sverige‬‏)"
+    },
+    {
+        "code": "SO",
+        "name": "الصومال (‪Soomaaliya‬‏)"
+    },
+    {
+        "code": "IQ",
+        "name": "العراق"
+    },
+    {
+        "code": "VA",
+        "name": "الفاتيكان (‪Città del Vaticano‬‏)"
+    },
+    {
+        "code": "CM",
+        "name": "الكاميرون (‪Cameroun‬‏)"
+    },
+    {
+        "code": "CD",
+        "name": "الكونغو - كينشاسا (‪Jamhuri ya Kidemokrasia ya Kongo‬‏)"
+    },
+    {
+        "code": "MA",
+        "name": "المغرب (‪Morocco‬‏)"
+    },
+    {
+        "code": "SA",
+        "name": "المملكة العربية السعودية"
+    },
+    {
+        "code": "NO",
+        "name": "النرويج (‪Norge‬‏)"
+    },
+    {
+        "code": "NE",
+        "name": "النيجر (‪Nijar‬‏)"
+    },
+    {
+        "code": "US",
+        "name": "الولايات المتحدة (‪United States‬‏)"
+    },
+    {
+        "code": "YE",
+        "name": "اليمن"
+    },
+    {
+        "code": "PG",
+        "name": "بابوا غينيا الجديدة (‪Papua New Guinea‬‏)"
+    },
+    {
+        "code": "PK",
+        "name": "باكستان (پاکستان)"
+    },
+    {
+        "code": "BB",
+        "name": "بربادوس (‪Barbados‬‏)"
+    },
+    {
+        "code": "BN",
+        "name": "بروناي (‪Brunei‬‏)"
+    },
+    {
+        "code": "BG",
+        "name": "بلغاريا (‪България‬‏)"
+    },
+    {
+        "code": "BD",
+        "name": "بنغلاديش (‪বাংলাদেশ‬‏)"
+    },
+    {
+        "code": "BJ",
+        "name": "بنين (‪Bénin‬‏)"
+    },
+    {
+        "code": "BW",
+        "name": "بوتسوانا (‪Botswana‬‏)"
+    },
+    {
+        "code": "BF",
+        "name": "بوركينا فاسو (‪Burkina Faso‬‏)"
+    },
+    {
+        "code": "PL",
+        "name": "بولندا (‪Polska‬‏)"
+    },
+    {
+        "code": "PF",
+        "name": "بولينيزيا الفرنسية (‪Polynésie française‬‏)"
+    },
+    {
+        "code": "BY",
+        "name": "بيلاروس (‪Беларусь‬‏)"
+    },
+    {
+        "code": "TW",
+        "name": "تايوان (‪台灣‬‏)"
+    },
+    {
+        "code": "TR",
+        "name": "تركيا (‪Türkiye‬‏)"
+    },
+    {
+        "code": "TT",
+        "name": "ترينيداد وتوباغو (‪Trinidad & Tobago‬‏)"
+    },
+    {
+        "code": "CL",
+        "name": "تشيلي (‪Chile‬‏)"
+    },
+    {
+        "code": "TG",
+        "name": "توغو (‪Togo‬‏)"
+    },
+    {
+        "code": "TK",
+        "name": "توكيلو (‪Tokelau‬‏)"
+    },
+    {
+        "code": "TO",
+        "name": "تونغا (‪Tonga‬‏)"
+    },
+    {
+        "code": "JM",
+        "name": "جامايكا (‪Jamaica‬‏)"
+    },
+    {
+        "code": "AX",
+        "name": "جزر آلاند (‪Åland‬‏)"
+    },
+    {
+        "code": "KM",
+        "name": "جزر القمر"
+    },
+    {
+        "code": "MQ",
+        "name": "جزر المارتينيك (‪Martinique‬‏)"
+    },
+    {
+        "code": "UM",
+        "name": "جزر الولايات المتحدة النائية (‪U.S. Outlying Islands‬‏)"
+    },
+    {
+        "code": "TC",
+        "name": "جزر توركس وكايكوس (‪Turks & Caicos Islands‬‏)"
+    },
+    {
+        "code": "FO",
+        "name": "جزر فارو (‪Føroyar‬‏)"
+    },
+    {
+        "code": "VG",
+        "name": "جزر فيرجن البريطانية (‪British Virgin Islands‬‏)"
+    },
+    {
+        "code": "KY",
+        "name": "جزر كايمان (‪Cayman Islands‬‏)"
+    },
+    {
+        "code": "CC",
+        "name": "جزر كوكوس (كيلينغ) (‪Kepulauan Cocos (Keeling)‬‏)"
+    },
+    {
+        "code": "MP",
+        "name": "جزر ماريانا الشمالية (‪Northern Mariana Islands‬‏)"
+    },
+    {
+        "code": "AC",
+        "name": "جزيرة أسينشيون (‪Ascension Island‬‏)"
+    },
+    {
+        "code": "CX",
+        "name": "جزيرة كريسماس (‪Christmas Island‬‏)"
+    },
+    {
+        "code": "IM",
+        "name": "جزيرة مان (‪Isle of Man‬‏)"
+    },
+    {
+        "code": "HM",
+        "name": "جزيرة هيرد وجزر ماكدونالد (‪Heard & McDonald Islands‬‏)"
+    },
+    {
+        "code": "DO",
+        "name": "جمهورية الدومينيكان (‪República Dominicana‬‏)"
+    },
+    {
+        "code": "SS",
+        "name": "جنوب السودان"
+    },
+    {
+        "code": "GS",
+        "name": "جورجيا الجنوبية وجزر ساندويتش الجنوبية (‪South Georgia & South Sandwich Islands‬‏)"
+    },
+    {
+        "code": "JE",
+        "name": "جيرسي (‪Jersey‬‏)"
+    },
+    {
+        "code": "DG",
+        "name": "دييغو غارسيا (‪Diego Garcia‬‏)"
+    },
+    {
+        "code": "RU",
+        "name": "روسيا (‪Россия‬‏)"
+    },
+    {
+        "code": "RE",
+        "name": "روينيون (‪La Réunion‬‏)"
+    },
+    {
+        "code": "ZW",
+        "name": "زيمبابوي (‪Zimbabwe‬‏)"
+    },
+    {
+        "code": "WS",
+        "name": "ساموا (‪Samoa‬‏)"
+    },
+    {
+        "code": "BL",
+        "name": "سان بارتليمي (‪Saint-Barthélemy‬‏)"
+    },
+    {
+        "code": "VC",
+        "name": "سانت فنسنت وجزر غرينادين (‪St. Vincent & Grenadines‬‏)"
+    },
+    {
+        "code": "LC",
+        "name": "سانت لوسيا (‪St. Lucia‬‏)"
+    },
+    {
+        "code": "SH",
+        "name": "سانت هيلينا (‪St. Helena‬‏)"
+    },
+    {
+        "code": "SM",
+        "name": "سان مارينو (‪San Marino‬‏)"
+    },
+    {
+        "code": "LK",
+        "name": "سريلانكا (‪ශ්‍රී ලංකාව‬‏)"
+    },
+    {
+        "code": "SK",
+        "name": "سلوفاكيا (‪Slovensko‬‏)"
+    },
+    {
+        "code": "SG",
+        "name": "سنغافورة (‪Singapore‬‏)"
+    },
+    {
+        "code": "SR",
+        "name": "سورينام (‪Suriname‬‏)"
+    },
+    {
+        "code": "SL",
+        "name": "سيراليون (‪Sierra Leone‬‏)"
+    },
+    {
+        "code": "EA",
+        "name": "سيوتا وميليلا (‪Ceuta y Melilla‬‏)"
+    },
+    {
+        "code": "TJ",
+        "name": "طاجيكستان (‪Тоҷикистон‬‏)"
+    },
+    {
+        "code": "GM",
+        "name": "غامبيا (‪Gambia‬‏)"
+    },
+    {
+        "code": "GD",
+        "name": "غرينادا (‪Grenada‬‏)"
+    },
+    {
+        "code": "GT",
+        "name": "غواتيمالا (‪Guatemala‬‏)"
+    },
+    {
+        "code": "GU",
+        "name": "غوام (‪Guam‬‏)"
+    },
+    {
+        "code": "GY",
+        "name": "غيانا (‪Guyana‬‏)"
+    },
+    {
+        "code": "GN",
+        "name": "غينيا (‪Guinée‬‏)"
+    },
+    {
+        "code": "GW",
+        "name": "غينيا بيساو (‪Guiné-Bissau‬‏)"
+    },
+    {
+        "code": "FR",
+        "name": "فرنسا (‪France‬‏)"
+    },
+    {
+        "code": "VE",
+        "name": "فنزويلا (‪Venezuela‬‏)"
+    },
+    {
+        "code": "VN",
+        "name": "فيتنام (‪Việt Nam‬‏)"
+    },
+    {
+        "code": "CY",
+        "name": "قبرص (‪Κύπρος‬‏)"
+    },
+    {
+        "code": "KG",
+        "name": "قيرغيزستان (‪Кыргызстан‬‏)"
+    },
+    {
+        "code": "NC",
+        "name": "كاليدونيا الجديدة (‪Nouvelle-Calédonie‬‏)"
+    },
+    {
+        "code": "KH",
+        "name": "كمبوديا (‪កម្ពុជា‬‏)"
+    },
+    {
+        "code": "CU",
+        "name": "كوبا (‪Cuba‬‏)"
+    },
+    {
+        "code": "KR",
+        "name": "كوريا الجنوبية (‪대한민국‬‏)"
+    },
+    {
+        "code": "CR",
+        "name": "كوستاريكا (‪Costa Rica‬‏)"
+    },
+    {
+        "code": "CO",
+        "name": "كولومبيا (‪Colombia‬‏)"
+    },
+    {
+        "code": "KE",
+        "name": "كينيا (‪Kenya‬‏)"
+    },
+    {
+        "code": "LA",
+        "name": "لاوس (‪ລາວ‬‏)"
+    },
+    {
+        "code": "LU",
+        "name": "لوكسمبورغ (‪Luxembourg‬‏)"
+    },
+    {
+        "code": "LR",
+        "name": "ليبيريا (‪Liberia‬‏)"
+    },
+    {
+        "code": "LI",
+        "name": "ليختنشتاين (‪Liechtenstein‬‏)"
+    },
+    {
+        "code": "MT",
+        "name": "مالطا (‪Malta‬‏)"
+    },
+    {
+        "code": "MY",
+        "name": "ماليزيا (‪Malaysia‬‏)"
+    },
+    {
+        "code": "MG",
+        "name": "مدغشقر (‪Madagasikara‬‏)"
+    },
+    {
+        "code": "MK",
+        "name": "مقدونيا الشمالية (‪Северна Македонија‬‏)"
+    },
+    {
+        "code": "MW",
+        "name": "ملاوي (‪Malawi‬‏)"
+    },
+    {
+        "code": "MR",
+        "name": "موريتانيا"
+    },
+    {
+        "code": "MZ",
+        "name": "موزمبيق (‪Moçambique‬‏)"
+    },
+    {
+        "code": "MC",
+        "name": "موناكو (‪Monaco‬‏)"
+    },
+    {
+        "code": "MM",
+        "name": "ميانمار (بورما) (‪မြန်မာ‬‏)"
+    },
+    {
+        "code": "NA",
+        "name": "ناميبيا (‪Namibië‬‏)"
+    },
+    {
+        "code": "NP",
+        "name": "نيبال (‪नेपाल‬‏)"
+    },
+    {
+        "code": "NI",
+        "name": "نيكاراغوا (‪Nicaragua‬‏)"
+    },
+    {
+        "code": "NU",
+        "name": "نيوي (‪Niue‬‏)"
+    },
+    {
+        "code": "HN",
+        "name": "هندوراس (‪Honduras‬‏)"
+    },
+    {
+        "code": "NL",
+        "name": "هولندا (‪Nederland‬‏)"
+    },
+    {
+        "code": "HK",
+        "name": "هونغ كونغ (‪香港‬‏)"
+    }
+]

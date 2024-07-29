@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;800&display=swap');
+
+.spinner {
+    top: 20px !important;
+    right: 135px !important;
+}
+
+.ltr .mantine-Input-input {
+    direction: ltr !important;
+    text-align: left !important;
+}

@@ -1,0 +1,19 @@
+{
+    "name": "socialiteproviders/yottahq",
+    "description": "YottaHQ OAuth2 Provider for Laravel Socialite",
+    "license": "MIT",
+    "authors": [{
+        "name": "YottaHQ",
+        "email": "mo@yottahq.com"
+    }],
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "socialiteproviders/manager": "^4.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "SocialiteProviders\\YottaHQ\\": ""
+        }
+    }
+}
