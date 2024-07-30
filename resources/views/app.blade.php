@@ -44,12 +44,12 @@
     @endif
 
     {{
-        Vite::useBuildDirectory('/build/app')
+        Vite::useBuildDirectory('/build')
     }}
 
     <!-- Scripts -->
     @viteReactRefresh
-    @vite('resources/js/app/app.tsx')
+    @vite('resources/js/app.tsx')
     @inertiaHead
 </head>
 <body>

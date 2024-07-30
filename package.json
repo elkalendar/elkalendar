@@ -2,10 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite --config vite.config.app.ts",
-        "dev:landing": "vite --config vite.config.landing.ts",
-        "build": "vite build --config vite.config.app.ts",
-        "build:landing": "vite build --config vite.config.landing.ts",
+        "dev": "vite --config vite.config.ts",
+        "build": "vite build --config vite.config.ts",
         "lint": "eslint --fix resources/js/**/*.tsx"
     },
     "devDependencies": {

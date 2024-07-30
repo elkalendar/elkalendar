@@ -1,5 +1,5 @@
 import './bootstrap';
-import '../../css/app.css';
+import '../css/app.css';
 import '@mantine/core/styles.css';
 import {createInertiaApp} from '@inertiajs/inertia-react';
 import {InertiaProgress} from '@inertiajs/progress';

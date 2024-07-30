@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Public\BookEventController;
 use App\Http\Controllers\Public\CancelBookingController;
 use App\Http\Controllers\Public\DownloadBookingIcsController;
@@ -9,15 +11,6 @@ use App\Http\Controllers\Public\ShowEventController;
 use App\Http\Controllers\Public\ShowUserProfileController;
 use App\Http\Middleware\HandleInertiaRequestsPrivate;
 use Inertia\Inertia;
-Route::get('test', function () {
-    $day = \Carbon\Carbon::parse('2024-07-21');
-    $event = \App\Models\Event::first();
-    $schedule = \App\Models\Schedule::first();
-    /** @var \App\Services\DayService $dayService */
-    $dayService = app(\App\Services\DayService::class);
-
-    dd($dayService->getDayAvailability($day, $schedule, $event));
-});
 
 Route::group([
     'domain' => config('app.domain'),
@@ -52,13 +45,8 @@ Route::group([
 
 
 Route::group([
-    'domain' => 'app.'.config('app.domain'),
+    'domain' => 'app.' . config('app.domain'),
     'middleware' => [HandleInertiaRequestsPrivate::class],
 ], static function () {
-    require __DIR__.'/app.php';
-});
-
-Route::middleware([HandleInertiaRequestsPrivate::class])->get('/', static function () {
-    Inertia::setRootView('landing');
-    return Inertia::render('Welcome');
+    require __DIR__ . '/app.php';
 });

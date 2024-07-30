@@ -23,7 +23,7 @@
         "strictNullChecks": false,
         "paths": {
             "@/*": [
-                "resources/js/app/*",
+                "resources/js/*",
             ]
         }
     },

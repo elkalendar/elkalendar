@@ -8,10 +8,10 @@ export default defineConfig({
     laravel({
       input: [
         'resources/css/app.css',
-        'resources/js/app/app.tsx',
+        'resources/js/app.tsx',
       ],
       refresh: true,
-      buildDirectory: 'build/app',
+      buildDirectory: 'build',
     }),
     react(),
   ],
@@ -24,7 +24,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/resources/js/app',
+      '@': '/resources/js',
     },
   },
 });
