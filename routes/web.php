@@ -37,10 +37,6 @@ Route::group([
             Route::post('{username}/{slug}', BookEventController::class)
                 ->name('event.book');
         });
-//
-//    Route::get('/', static function () {
-//        return redirect(config('app.domain_with_scheme'));
-//    });
 });
 
 
@@ -49,4 +45,8 @@ Route::group([
     'middleware' => [HandleInertiaRequestsPrivate::class],
 ], static function () {
     require __DIR__ . '/app.php';
+});
+
+Route::get('/', static function () {
+    return view('welcome');
 });

@@ -1,9 +1,11 @@
 {
+    "name": "elkalendar",
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite --config vite.config.ts",
-        "build": "vite build --config vite.config.ts",
+        "dev": "vite",
+        "build": "vite build ",
+        "build:landing": "vite build --config vite.config.landing.js",
         "lint": "eslint --fix resources/js/**/*.tsx"
     },
     "devDependencies": {
@@ -14,6 +16,7 @@
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@babel/preset-env": "^7.24.8",
         "@babel/preset-react": "^7.24.7",
+        "@tailwindcss/forms": "^0.5.7",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "@typescript-eslint/eslint-plugin": "^7.16.1",
@@ -33,6 +36,7 @@
         "postcss-preset-mantine": "^1.15.0",
         "postcss-simple-vars": "^7.0.1",
         "sass": "^1.77.8",
+        "tailwindcss": "^3.4.7",
         "ts-loader": "^9.5.1",
         "typescript": "^5.5.3",
         "vite": "^5.3.4"

@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Events\Events\EventCreated;
 use App\Events\Events\EventDeleted;
 use App\Events\Events\EventUpdated;
+use App\Traits\Bookable;
 use Glorand\Model\Settings\Traits\HasSettingsField;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -28,6 +29,7 @@ class Event extends Model
     use HasSettingsField;
     use HasTranslations;
     use SoftDeletes;
+    use Bookable;
 
     protected $dispatchesEvents = [
         'created' => EventCreated::class,
@@ -69,11 +71,6 @@ class Event extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function bookings()
-    {
-        return $this->hasMany(Booking::class);
     }
 
     public function locations()

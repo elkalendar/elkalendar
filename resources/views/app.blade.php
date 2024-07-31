@@ -44,7 +44,7 @@
     @endif
 
     {{
-        Vite::useBuildDirectory('/build')
+        Vite::useBuildDirectory('/build/app')
     }}
 
     <!-- Scripts -->

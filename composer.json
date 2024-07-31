@@ -94,7 +94,7 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
-        "phpstan": "vendor/bin/phpstan -c code-quality/phpstan.neon"
+        "phpstan": "vendor/bin/phpstan -c phpstan.neon"
     },
     "extra": {
         "laravel": {
