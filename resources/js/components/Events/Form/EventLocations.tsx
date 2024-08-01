@@ -9,8 +9,6 @@ import InPersonHostForm from '@/components/EventLocationForms/InPersonHostForm';
 import {showSuccessToast} from '@/utils/FormHelpers';
 import EventLocationsList from '@/components/EventLocationsList';
 import InPersonGuestForm from '@/components/EventLocationForms/InPersonGuestForm';
-import GoogleMeetForm from '@/components/EventLocationForms/GoogleMeetForm';
-import ZoomForm from "@/components/EventLocationForms/ZoomForm";
 
 interface EventLocationsProps {
   event: Event;
@@ -49,10 +47,6 @@ function EventLocations(props: EventLocationsProps) {
         />;
       case EventLocationTypes.IN_PERSON_GUEST:
         return <InPersonGuestForm event={event} onSuccess={onSuccess}/>;
-      case EventLocationTypes.GOOGLE_MEET:
-        return <GoogleMeetForm event={event} onSuccess={onSuccess}/>;
-      case EventLocationTypes.ZOOM:
-        return <ZoomForm event={event} onSuccess={onSuccess}/>;
       default:
         throw new Error('Invalid location type');
     }
@@ -98,26 +92,6 @@ function EventLocations(props: EventLocationsProps) {
           setModalOpen(true);
         }}
         data={[
-          {
-            group: 'المكالمات والكونفرانس',
-            items: [
-              {
-                value: EventLocationTypes.GOOGLE_MEET,
-                label: getEventLocationLabel(EventLocationTypes.GOOGLE_MEET),
-                disabled: locations.find((location) => location.type === EventLocationTypes.GOOGLE_MEET),
-              },
-              {
-                value: EventLocationTypes.ZOOM,
-                label: getEventLocationLabel(EventLocationTypes.ZOOM),
-                disabled: locations.find((location) => location.type === EventLocationTypes.ZOOM),
-              },
-              // {
-              //   value: EventLocationTypes.MICROSOFT_TEAMS,
-              //   label: getEventLocationLabel(EventLocationTypes.MICROSOFT_TEAMS),
-              //   disabled: locations.find((location) => location.type === EventLocationTypes.MICROSOFT_TEAMS),
-              // },
-            ],
-          },
           {
             group: 'مقابلة شخصية',
             items: [

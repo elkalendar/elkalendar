@@ -3,7 +3,6 @@ import OnboardingLayout from '../../layouts/OnboardingLayout';
 import classes from "@/pages/Onboarding/classes.module.css";
 import {Box, Button, Flex, Group, Input, Select, Text, TextInput, Title} from "@mantine/core";
 import {showSuccessToast} from "@/utils/FormHelpers";
-import SlugInput from "@/components/SlugInput";
 import {useForm} from "@inertiajs/inertia-react";
 import useTypedPage from "@/hooks/useTypedPage";
 import TimezoneSelector from "@/components/TimezoneSelector";

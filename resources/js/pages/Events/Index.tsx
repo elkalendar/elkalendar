@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {BiPlus} from 'react-icons/bi';
-import {Button, Flex, Input, Modal, Slider,} from '@mantine/core';
+import {Button, Flex, Input, Modal, Slider, TextInput,} from '@mantine/core';
 import {useForm} from '@inertiajs/inertia-react';
 import {BsCalendar} from 'react-icons/bs';
 import {FaSave} from 'react-icons/fa';
@@ -10,7 +10,6 @@ import PageHeader from '@/components/PageHeader/PageHeader';
 import NoResults from '@/components/NoResults/NoResults';
 import EventsTable from '@/components/Events/EventsTable';
 import {showSuccessToast} from '@/utils/FormHelpers';
-import SlugInput from '@/components/SlugInput';
 import useTypedPage from "@/hooks/useTypedPage";
 
 interface IndexProps {
@@ -70,18 +69,15 @@ export default function Dashboard(props: IndexProps) {
             />
           </Input.Wrapper>
 
-          <Input.Wrapper
+          <TextInput
             withAsterisk
             label="الرابط"
             description="يستخدم الرابط للوصول إلى الاجتماع"
             error={form.errors.slug}
-          >
-            <SlugInput
-              prefix={"https://elkalendar.com/" + page.props.auth.user.data.username + "/"}
-              value={form.data.slug}
-              onChange={(e) => form.setData('slug', e.currentTarget.value)}
-            />
-          </Input.Wrapper>
+            prefix={"https://elkalendar.com/" + page.props.auth.user.data.username + "/"}
+            value={form.data.slug}
+            onChange={(e) => form.setData('slug', e.currentTarget.value)}
+          />
 
           <Input.Wrapper
             withAsterisk

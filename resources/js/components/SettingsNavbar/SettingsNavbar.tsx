@@ -80,35 +80,6 @@ export function SettingsNavbar() {
         >
           كلمة السر
         </Button>
-
-        {/* <Button */}
-        {/*  fullWidth */}
-        {/*  component={InertiaLink} */}
-        {/*  href='/settings/notifications' */}
-        {/*  variant={page.url.includes('/settings/notifications') ? 'light' : 'subtle'} */}
-        {/*  justify='start' */}
-        {/* > */}
-        {/*  الاشعارات */}
-        {/* </Button> */}
-
-        {/* <Button */}
-        {/*  fullWidth */}
-        {/*  component={InertiaLink} */}
-        {/*  href='/settings/calendars' */}
-        {/*  variant={page.url.includes('/settings/calendars') ? 'light' : 'subtle'} */}
-        {/*  justify='start' */}
-        {/* > */}
-        {/*  التقويمات */}
-        {/* </Button> */}
-        {/* <Button */}
-        {/*  fullWidth */}
-        {/*  component={InertiaLink} */}
-        {/*  href='/settings/appearance' */}
-        {/*  variant={page.url.includes('/settings/appearance') ? 'light' : 'subtle'} */}
-        {/*  justify='start' */}
-        {/* > */}
-        {/*  المظهر والالوان */}
-        {/* </Button> */}
       </Stack>
     </Stack>
   );

@@ -17,7 +17,6 @@ import {TbCheck, TbX} from 'react-icons/tb';
 import {FaSave} from 'react-icons/fa';
 import {useForm} from '@inertiajs/inertia-react';
 import {Event} from '@/types/entities';
-import SlugInput from '@/components/SlugInput';
 import {showSuccessToast} from '@/utils/FormHelpers';
 import useTypedPage from "@/hooks/useTypedPage";
 

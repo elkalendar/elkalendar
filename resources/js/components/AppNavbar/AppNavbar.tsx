@@ -1,12 +1,12 @@
 import React from 'react';
-import {Badge, Button, Flex, Stack, Text, useMantineColorScheme, useMantineTheme,} from '@mantine/core';
+import {Badge, Button, Divider, Flex, Stack, Text, useMantineColorScheme, useMantineTheme,} from '@mantine/core';
 import {LuExternalLink} from 'react-icons/lu';
 import {FiCopy} from 'react-icons/fi';
 import {InertiaLink} from '@inertiajs/inertia-react';
 import {BiCog} from 'react-icons/bi';
 import {useClipboard} from '@mantine/hooks';
 import {FaCalendar, FaHome, FaLink} from 'react-icons/fa';
-import {BsCalendarWeek} from 'react-icons/bs';
+import {BsCalendarWeek, BsGithub} from 'react-icons/bs';
 import {AiTwotoneAppstore} from 'react-icons/ai';
 import {PiPlugsConnectedFill} from 'react-icons/pi';
 import {CiMail} from 'react-icons/ci';
@@ -25,6 +25,7 @@ function AppNavbar() {
   const clipboard = useClipboard({timeout: 500});
   const page = useTypedPage();
 
+  console.log(page)
   const theme = useMantineTheme();
   const colorScheme = useMantineColorScheme();
 
@@ -132,6 +133,18 @@ function AppNavbar() {
         >
           قولنا رأيك
         </Button>
+        <Divider my={2}/>
+        <Button
+          component="a"
+          href="https://github.com/elkalendar/elkalendar"
+          variant="subtle"
+          color='gray'
+          target="_blank"
+          leftSection={<BsGithub />}
+          justify="start"
+        >
+          الكود المصدري
+        </Button>
         <Text
           styles={{
             root: {
@@ -142,7 +155,7 @@ function AppNavbar() {
           size="xs"
           mt={12}
         >
-          &copy; 2023 الكالندر
+          &copy; {page.props.year} الكالندر
         </Text>
       </Flex>
     </Stack>
