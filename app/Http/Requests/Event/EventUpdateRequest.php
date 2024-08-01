@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Requests\Event;
 
+use App\Models\Event;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -12,12 +13,13 @@ class EventUpdateRequest extends FormRequest
 {
     public function authorize()
     {
-        return true;
+        return $this->route('event')->user_id === auth()->user()->getAuthIdentifier();
     }
 
     public function rules()
     {
-        $event = auth()->user()->events()->findByHashidOrFail($this->route('event'));
+        /** @var Event $event */
+        $event = $this->route('event');
 
         return [
             'name' => 'required|string|max:255',

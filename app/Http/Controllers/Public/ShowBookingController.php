@@ -24,13 +24,13 @@ class ShowBookingController
 
         if ($booking->cancelled_at) {
             return Inertia::render('Bookings/Public/BookingCancelled', [
-                'userBookingPage' => url($$event->user->username),
+                'userBookingPage' => url($event->user->username),
             ]);
         }
 
         if ($booking->start_time->isPast()) {
             return Inertia::render('Bookings/Public/BookingInPast', [
-                'userBookingPage' => url($$event->user->username),
+                'userBookingPage' => url($event->user->username),
             ]);
         }
 

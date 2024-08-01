@@ -5,7 +5,6 @@ import {
   Avatar,
   Burger,
   Button,
-  Container,
   Flex,
   Image,
   Indicator,
@@ -30,7 +29,6 @@ interface Props {
   title: string;
   bookingsCount?: number;
   children: React.JSX.Element;
-
   renderHeader?(): React.JSX.Element;
 }
 
@@ -66,10 +64,6 @@ export default function (props: Props) {
             <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm"/>
 
             <Image src="/logo.svg" alt="logo" h={26}/>
-
-            <Text size="lg" weight={700} className="text-emphasis">
-              الكالندر
-            </Text>
           </Flex>
 
           <Flex gap={4} align="center">
@@ -133,8 +127,12 @@ export default function (props: Props) {
                   اعدادات الكالندر
                 </Menu.Item>
                 <Menu.Divider/>
-                <Menu.Item leftSection={<BiLinkExternal/>} component='a' target='_blank'
-                           href={page.props.accountsDomain}>
+                <Menu.Item
+                  leftSection={<BiLinkExternal/>}
+                  component='a'
+                  target='_blank'
+                  href='/'
+                >
                   اعدادات حسابك
                 </Menu.Item>
                 <Menu.Item leftSection={<FiLogOut/>} component='a' href='/logout'>
@@ -157,9 +155,9 @@ export default function (props: Props) {
         backgroundColor: colorScheme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
       }}
       >
-          {props.renderHeader ? props.renderHeader() : null}
+        {props.renderHeader ? props.renderHeader() : null}
 
-          {props.children}
+        {props.children}
       </AppShell.Main>
     </AppShell>
   );

@@ -4,6 +4,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "dev:landing": "vite --config vite.config.landing.js",
         "build": "vite build ",
         "build:landing": "vite build --config vite.config.landing.js",
         "lint": "eslint --fix resources/js/**/*.tsx"

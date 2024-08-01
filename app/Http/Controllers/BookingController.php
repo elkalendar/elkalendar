@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Enum\BookingFilters;
-use App\Http\Resources\BookingResource;
 use App\Repositories\BookingRepository;
 use App\Repositories\UserRepository;
 use App\Services\EventLocationService;
@@ -29,15 +28,6 @@ class BookingController
 
         return Inertia::render('Bookings/Index', [
             'bookings' => \App\Http\Resources\BookingResource::collection($bookings),
-        ]);
-    }
-
-    public function show(string $bookingId): \Inertia\Response
-    {
-        $booking = $this->bookingRepository->getBookingById($bookingId, auth()->user());
-
-        return Inertia::render('Bookings/Show', [
-            'booking' => new BookingResource($booking),
         ]);
     }
 }

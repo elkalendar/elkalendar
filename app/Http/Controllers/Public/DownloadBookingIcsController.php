@@ -18,11 +18,11 @@ class DownloadBookingIcsController
     {
         $ics = $this->ICalendarService->generate($booking);
 
-        $tempFileName = sys_get_temp_dir().'/'.$booking->id;
+        $tempFileName = sys_get_temp_dir() . '/' . $booking->id;
 
         file_put_contents($tempFileName, $ics);
 
-        $downloadFileName = 'elkalendar-invite-'.now()->toIso8601String().'.ics';
+        $downloadFileName = 'elkalendar-invite-' . now()->toIso8601String() . '.ics';
 
         return response()->download($tempFileName, $downloadFileName);
     }

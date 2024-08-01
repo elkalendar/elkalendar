@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Enum\Defaults;
 use Glorand\Model\Settings\Traits\HasSettingsField;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Response;
@@ -24,7 +25,7 @@ use Spatie\Onboard\Concerns\Onboardable;
  * @property Schedule[] $schedules
  * @property Integration[] $integrations
  */
-class User extends Authenticatable implements Onboardable
+class User extends Authenticatable implements Onboardable, MustVerifyEmail
 {
     use GetsOnboarded;
     use HasFactory;

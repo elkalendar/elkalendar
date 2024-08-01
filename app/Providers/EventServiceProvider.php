@@ -28,7 +28,6 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 use SocialiteProviders\Microsoft\MicrosoftExtendSocialite;
-use SocialiteProviders\YottaHQ\YottaHQExtendSocialite;
 use SocialiteProviders\Zoom\ZoomExtendSocialite;
 
 class EventServiceProvider extends ServiceProvider

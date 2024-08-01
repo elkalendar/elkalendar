@@ -15,6 +15,7 @@ export interface User {
   timeFormat: string;
   theme: string;
   allowSeoIndexing: boolean;
+  notificationsCount: number;
 }
 
 export interface App {
@@ -117,6 +118,7 @@ export interface Booking {
   endTimeHost: string;
   startTimeGuest: string;
   endTimeGuest: string;
+  formattedTime: string;
   event: Event;
   invitee: Invitee;
   guestCount: number;
