@@ -52,6 +52,7 @@ class HandleInertiaRequestsPrivate extends Middleware
             'errors' => function () use ($request) {
                 return $this->resolveValidationErrors($request);
             },
+            'year' => now()->year,
         ];
 
         if (auth()->user()) {

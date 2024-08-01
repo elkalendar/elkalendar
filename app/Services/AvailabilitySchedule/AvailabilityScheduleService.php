@@ -3,6 +3,7 @@
 namespace App\Services\AvailabilitySchedule;
 
 use App\Exceptions\OnlyScheduleDeleteException;
+use App\Models\Event;
 use App\Models\Schedule;
 use App\Models\ScheduleInterval;
 use App\Services\IntervalService;
@@ -42,13 +43,19 @@ class AvailabilityScheduleService
             throw new OnlyScheduleDeleteException();
         }
 
-        $schedule->delete();
+        $firstDifferentSchedule = auth()->user()->schedules()->whereNot('id', $schedule->id)->first();
 
         if ($schedule->is_default === 1) {
-            auth()->user()->schedules()->first()->update([
+            $firstDifferentSchedule->update([
                 'is_default' => 1,
             ]);
         }
+
+        Event::query()->where('schedule_id', $schedule->id)->update([
+            'schedule_id' => $firstDifferentSchedule->id,
+        ]);
+
+        $schedule->delete();
     }
 
     public function update(Schedule $schedule, array $data)

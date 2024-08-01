@@ -41,6 +41,13 @@ class AvailabilitySchedulesController
         ]);
     }
 
+    public function update(Schedule $schedule, AvailabilityUpdateRequest $request): \Illuminate\Http\RedirectResponse
+    {
+        $this->availabilityScheduleService->update($schedule, $request->validated());
+
+        return redirect()->back();
+    }
+
     public function delete(Schedule $schedule): \Illuminate\Http\RedirectResponse
     {
         try {
@@ -52,12 +59,5 @@ class AvailabilitySchedulesController
                 'scheduleError' => 'لا يمكن حذف الموعد الافتراضي',
             ]);
         }
-    }
-
-    public function update(Schedule $schedule, AvailabilityUpdateRequest $request): \Illuminate\Http\RedirectResponse
-    {
-        $this->availabilityScheduleService->update($schedule, $request->validated());
-
-        return redirect()->back();
     }
 }
