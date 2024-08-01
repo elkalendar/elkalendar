@@ -11,7 +11,7 @@ use App\Models\Schedule;
 use App\Services\AvailabilitySchedule\AvailabilityScheduleService;
 use Inertia\Inertia;
 
-readonly class AvailabilitySchedulesController
+class AvailabilitySchedulesController
 {
     public function __construct(private AvailabilityScheduleService $availabilityScheduleService)
     {

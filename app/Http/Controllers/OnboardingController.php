@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Http\Controllers;
@@ -11,18 +12,10 @@ use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use Inertia\Inertia;
 
-class OnboardingController implements HasMiddleware
+class OnboardingController
 {
     public function __construct(public readonly TimezoneService $timezoneService)
     {
-    }
-
-    public static function middleware(): array
-    {
-        return [];
-//        return [
-//            new Middleware(RedirectIfOnboardingComplete::class, only: ['intro', 'step1', 'handleIntro', 'handleStep1']),
-//        ];
     }
 
     public function intro()

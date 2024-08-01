@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\AppsController;
 use App\Http\Controllers\AvailabilitySchedules\AddDayController;
 use App\Http\Controllers\AvailabilitySchedules\CreateAvailabilityScheduleController;
 use App\Http\Controllers\AvailabilitySchedules\RemoveDayController;
@@ -14,39 +13,35 @@ use App\Http\Controllers\EventLocationsController;
 use App\Http\Controllers\Events\EventsController;
 use App\Http\Controllers\Events\UpdateEventScheduleController;
 use App\Http\Controllers\Intervals\IntervalController;
+use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\SettingsController;
-use App\Http\Controllers\Socialite\SocialiteController;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\RedirectUserIfNotOnborded;
 use Illuminate\Support\Facades\Route;
 
-require __DIR__.'/auth.php';
-
 Route::group([
-    'middleware' => ['auth'],
+    'domain' => 'app.' . config('app.domain'),
+    'middleware' => ['auth', 'verified', 'inertia.private'],
 ], static function () {
-    require_once __DIR__.'/onboarding.php';
+    Route::name('onboarding.')
+        ->prefix('onboarding')
+        ->group(static function () {
+            Route::get('/intro', [OnboardingController::class, 'intro'])->name('intro');
+            Route::get('/step1', [OnboardingController::class, 'step1'])->name('step1');
+            Route::get('/final', [OnboardingController::class, 'final'])->name('final');
 
-    Route::get('bookings/{bookingId}/download', [BookingController::class, 'downloadIcs'])
-        ->name('download-ics');
+            Route::post('/intro', [OnboardingController::class, 'handleIntro'])->name('handleIntro');
+            Route::post('/step1', [OnboardingController::class, 'handleStep1'])->name('handleStep1');
+        });
 
     Route::group([
-//        'middleware' => [RedirectUserIfNotOnborded::class],
+        'middleware' => ['onboarding.not-onboarded'],
     ], static function () {
-
         Route::get('/', DashboardController::class)
             ->name('dashboard');
 
-        Route::group([
-            'prefix' => 'events',
-            'name' => 'events.',
-        ], function () {
-            Route::get('/', [EventsController::class, 'index'])->name('index');
-            Route::post('/', [EventsController::class, 'store'])->name('store');
-            Route::get('{event}/edit', [EventsController::class, 'edit'])->name('edit');
-            Route::put('{event}', [EventsController::class, 'update'])->name('update');
-            Route::delete('{event}', [EventsController::class, 'destroy'])->name('destroy');
-        });
+        Route::resource('events', EventsController::class, [
+            'except' => ['create', 'show']
+        ]);
 
         Route::put('events/{event}/update-schedule', UpdateEventScheduleController::class)
             ->name('events.update-schedule');
@@ -69,6 +64,7 @@ Route::group([
                 Route::delete('{locationId}', [EventLocationsController::class, 'deleteLocation'])
                     ->name('delete');
             });
+
         Route::post('user/resend-verification-email', [UserController::class, 'resend'])
             ->name('resend');
 
@@ -124,28 +120,8 @@ Route::group([
             ->group(static function () {
                 Route::get('/', [BookingController::class, 'index'])->name('index');
                 Route::post('{booking}/cancel', CancelByHostController::class)->name('cancelByHost');
+                Route::get('{booking}/download', \App\Http\Controllers\Public\DownloadBookingIcsController::class)
+                    ->name('download-ics');
             });
-
-        Route::name('apps.')
-            ->prefix('apps')
-            ->group(static function () {
-                Route::get('/', [AppsController::class, 'index'])
-                    ->name('index');
-                Route::get('details/{key}', [AppsController::class, 'show'])
-                    ->name('show');
-                Route::get('connect/{key}', [SocialiteController::class, 'connect'])
-                    ->name('connect');
-                Route::get('connect/{key}/callback', [SocialiteController::class, 'callback'])
-                    ->name('connectCallback');
-                Route::get('{category}', [AppsController::class, 'filter'])
-                    ->name('filter');
-            });
-        Route::get('connected-apps', [AppsController::class, 'connected'])
-            ->name('connected');
-        Route::get('connected-apps/{category}', [AppsController::class, 'filterConnected'])
-            ->name('filterConnected');
-        Route::delete('connected-apps/{integrationId}/disconnect', [AppsController::class, 'disconnect']);
-        Route::post('connected-apps/{integrationId}/settings', [AppsController::class, 'updateSettings'])
-            ->name('updateSettings');
     });
 });

@@ -11,6 +11,7 @@ import {
   Switch,
   Text,
   Textarea,
+  TextInput,
 } from '@mantine/core';
 import {TbCheck, TbX} from 'react-icons/tb';
 import {FaSave} from 'react-icons/fa';
@@ -58,18 +59,31 @@ function Setup(props: SetupProps) {
         minRows={3}
       />
 
-      <Input.Wrapper
-        withAsterisk
-        label="رابط الاجتماع"
-        description="اختر رابط الاجتماع الذي ستشاركه مع الاشخاص لحجز الاجتماع. يجب ان يكون حروف وارقام انجليزية فقط."
-        error={form.errors.slug}
-      >
-        <SlugInput
-          prefix={"https://elkalendar.com/" + page.props.auth.user.data.username + "/"}
+      <>
+        <TextInput
+          withAsterisk
+          label="رابط الاجتماع"
+          description="اختر رابط الاجتماع الذي ستشاركه مع الاشخاص لحجز الاجتماع. يجب ان يكون حروف وارقام انجليزية فقط."
+          error={form.errors.slug}
           value={form.data.slug}
           onChange={(e) => form.setData('slug', e.currentTarget.value)}
+          className='ltr'
         />
-      </Input.Wrapper>
+
+        <Text
+          size="sm"
+          c="gray.3"
+          styles={{
+            root: {
+              textAlign: 'left',
+              padding: '0.5rem 0',
+              direction: 'ltr'
+            },
+          }}
+        >
+          {"https://elkalendar.com/" + page.props.auth.user.data.username + "/"}
+        </Text>
+      </>
 
       <Input.Wrapper
         withAsterisk
@@ -135,10 +149,13 @@ function Setup(props: SetupProps) {
 
       <Group>
         <Button
-          onClick={() => {
-            form.put(`/events/${props.event.id}`, {
+          onClick={(e) => {
+            e.preventDefault();
+
+            form.patch(`/events/${props.event.id}`, {
               preserveScroll: true,
               onSuccess: () => {
+                form.setDefaults();
                 showSuccessToast();
               },
             });

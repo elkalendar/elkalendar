@@ -54,18 +54,6 @@ function AppNavbar() {
       href: '/availability',
       variant: page.url.includes('/availability') ? 'light' : 'subtle',
     },
-    {
-      icon: <AiTwotoneAppstore/>,
-      label: 'التطبيقات',
-      href: '/apps',
-      variant: page.url.includes('/apps') ? 'light' : 'subtle',
-    },
-    {
-      icon: <PiPlugsConnectedFill/>,
-      label: 'التطبيقات المتصلة',
-      href: '/connected-apps',
-      variant: page.url.includes('/connected-apps') ? 'light' : 'subtle',
-    },
   ];
 
   const mainLinks = links.map((link: Link, index: number) => {

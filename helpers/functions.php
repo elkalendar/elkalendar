@@ -10,7 +10,7 @@ function isRTL(): bool
     return app()->getLocale() === 'ar';
 }
 
-function publicUrl(string $path): string
+function publicUrl(string|null $path): string
 {
     return config('app.short_domain_with_scheme').'/'.$path;
 }

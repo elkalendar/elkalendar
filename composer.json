@@ -18,18 +18,13 @@
         "inertiajs/inertia-laravel": "^1.3",
         "khaled.alshamaa/ar-php": "^6.3",
         "laravel/framework": "^11.9",
-        "laravel/horizon": "^5.25",
-        "laravel/pulse": "^1.2",
         "laravel/sanctum": "^4.0",
         "laravel/socialite": "*",
         "laravel/tinker": "^2.9",
         "league/flysystem-aws-s3-v3": "^3.28",
         "league/period": "^5.3",
-        "lomkit/laravel-rest-api": "^2.8",
         "microsoft/microsoft-graph": "^2.12",
         "mtvs/eloquent-hashids": "^3.5",
-        "saloonphp/laravel-plugin": "^3.5",
-        "saloonphp/saloon": "^3.9",
         "sentry/sentry-laravel": "^4.7",
         "socialiteproviders/manager": "^4.6",
         "socialiteproviders/microsoft": "^4.5",
@@ -37,8 +32,7 @@
         "spatie/calendar-links": "^1.11",
         "spatie/icalendar-generator": "^2.8",
         "spatie/laravel-onboard": "^2.6",
-        "spatie/laravel-translatable": "^6.7",
-        "tightenco/ziggy": "^2.2"
+        "spatie/laravel-translatable": "^6.7"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
@@ -49,7 +43,6 @@
         "fakerphp/faker": "^1.23",
         "friendsofphp/php-cs-fixer": "^3.59",
         "garygreen/pretty-routes": "^1.0",
-        "itsgoingd/clockwork": "^5.2",
         "larastan/larastan": "^2.0",
         "laravel/pint": "^1.16",
         "laravel/sail": "^1.26",
@@ -66,8 +59,7 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
-            "SocialiteProviders\\YottaHQ\\": "SocialiteProviders/src/YottaHQ/"
+            "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
             "helpers/functions.php"
