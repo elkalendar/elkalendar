@@ -1,3 +1,6 @@
 # elKalendar
 
-The simple calendar and booking management software.
+A free and open-source scheduling system was built with Laravel.
+
+## Built with:
+[![elKalendar Tech Stack](https://skillicons.dev/icons?i=php,laravel,react,mysql,nginx,ts,html,css)](https://stackshare.io/elkalendar/elkalendar)
