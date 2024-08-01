@@ -8,6 +8,7 @@ import {Head} from "@inertiajs/inertia-react";
 
 interface Props {
   title?: string;
+  children: React.JSX.Element;
 }
 
 export default (props: Props) => {
