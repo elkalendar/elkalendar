@@ -1,3 +1,4 @@
+![elKalendar Cover](storage/github-cover.jpg)
 # elKalendar
 
 A free and open-source scheduling system was built with Laravel.
