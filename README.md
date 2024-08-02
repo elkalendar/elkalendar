@@ -32,7 +32,7 @@ php artisan key:generate
 # check and adjust the configuration in the .env file and then run
 php artisan migrate 
 
-npm run build
+npm run build:all
 
 php artisan serve
 ```
