@@ -11,7 +11,7 @@ export default defineConfig({
         'resources/js/app.tsx',
       ],
       refresh: true,
-      buildDirectory: 'build',
+      buildDirectory: 'build/app',
     }),
     react(),
   ],
