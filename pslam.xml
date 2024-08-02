@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="7"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="app"/>
+        <directory name="database/factories"/>
+        <directory name="database/seeders"/>
+        <directory name="routes"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+
+    <plugins>
+        <pluginClass class="Psalm\LaravelPlugin\Plugin"/>
+    </plugins>
+
+    <issueHandlers>
+        <MissingDependency errorLevel="suppress" />
+        <PossiblyUnusedMethod errorLevel="suppress" />
+        <PossiblyUnusedParam errorLevel="suppress" />
+        <PossiblyUnusedProperty errorLevel="suppress" />
+        <PossiblyUnusedReturnValue errorLevel="suppress" />
+        <ReservedWord errorLevel="suppress" />
+        <UnnecessaryVarAnnotation errorLevel="suppress" />
+        <UnusedClass errorLevel="suppress" />
+        <UnusedClosureParam errorLevel="suppress" />
+        <UnusedForeachValue errorLevel="suppress" />
+        <UnusedMethod errorLevel="suppress" />
+        <UnusedReturnValue errorLevel="suppress" />
+        <UnusedVariable errorLevel="suppress" />
+    </issueHandlers>
+</psalm>
