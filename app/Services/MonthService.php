@@ -52,8 +52,8 @@ class MonthService
 
             foreach ($dayPeriods as $period) {
                 $startTime = Carbon::parse(
-                        $availableDate->format(Defaults::DATE_FORMAT) . ' ' . $period->startDate->format('H:i')
-                    );
+                    $availableDate->format(Defaults::DATE_FORMAT) . ' ' . $period->startDate->format('H:i')
+                );
                 $startTime = $startTime->shiftTimezone($timezone)->setTimezone('UTC');
 
                 $endTime = Carbon::parse(

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Integrations\ZoomConnector;
 
 use Saloon\Http\Connector;
@@ -8,7 +10,8 @@ use Saloon\Traits\Plugins\HasTimeout;
 
 class ZoomConnector extends Connector
 {
-    use AcceptsJson, HasTimeout;
+    use AcceptsJson;
+    use HasTimeout;
 
     protected int $connectTimeout = 60;
 

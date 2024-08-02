@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'verifyMsg' => 'Please verify your email address!',
     'availability' => 'My Schedule',

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'event_location_types' => [
         \App\Enum\EventLocationTypes::GOOGLE_MEET->value => 'جوجل Meet',

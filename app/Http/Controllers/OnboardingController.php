@@ -5,11 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Enum\Countries;
-use App\Http\Middleware\RedirectIfOnboardingComplete;
 use App\Http\Requests\Onboarding\Step1Request;
 use App\Services\TimezoneService;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
 use Inertia\Inertia;
 
 class OnboardingController

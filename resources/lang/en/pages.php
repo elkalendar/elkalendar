@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'home' => [
         'title' => 'Meeting organization and scheduling app',

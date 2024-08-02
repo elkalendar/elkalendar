@@ -25,8 +25,7 @@ class BookRequest extends FormRequest
     public function __construct(
         private readonly UserRepository $userRepository,
         private readonly AvailabilityService $availabilityService
-    )
-    {
+    ) {
         parent::__construct();
     }
 

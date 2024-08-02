@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'noOpenings' => 'الحجز غير متاح حالياً.',
     'loggedinEventMsg' => 'انت مسجل الدخول بإستخدام :email. هذه الرسالة تظهر لك فقط.',

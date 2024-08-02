@@ -38,5 +38,3 @@ Route::group([
                 ->name('event.book');
         });
 });
-
-

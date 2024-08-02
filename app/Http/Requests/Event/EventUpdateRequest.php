@@ -25,11 +25,11 @@ class EventUpdateRequest extends FormRequest
             'name' => 'required|string|max:255',
             'slug' => [
                 'max:255',
-                Rule::unique('events')->where(fn($query) => $query->where('user_id', auth()->user()->id))->ignore(
+                Rule::unique('events')->where(fn ($query) => $query->where('user_id', auth()->user()->id))->ignore(
                     $event->id
                 )
-                    ->where(fn($query) => $query->where('slug', Str::slug(request('slug'))))
-                    ->where(fn($query) => $query->where('deleted_at', null))
+                    ->where(fn ($query) => $query->where('slug', Str::slug(request('slug'))))
+                    ->where(fn ($query) => $query->where('deleted_at', null))
                     ->ignore($event->id),
             ],
             'description' => 'max:500',

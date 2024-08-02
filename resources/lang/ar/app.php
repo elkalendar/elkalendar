@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'name' => 'الكالندر',
     'title' => 'تطبيق مجاني لتنظيم المواعيد والمقابلات',

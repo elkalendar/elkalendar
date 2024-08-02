@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'name' => 'elKalendar',
     'title' => 'Free online appointment scheduling app',

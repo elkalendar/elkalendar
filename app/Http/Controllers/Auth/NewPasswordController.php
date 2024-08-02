@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+declare(strict_types=1);
 
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;

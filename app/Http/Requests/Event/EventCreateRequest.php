@@ -22,9 +22,9 @@ class EventCreateRequest extends FormRequest
             'duration' => 'integer|min:15|max:120',
             'slug' => [
                 'max:255',
-                Rule::unique('events')->where(fn($query) => $query->where('user_id', auth()->user()->id))
-                    ->where(fn($query) => $query->where('slug', Str::slug(request('slug'))))
-                    ->where(fn($query) => $query->where('deleted_at', null)),
+                Rule::unique('events')->where(fn ($query) => $query->where('user_id', auth()->user()->id))
+                    ->where(fn ($query) => $query->where('slug', Str::slug(request('slug'))))
+                    ->where(fn ($query) => $query->where('deleted_at', null)),
             ],
         ];
     }

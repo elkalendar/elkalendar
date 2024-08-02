@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'noOpenings' => 'No openings at the moment.',
     'loggedinEventMsg' => 'You are logged in as :email. This message is only visible to you.',

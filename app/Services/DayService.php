@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Enum\Defaults;
-use App\Models\Booking;
 use App\Models\Event;
 use App\Models\Schedule;
 use App\Repositories\BookingRepository;

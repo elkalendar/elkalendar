@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'verifyMsg' => 'يرجى تفعيل بريدك الالكتروني.',
     'availability' => 'جدول مواعيدي',
