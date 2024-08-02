@@ -1,10 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "elkalendar/elkalendar",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Free and open-source scheduling system built with Laravel.",
     "keywords": [
         "laravel",
-        "framework"
+        "scheduling",
+        "appointments",
+        "booking"
     ],
     "license": "MIT",
     "require": {
