@@ -31,6 +31,10 @@ php artisan key:generate
 
 # check and adjust the configuration in the .env file and then run
 php artisan migrate 
+
+npm run build
+
+php artisan serve
 ```
 
 ## Principles, Vision, Goals, and Strategy
