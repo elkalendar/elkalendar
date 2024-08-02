@@ -7,6 +7,7 @@
         "dev:landing": "vite --config vite.config.landing.js",
         "build": "vite build ",
         "build:landing": "vite build --config vite.config.landing.js",
+        "build:all": "npm run build && npm run build:landing",
         "lint": "eslint --fix resources/js/**/*.tsx"
     },
     "devDependencies": {
