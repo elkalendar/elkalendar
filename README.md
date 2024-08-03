@@ -29,7 +29,8 @@ cp .env.example .env
 
 php artisan key:generate
 
-# check and adjust the configuration in the .env file and then run
+# check and adjust the configuration in the .env file 
+# according to your local dev env and then run
 php artisan migrate 
 
 npm run build:all
