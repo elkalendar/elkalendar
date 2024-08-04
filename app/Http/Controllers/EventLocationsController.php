@@ -102,51 +102,6 @@ class EventLocationsController
         ]);
     }
 
-    public function setGoogleMeet(string $eventId)
-    {
-        //TODO: make sure user has a connected google calendar integration
-
-        $user = auth()->user();
-        $googleCalendarIntegration = $user->integrations()->where('provider', 'google_calendar')->first();
-
-        if (! $googleCalendarIntegration) {
-            return redirect()->back()->withErrors([
-                'google_calendar' => 'يرجى ربط تطبيق تقويم Google من التطبيقات اولا قبل اضافة هذه الطريقة الى الحدث.',
-            ]);
-        }
-
-        $event = auth()->user()->events()->findByHashidOrFail($eventId);
-
-        $event->locations()->where('type', EventLocationTypes::GOOGLE_MEET)->delete();
-
-        $event->locations()->create([
-            'type' => EventLocationTypes::GOOGLE_MEET,
-            'position' => $event->locations()->count() + 1,
-        ]);
-    }
-
-    public function setZoom(string $eventId)
-    {
-
-        $user = auth()->user();
-        $zoomIntegration = $user->integrations()->where('provider', EventLocationTypes::ZOOM)->first();
-
-        if (! $zoomIntegration) {
-            return redirect()->back()->withErrors([
-                'zoom' => 'يرجى ربط تطبيق زووم Zoom من التطبيقات اولا قبل اضافة هذه الطريقة الى الحدث.',
-            ]);
-        }
-
-        $event = auth()->user()->events()->findByHashidOrFail($eventId);
-
-        $event->locations()->where('type', EventLocationTypes::ZOOM)->delete();
-
-        $event->locations()->create([
-            'type' => EventLocationTypes::ZOOM,
-            'position' => $event->locations()->count() + 1,
-        ]);
-    }
-
     public function deleteLocation(string $eventId, string $locationId)
     {
         $event = auth()->user()->events()->findByHashidOrFail($eventId);

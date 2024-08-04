@@ -29,8 +29,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Event::listen(function (\SocialiteProviders\Manager\SocialiteWasCalled $event) {
-            $event->extendSocialite('zoom', \SocialiteProviders\Zoom\Provider::class);
-        });
     }
 }

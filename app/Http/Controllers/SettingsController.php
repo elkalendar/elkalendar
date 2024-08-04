@@ -8,7 +8,7 @@ use App\Enum\Countries;
 use App\Http\Requests\Settings\AppearanceSettingsRequest;
 use App\Http\Requests\Settings\GeneralSettingsRequest;
 use App\Http\Requests\Settings\PublicPageSettingsRequest;
-use App\Http\Resources\IntegrationResource;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
@@ -20,15 +20,6 @@ class SettingsController
 
         return Inertia::render('Settings/General', [
             'countries' => $countries,
-        ]);
-    }
-
-    public function calendars(): \Inertia\Response
-    {
-        $integrations = auth()->user()->integrations()->get();
-
-        return Inertia::render('Settings/Calendars', [
-            'integrations' => IntegrationResource::collection($integrations),
         ]);
     }
 
@@ -60,6 +51,7 @@ class SettingsController
 
     public function savePublicPage(PublicPageSettingsRequest $request): \Illuminate\Http\RedirectResponse
     {
+        /** @var User $user */
         $user = auth()->user();
 
         if ($request->hasFile('photo')) {

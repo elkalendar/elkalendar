@@ -60,11 +60,6 @@ class Booking extends Model
         return $this->belongsTo(Event::class);
     }
 
-    public function cancelledBy()
-    {
-        return User::find($this->cancelled_by);
-    }
-
     public function getBookingTimeForHostTimezone(): Carbon
     {
         return Carbon::parse($this->start_time)->setTimezone($this->getHostTimezone());

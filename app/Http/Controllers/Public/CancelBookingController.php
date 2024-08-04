@@ -4,22 +4,15 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Public;
 
-use App\Events\Bookings\BookingCancelled;
+use App\Actions\Bookings\CancelBookingByGuestAction;
+use App\Http\Requests\Booking\CancelByGuestRequest;
 use App\Models\Booking;
 
 class CancelBookingController
 {
-    public function __invoke(Booking $booking)
+    public function __invoke(Booking $booking, CancelByGuestRequest $request, CancelBookingByGuestAction $action)
     {
-        request()->validate([
-            'cancel_reason' => ['required', 'string', 'max:255'],
-        ]);
-
-        $booking->cancelled_at = now();
-        $booking->cancel_reason = request('cancel_reason');
-        $booking->save();
-
-        event(new BookingCancelled($booking));
+        $action->execute($booking, $request->get('cancel_reason'));
 
         return redirect()->back();
     }

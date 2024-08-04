@@ -6,8 +6,8 @@ namespace App\Http\Controllers\Public;
 
 use App\Repositories\BookingRepository;
 use App\Repositories\UserRepository;
+use App\Services\AvailabilityService;
 use App\Services\EventLocationService;
-use App\Services\NewAvailability\AvailabilityService;
 use App\Services\TimezoneService;
 use Carbon\Carbon;
 use Inertia\Inertia;

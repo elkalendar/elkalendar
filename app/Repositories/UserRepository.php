@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
+use App\Exceptions\UserNotFoundException;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Arr;
 
 class UserRepository
 {
+    /**
+     * @throws UserNotFoundException
+     */
     public function getUserByUsername(string $username, array $with = []): User
     {
         $withArray = [];
@@ -21,10 +25,12 @@ class UserRepository
             };
         }
 
-        if (Arr::has($with, 'integrations')) {
-            $withArray[] = 'integrations';
+        $user = User::with($withArray)->where('username', $username)->first();
+
+        if (!$user) {
+            throw new UserNotFoundException('User not found: ' . $username);
         }
 
-        return User::with($withArray)->where('username', $username)->firstOrFail();
+        return $user;
     }
 }

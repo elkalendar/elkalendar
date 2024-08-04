@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Listeners\Bookings;
 
-use App\Entities\Guest;
 use App\Events\Bookings\BookingCreated;
 use App\Notifications\Bookings\BookingCreatedGuestNotification;
 use App\Notifications\Bookings\BookingCreatedInviteeNotification;
+use App\Support\Guest;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;

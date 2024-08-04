@@ -45,13 +45,11 @@ class EventsController
     public function edit(Event $event)
     {
         $schedules = auth()->user()->schedules()->get();
-        $integrations = auth()->user()->integrations()->get();
 
         return Inertia::render('Events/Edit', [
             'event' => EventResource::make($event),
             'schedules' => ScheduleResource::collection($schedules),
             'allowedLocationTypes' => EventLocationTypes::getEnabledLocationTypes(),
-            'integrations' => IntegrationResource::collection($integrations),
         ]);
     }
 

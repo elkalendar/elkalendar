@@ -9,6 +9,7 @@ use App\Http\Controllers\Public\RescheduleBookingController;
 use App\Http\Controllers\Public\ShowBookingController;
 use App\Http\Controllers\Public\ShowEventController;
 use App\Http\Controllers\Public\ShowUserProfileController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\PagesController::class, 'home'])->name('home');
 

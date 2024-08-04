@@ -23,7 +23,6 @@ use Spatie\Onboard\Concerns\Onboardable;
  * @property Event[] $events
  * @property Booking[] $bookings
  * @property Schedule[] $schedules
- * @property Integration[] $integrations
  */
 class User extends Authenticatable implements Onboardable, MustVerifyEmail
 {
@@ -83,11 +82,6 @@ class User extends Authenticatable implements Onboardable, MustVerifyEmail
         return $this->hasMany(EventLocation::class);
     }
 
-    public function integrations()
-    {
-        return $this->hasMany(Integration::class);
-    }
-
     public function cancelledBookings()
     {
         return $this->hasMany(Booking::class, 'cancelled_by', 'id');
@@ -121,27 +115,5 @@ class User extends Authenticatable implements Onboardable, MustVerifyEmail
     public function scheduleExclusions()
     {
         return $this->hasMany(ScheduleExclusion::class);
-    }
-
-    public function logoutFromOAuth()
-    {
-        $accessToken = session()->get('access_token');
-
-        if (!$accessToken) {
-            Log::error('Cannot logout from YottaHQ oAuth server. Access token is missing.');
-            return;
-        }
-
-        $logoutResponse = Http::withToken($accessToken)
-            ->acceptJson()
-            ->get(config('services.yottahq.accounts_domain') . '/api/logout');
-
-        if ($logoutResponse->status() !== Response::HTTP_OK) {
-            Log::error('Failed to logout from YottaHQ oAuth server', [
-                'response' => $logoutResponse->json(),
-            ]);
-
-            return redirect()->route('dashboard')->with('error', 'Failed to logout from YottaHQ oAuth server');
-        }
     }
 }

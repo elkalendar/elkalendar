@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace App\Http\Requests\Booking;
 
 use App\Enum\EventLocationTypes;
+use App\Exceptions\EventNotFoundException;
+use App\Exceptions\UserNotFoundException;
 use App\Models\Event;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use App\Rules\Emails;
 use App\Rules\OnlyUnicodeLetters;
-use App\Services\NewAvailability\AvailabilityService;
+use App\Services\AvailabilityService;
 use Carbon\Carbon;
 use Closure;
 use Illuminate\Foundation\Http\FormRequest;
@@ -34,10 +36,14 @@ class BookRequest extends FormRequest
         return true;
     }
 
+    /**
+     * @throws EventNotFoundException
+     * @throws UserNotFoundException
+     */
     public function rules()
     {
-        $this->user = $this->userRepository->getUserByUsername($this->route('username'), ['events', 'integrations']);
-        $this->event = $this->user->events()->with(['locations', 'schedule'])->where('slug', $this->route('slug'))->firstOrFail();
+        $this->user = $this->getTheUserByUsername();
+        $this->event = $this->getEventBySlug();
 
         $rules = [
             'date' => 'required|date_format:Y-m-d',
@@ -99,5 +105,33 @@ class BookRequest extends FormRequest
         }
 
         return $rules;
+    }
+
+    /**
+     * @throws UserNotFoundException
+     */
+    public function getTheUserByUsername(): User
+    {
+        return $this->userRepository->getUserByUsername($this->route('username'), ['events']);
+    }
+
+
+    /**
+     * @throws EventNotFoundException
+     */
+    public function getEventBySlug(): Event
+    {
+        $event = $this->user->events()
+            ->with(['locations', 'schedule'])
+            ->where('slug', $this->route('slug'))
+            ->first();
+
+        if (!$event) {
+            throw new EventNotFoundException(
+                'Event not found: ' . $this->route('slug') . ' for user ' . $this->user->username
+            );
+        }
+
+        return $event;
     }
 }

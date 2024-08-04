@@ -10,15 +10,4 @@ class UserController
     {
         auth()->user()->sendEmailVerificationNotification();
     }
-
-    public function logout()
-    {
-        $user = request()->user();
-        $user->logoutFromOAuth();
-
-        auth()->logout();
-        session()->flush();
-
-        return redirect()->away(config('app.domain_with_scheme'));
-    }
 }
