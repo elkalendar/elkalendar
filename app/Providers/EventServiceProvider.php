@@ -12,6 +12,7 @@ use App\Events\Events\EventUpdated;
 use App\Listeners\Bookings\SendBookingCancelledEmail;
 use App\Listeners\Bookings\SendBookingCreatedEmailToHost;
 use App\Listeners\Bookings\SendBookingCreatedEmailToInvitees;
+use App\Listeners\CreateEventLocationForEvent;
 use App\Listeners\User\BootstrapUser;
 use App\Listeners\User\SendDeauthorizationNotification;
 use Illuminate\Auth\Events\Registered;
@@ -45,7 +46,9 @@ class EventServiceProvider extends ServiceProvider
             ZoomExtendSocialite::class.'@handle',
             MicrosoftExtendSocialite::class.'@handle',
         ],
-        EventCreated::class => [],
+        EventCreated::class => [
+            CreateEventLocationForEvent::class,
+        ],
         EventUpdated::class => [],
         EventDeleted::class => [],
     ];

@@ -31,7 +31,7 @@ class BootstrapUser
             }
         }
 
-        $event = $event->user->events()->create([
+        $event->user->events()->create([
             'schedule_id' => $schedule->id,
             'name' => [
                 'ar' => 'استشارة مجانية',
@@ -44,14 +44,6 @@ class BootstrapUser
             ],
             'color' => ColorService::generateHex(),
             'duration' => Arr::random([15, 30, 45, 60, 90]),
-        ]);
-
-        $event->locations()->create([
-            'type' => EventLocationTypes::TEXT,
-            'settings' => [
-                'text' => 'عنوان شركتنا',
-            ],
-            'position' => 1,
         ]);
     }
 }
