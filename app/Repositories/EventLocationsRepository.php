@@ -6,7 +6,5 @@ namespace App\Repositories;
 
 class EventLocationsRepository
 {
-    public function deleteByType(string $type)
-    {
-    }
+    public function deleteByType(string $type) {}
 }

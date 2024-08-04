@@ -9,8 +9,7 @@ class Attendee
     public function __construct(
         public string $email,
         public ?string $name,
-    ) {
-    }
+    ) {}
 
     public function toArray(): array
     {

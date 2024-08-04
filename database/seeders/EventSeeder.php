@@ -13,9 +13,7 @@ use Illuminate\Support\Arr;
 
 class EventSeeder extends Seeder
 {
-    public function __construct(private readonly Generator $faker)
-    {
-    }
+    public function __construct(private readonly Generator $faker) {}
 
     public function run()
     {

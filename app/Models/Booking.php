@@ -32,9 +32,9 @@ use Mtvs\EloquentHashids\HashidRouting;
  */
 class Booking extends Model
 {
-    use HasSettingsField;
     use HasHashid;
     use HashidRouting;
+    use HasSettingsField;
 
     protected $guarded = [];
 

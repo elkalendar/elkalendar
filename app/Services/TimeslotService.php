@@ -8,12 +8,10 @@ use League\Period\Sequence;
 
 class TimeslotService
 {
-    public function __construct(private SequenceService $sequenceService)
-    {
-    }
+    public function __construct(private SequenceService $sequenceService) {}
 
     /**
-     * @param Sequence[] $dates
+     * @param  Sequence[]  $dates
      */
     public function generateTimeslotsForDates(array $dates, int $durationInMinutes): array
     {

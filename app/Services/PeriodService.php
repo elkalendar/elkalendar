@@ -16,7 +16,7 @@ class PeriodService
     {
         $timeslots = [];
 
-        foreach ($period->splitForward($durationInMinutes . ' minutes') as $timeslot) {
+        foreach ($period->splitForward($durationInMinutes.' minutes') as $timeslot) {
             $timeslots[] = Carbon::parse($timeslot->startDate);
         }
 

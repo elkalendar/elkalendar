@@ -16,8 +16,7 @@ readonly class BookEventController
     public function __construct(
         private BookingRepository $bookingRepository,
         private EventLocationService $eventLocationService,
-    ) {
-    }
+    ) {}
 
     public function __invoke(string $username, string $slug, BookRequest $request)
     {

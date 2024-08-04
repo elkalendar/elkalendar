@@ -15,8 +15,7 @@ readonly class AvailabilityService
         private SequenceService $sequenceService,
         private TimeslotService $timeslotService,
         private MonthService $monthService,
-    ) {
-    }
+    ) {}
 
     public function getMonthAvailabilityTimeSlots(Carbon $month, int $durationInMinutes, Schedule $schedule): array
     {
@@ -39,14 +38,14 @@ readonly class AvailabilityService
             ->getBookingsFilteredByDates(array_keys($monthAvailability))
             ->groupBy('date');
 
-
         foreach ($monthAvailability as $date => $datePeriods) {
             $dayBookings = $bookingsThisMonth[$date] ?? [];
 
             $dayAvailabilitySequence = $this->sequenceService->generateSequence($datePeriods);
 
-            if (!$dayBookings) {
+            if (! $dayBookings) {
                 $monthAvailability[$date] = $dayAvailabilitySequence;
+
                 continue;
             }
 

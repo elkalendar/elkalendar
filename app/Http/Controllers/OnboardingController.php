@@ -11,9 +11,7 @@ use Inertia\Inertia;
 
 class OnboardingController
 {
-    public function __construct(public readonly TimezoneService $timezoneService)
-    {
-    }
+    public function __construct(public readonly TimezoneService $timezoneService) {}
 
     public function intro()
     {
@@ -22,7 +20,7 @@ class OnboardingController
         }
 
         return Inertia::render('Onboarding/Intro', [
-            'onboarding' => !auth()->user() ? [] : [
+            'onboarding' => ! auth()->user() ? [] : [
                 'finished' => auth()->user()->onboarding()->finished(),
                 'steps' => auth()->user()->onboarding()->steps,
                 'currentStep' => 0,
@@ -32,7 +30,7 @@ class OnboardingController
 
     public function step1()
     {
-        if (!auth()->user()->settings()->get('onboarding.intro.finished')) {
+        if (! auth()->user()->settings()->get('onboarding.intro.finished')) {
             return redirect('/onboarding/intro');
         }
 
@@ -45,7 +43,7 @@ class OnboardingController
         $countries = Countries::getProcessedCountries();
 
         return Inertia::render('Onboarding/Step1', [
-            'onboarding' => !auth()->user() ? [] : [
+            'onboarding' => ! auth()->user() ? [] : [
                 'finished' => auth()->user()->onboarding()->finished(),
                 'steps' => auth()->user()->onboarding()->steps,
                 'currentStep' => 1,
@@ -57,7 +55,7 @@ class OnboardingController
 
     public function final()
     {
-        if (!auth()->user()->settings()->get('onboarding.step1.finished')) {
+        if (! auth()->user()->settings()->get('onboarding.step1.finished')) {
             return redirect('/onboarding/step1');
         }
 
@@ -71,7 +69,7 @@ class OnboardingController
         ]);
 
         return Inertia::render('Onboarding/Final', [
-            'onboarding' => !auth()->user() ? [] : [
+            'onboarding' => ! auth()->user() ? [] : [
                 'finished' => auth()->user()->onboarding()->finished(),
                 'steps' => auth()->user()->onboarding()->steps,
                 'currentStep' => 3,

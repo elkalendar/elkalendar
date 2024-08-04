@@ -65,18 +65,17 @@ class BookRequest extends FormRequest
                         return $timeslot->equalTo($userTimeslot);
                     });
 
-
                     if ($timeslots->isEmpty()) {
-                        $fail("هذا التوقيت غير متاح. يرجى اختيار توقيت آخر.");
+                        $fail('هذا التوقيت غير متاح. يرجى اختيار توقيت آخر.');
                     }
-                }
+                },
             ],
             'name' => [
                 'required',
                 'string',
                 'max:255',
                 'min:2',
-                new OnlyUnicodeLetters(),
+                new OnlyUnicodeLetters,
             ],
             'location' => [
                 'nullable',
@@ -84,7 +83,7 @@ class BookRequest extends FormRequest
                 //                new LocationIsAvailable(auth()->user(), $event)
             ],
             'email' => 'required|string|email|max:255',
-            'guests' => new Emails(),
+            'guests' => new Emails,
             'timezone' => 'timezone',
         ];
 
@@ -115,7 +114,6 @@ class BookRequest extends FormRequest
         return $this->userRepository->getUserByUsername($this->route('username'), ['events']);
     }
 
-
     /**
      * @throws EventNotFoundException
      */
@@ -126,9 +124,9 @@ class BookRequest extends FormRequest
             ->where('slug', $this->route('slug'))
             ->first();
 
-        if (!$event) {
+        if (! $event) {
             throw new EventNotFoundException(
-                'Event not found: ' . $this->route('slug') . ' for user ' . $this->user->username
+                'Event not found: '.$this->route('slug').' for user '.$this->user->username
             );
         }
 

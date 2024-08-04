@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Notification;
 
 class SendBookingCancelledEmail implements ShouldQueue
 {
-    public function __construct(public BookingCancelled $event)
-    {
-    }
+    public function __construct(public BookingCancelled $event) {}
 
     public function handle()
     {
-        if (!$this->event->booking->user->hasVerifiedEmail()) {
+        if (! $this->event->booking->user->hasVerifiedEmail()) {
             Log::info('Notification not send because host email is not verified');
 
             return;
@@ -30,7 +28,7 @@ class SendBookingCancelledEmail implements ShouldQueue
                 new BookingCancelledNotification($this->event->booking)
             );
         } catch (\Exception $e) {
-            Log::error('BookingCancelledNotification not send because of error: ' . $e->getMessage());
+            Log::error('BookingCancelledNotification not send because of error: '.$e->getMessage());
         }
 
         foreach ($this->event->booking->guests as $guestEmailAddress) {

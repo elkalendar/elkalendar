@@ -16,8 +16,7 @@ class BookingController
         private readonly BookingRepository $bookingRepository,
         public UserRepository $userRepository,
         public EventLocationService $eventLocationService,
-    ) {
-    }
+    ) {}
 
     public function index(): \Inertia\Response
     {

@@ -10,7 +10,6 @@ use App\Enum\EventLocationTypes;
 use App\Http\Requests\Event\EventCreateRequest;
 use App\Http\Requests\Event\EventUpdateRequest;
 use App\Http\Resources\EventResource;
-use App\Http\Resources\IntegrationResource;
 use App\Http\Resources\ScheduleResource;
 use App\Models\Event;
 use App\Services\ColorService;

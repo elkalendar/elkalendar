@@ -16,7 +16,7 @@ class OnboardingSteps extends \Spatie\Onboard\OnboardingSteps
     {
         $step = new OnboardingStep($title);
 
-        if ($model && new $model() instanceof Onboardable) {
+        if ($model && new $model instanceof Onboardable) {
             return $this->steps[$model][] = $step;
         }
 

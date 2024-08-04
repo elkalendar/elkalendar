@@ -9,9 +9,7 @@ use App\Services\IntervalService;
 
 class UpdateIntervalAction
 {
-    public function __construct(public IntervalService $intervalService)
-    {
-    }
+    public function __construct(public IntervalService $intervalService) {}
 
     public function execute(Schedule $schedule, string $day, string $from, string $to): void
     {

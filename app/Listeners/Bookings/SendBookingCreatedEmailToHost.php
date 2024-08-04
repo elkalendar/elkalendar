@@ -12,13 +12,11 @@ use Illuminate\Support\Facades\Notification;
 
 class SendBookingCreatedEmailToHost implements ShouldQueue
 {
-    public function __construct(public BookingCreated $event)
-    {
-    }
+    public function __construct(public BookingCreated $event) {}
 
     public function handle($event)
     {
-        if (!$event->booking->user->hasVerifiedEmail()) {
+        if (! $event->booking->user->hasVerifiedEmail()) {
             Log::info('Notification not send because host email is not verified');
 
             return;
@@ -27,7 +25,7 @@ class SendBookingCreatedEmailToHost implements ShouldQueue
         try {
             Notification::send($event->booking->user, new BookingCreatedHostNotification($event->booking));
         } catch (\Exception $e) {
-            Log::error('BookingCreatedHostNotification not send because of error: ' . $e->getMessage());
+            Log::error('BookingCreatedHostNotification not send because of error: '.$e->getMessage());
         }
     }
 }

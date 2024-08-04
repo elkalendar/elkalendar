@@ -25,10 +25,10 @@ class Step1Request extends FormRequest
                 'max:60',
                 'min:3',
                 Rule::unique('users', 'username')->ignore(auth()->user()->id),
-                new OnlyUnicodeLettersWithDashes(),
+                new OnlyUnicodeLettersWithDashes,
             ],
             'timeFormat' => ['required', 'in:12,24'],
-            'country' => ['required', 'in:' . implode(',', Countries::getCountryKeys())],
+            'country' => ['required', 'in:'.implode(',', Countries::getCountryKeys())],
             'timezone' => 'required|timezone',
         ];
     }

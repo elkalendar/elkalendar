@@ -13,9 +13,7 @@ use Inertia\Inertia;
 
 class AvailabilitySchedulesController
 {
-    public function __construct(private AvailabilityScheduleService $availabilityScheduleService)
-    {
-    }
+    public function __construct(private AvailabilityScheduleService $availabilityScheduleService) {}
 
     public function index(): \Inertia\Response
     {

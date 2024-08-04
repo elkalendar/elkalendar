@@ -10,7 +10,5 @@ class Guest
 {
     use Notifiable;
 
-    public function __construct(public string $email)
-    {
-    }
+    public function __construct(public string $email) {}
 }

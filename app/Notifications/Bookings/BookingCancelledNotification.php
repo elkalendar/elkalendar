@@ -15,9 +15,7 @@ class BookingCancelledNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public function __construct(public Booking $booking)
-    {
-    }
+    public function __construct(public Booking $booking) {}
 
     public function via($notifiable)
     {
@@ -26,21 +24,21 @@ class BookingCancelledNotification extends Notification implements ShouldQueue
 
     public function toMail($notifiable)
     {
-        $message = (new MailMessage())
-            ->greeting('مرحباً ' . $this->booking->invitee_name)
-            ->subject('تم الغاء الحجز: ' . $this->booking->event->name)
-            ->line('تم الغاء حجز الموعد: ' . $this->booking->event->name);
+        $message = (new MailMessage)
+            ->greeting('مرحباً '.$this->booking->invitee_name)
+            ->subject('تم الغاء الحجز: '.$this->booking->event->name)
+            ->line('تم الغاء حجز الموعد: '.$this->booking->event->name);
 
         if ($this->booking->cancelled_at) {
             $message->line('بواسطة المستضيف');
             $message->line(
-                'في التوقيت: ' . $this->booking->cancelled_at->setTimezone($this->booking->timezone)->format(
+                'في التوقيت: '.$this->booking->cancelled_at->setTimezone($this->booking->timezone)->format(
                     Defaults::TIMESTAMP_FORMAT
                 )
             );
         }
 
-        $message->line('سبب الالغاء: ' . $this->booking->cancel_reason ?? 'لم يتم تحديد سبب الالغاء')
+        $message->line('سبب الالغاء: '.$this->booking->cancel_reason ?? 'لم يتم تحديد سبب الالغاء')
             ->salutation('شكراً لإستخدامك الكالندر ❤️');
 
         return $message;

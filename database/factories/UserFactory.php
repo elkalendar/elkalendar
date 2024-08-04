@@ -58,7 +58,5 @@ class UserFactory extends Factory
      *
      * @return $this
      */
-    public function withPersonalTeam()
-    {
-    }
+    public function withPersonalTeam() {}
 }

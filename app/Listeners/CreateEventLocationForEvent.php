@@ -6,8 +6,6 @@ namespace App\Listeners;
 
 use App\Enum\EventLocationTypes;
 use App\Events\Events\EventCreated;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class CreateEventLocationForEvent
 {

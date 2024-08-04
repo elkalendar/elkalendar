@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Listeners\User;
 
-use App\Enum\EventLocationTypes;
 use App\Models\ScheduleInterval;
 use App\Services\ColorService;
 use App\Services\IntervalService;

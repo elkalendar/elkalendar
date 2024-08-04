@@ -20,8 +20,7 @@ class ShowEventController
         public EventLocationService $eventLocationService,
         public AvailabilityService $availabilityService,
         public TimezoneService $timezoneService,
-    ) {
-    }
+    ) {}
 
     public function __invoke(string $username, string $slug)
     {

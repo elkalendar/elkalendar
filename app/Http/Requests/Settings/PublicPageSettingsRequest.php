@@ -26,7 +26,7 @@ class PublicPageSettingsRequest extends FormRequest
                 'string',
                 'min:2',
                 'max:255',
-                new OnlyUnicodeLetters(),
+                new OnlyUnicodeLetters,
             ],
             'username' => [
                 'required',
@@ -34,7 +34,7 @@ class PublicPageSettingsRequest extends FormRequest
                 'max:60',
                 'min:3',
                 Rule::unique('users', 'username')->ignore($user->id),
-                new OnlyUnicodeLettersWithDashes(),
+                new OnlyUnicodeLettersWithDashes,
             ],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
             'profileMessage' => ['required', 'string', 'max:250'],

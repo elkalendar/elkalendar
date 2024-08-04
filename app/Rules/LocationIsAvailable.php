@@ -10,9 +10,7 @@ use Illuminate\Contracts\Validation\Rule;
 
 class LocationIsAvailable implements Rule
 {
-    public function __construct(private readonly User $user, private readonly Event $event)
-    {
-    }
+    public function __construct(private readonly User $user, private readonly Event $event) {}
 
     public function passes($attribute, $value)
     {

@@ -14,7 +14,6 @@ use App\Listeners\Bookings\SendBookingCreatedEmailToHost;
 use App\Listeners\Bookings\SendBookingCreatedEmailToInvitees;
 use App\Listeners\CreateEventLocationForEvent;
 use App\Listeners\User\BootstrapUser;
-use App\Listeners\User\SendDeauthorizationNotification;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use SocialiteProviders\Manager\SocialiteWasCalled;

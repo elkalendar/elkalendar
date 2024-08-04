@@ -49,7 +49,7 @@ class BookingCreatedInviteeNotification extends Notification implements ShouldQu
 
         $guestNotes = $this->booking->notes ? $this->booking->notes : 'لا يوجد';
 
-        $message = (new MailMessage())
+        $message = (new MailMessage)
             ->greeting('مرحباً '.$this->booking->invitee_name)
             ->subject('تم حجز الموعد بنجاح: '.$this->booking->event->name)
             ->line('تم حجز الموعد بنجاح: '.$this->booking->event->name)

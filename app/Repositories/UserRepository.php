@@ -27,8 +27,8 @@ class UserRepository
 
         $user = User::with($withArray)->where('username', $username)->first();
 
-        if (!$user) {
-            throw new UserNotFoundException('User not found: ' . $username);
+        if (! $user) {
+            throw new UserNotFoundException('User not found: '.$username);
         }
 
         return $user;

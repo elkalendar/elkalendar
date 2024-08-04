@@ -8,8 +8,8 @@ use App\Actions\Interval\UpdateIntervalAction;
 use App\Models\Schedule;
 use App\Services\IntervalService;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithExceptionHandling;
-use Tests\TestCase;
 use Mockery as m;
+use Tests\TestCase;
 
 class UpdateIntervalActionTest extends TestCase
 {
@@ -57,6 +57,6 @@ class UpdateIntervalActionTest extends TestCase
             ->with(['from' => $from, 'to' => $to])
             ->once();
 
-        $this->assertTrue(true, "Interval update method was called successfully."); // Example, doesn't do much here.
+        $this->assertTrue(true, 'Interval update method was called successfully.'); // Example, doesn't do much here.
     }
 }

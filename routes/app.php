@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
-    'domain' => 'app.' . config('app.domain'),
+    'domain' => 'app.'.config('app.domain'),
     'middleware' => ['auth', 'verified', 'inertia.private'],
 ], static function () {
     Route::name('onboarding.')
@@ -40,7 +40,7 @@ Route::group([
             ->name('dashboard');
 
         Route::resource('events', EventsController::class, [
-            'except' => ['create', 'show']
+            'except' => ['create', 'show'],
         ]);
 
         Route::put('events/{event}/update-schedule', UpdateEventScheduleController::class)

@@ -11,9 +11,7 @@ use Illuminate\Database\Seeder;
 
 class SchedulesSeeder extends Seeder
 {
-    public function __construct(private readonly \Faker\Generator $faker)
-    {
-    }
+    public function __construct(private readonly \Faker\Generator $faker) {}
 
     public function run()
     {

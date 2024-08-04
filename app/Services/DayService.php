@@ -18,15 +18,14 @@ class DayService
         private readonly BookingRepository $bookingRepository,
         private readonly SequenceService $sequenceService,
         private readonly TimeslotService $timeslotService,
-    ) {
-    }
+    ) {}
 
     public function getDayAvailability(Carbon $date, Schedule $schedule, Event $event): array
     {
         $dayName = Str::lower($date->format('l'));
         $scheduleIntervals = $schedule->intervals()->where('day', $dayName)->get()->map(function ($interval) use ($date) {
-            $start = Carbon::parse($date->format(Defaults::DATE_FORMAT) . ' ' . $interval->from);
-            $end = Carbon::parse($date->format(Defaults::DATE_FORMAT) . ' ' . $interval->to);
+            $start = Carbon::parse($date->format(Defaults::DATE_FORMAT).' '.$interval->from);
+            $end = Carbon::parse($date->format(Defaults::DATE_FORMAT).' '.$interval->to);
 
             return Period::fromDate($start, $end);
         });

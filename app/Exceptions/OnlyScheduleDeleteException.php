@@ -6,6 +6,4 @@ namespace App\Exceptions;
 
 use Exception;
 
-class OnlyScheduleDeleteException extends Exception
-{
-}
+class OnlyScheduleDeleteException extends Exception {}

@@ -42,7 +42,7 @@ class AvailabilityScheduleService
         $schedules = auth()->user()->schedules();
 
         if ($schedules->count() === 1) {
-            throw new OnlyScheduleDeleteException();
+            throw new OnlyScheduleDeleteException;
         }
 
         $firstDifferentSchedule = auth()->user()->schedules()->whereNot('id', $schedule->id)->first();

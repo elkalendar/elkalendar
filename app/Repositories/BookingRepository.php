@@ -115,7 +115,7 @@ class BookingRepository
 
     public function getBookingById(string $bookingId, ?User $user = null)
     {
-        if (!$user) {
+        if (! $user) {
             return Booking::where('id', $bookingId)->firstOrFail();
         }
 
@@ -129,7 +129,7 @@ class BookingRepository
             ->whereNull('cancelled_at')
             ->get();
 
-        if (!$asPeriod) {
+        if (! $asPeriod) {
             return $bookings;
         }
 

@@ -10,13 +10,11 @@ use League\Period\Sequence;
 
 class SequenceService
 {
-    public function __construct(private PeriodService $periodService)
-    {
-    }
+    public function __construct(private PeriodService $periodService) {}
 
     public function generateSequence(array $periods): Sequence
     {
-        $sequence = new Sequence();
+        $sequence = new Sequence;
 
         foreach ($periods as $period) {
             $startD = Carbon::parse($period->startDate);

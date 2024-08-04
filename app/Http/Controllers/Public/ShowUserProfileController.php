@@ -16,8 +16,7 @@ class ShowUserProfileController
         public UserRepository $userRepository,
         public BookingRepository $bookingRepository,
         public EventLocationService $eventLocationService,
-    ) {
-    }
+    ) {}
 
     public function __invoke(string $username)
     {

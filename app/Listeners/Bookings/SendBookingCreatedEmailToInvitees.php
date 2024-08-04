@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Notification;
 
 class SendBookingCreatedEmailToInvitees implements ShouldQueue
 {
-    public function __construct(public BookingCreated $event)
-    {
-    }
+    public function __construct(public BookingCreated $event) {}
 
     /**
      * Handle the event.

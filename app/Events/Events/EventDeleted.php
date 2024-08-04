@@ -16,9 +16,7 @@ class EventDeleted
     use InteractsWithSockets;
     use SerializesModels;
 
-    public function __construct(public Event $event)
-    {
-    }
+    public function __construct(public Event $event) {}
 
     public function broadcastOn(): array
     {

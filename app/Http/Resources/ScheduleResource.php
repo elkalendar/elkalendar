@@ -28,7 +28,7 @@ class ScheduleResource extends JsonResource
         return [
             'id' => $this->hashid,
             'name' => $this->name,
-            'isDefault' => (bool)$this->is_default,
+            'isDefault' => (bool) $this->is_default,
             'timezone' => $this->timezone,
             'intervals' => $intervals,
         ];

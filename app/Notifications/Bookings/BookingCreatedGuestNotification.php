@@ -67,7 +67,7 @@ class BookingCreatedGuestNotification extends Notification implements ShouldQueu
 
         $guestNotes = $this->booking->notes ? $this->booking->notes : 'لا يوجد';
 
-        return (new MailMessage())
+        return (new MailMessage)
             ->greeting('مرحباً '.$this->booking->invitee_name)
             ->subject('تم حجز الموعد بنجاح: '.$this->booking->event->name)
             ->line('تم حجز الموعد بنجاح: '.$this->booking->event->name)

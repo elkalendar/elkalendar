@@ -10,10 +10,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Http\Response;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 use Mtvs\EloquentHashids\HasHashid;
 use Mtvs\EloquentHashids\HashidRouting;
 use Spatie\Onboard\Concerns\GetsOnboarded;
@@ -24,13 +21,13 @@ use Spatie\Onboard\Concerns\Onboardable;
  * @property Booking[] $bookings
  * @property Schedule[] $schedules
  */
-class User extends Authenticatable implements Onboardable, MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail, Onboardable
 {
     use GetsOnboarded;
     use HasFactory;
-    use HasSettingsField;
     use HasHashid;
     use HashidRouting;
+    use HasSettingsField;
     use Notifiable;
 
     protected $dispatchesEvents = [

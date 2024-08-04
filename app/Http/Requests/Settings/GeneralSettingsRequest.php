@@ -19,7 +19,7 @@ class GeneralSettingsRequest extends FormRequest
         return [
             'timeFormat' => ['required', 'in:12,24'],
             'allowSeoIndexing' => ['required', 'boolean'],
-            'country' => ['required', 'in:' . implode(',', Countries::getCountryKeys())],
+            'country' => ['required', 'in:'.implode(',', Countries::getCountryKeys())],
         ];
     }
 }
