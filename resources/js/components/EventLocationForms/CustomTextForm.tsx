@@ -15,7 +15,7 @@ interface CustomTextFormProps {
 function CustomTextForm(props: CustomTextFormProps) {
   const form = useForm({
     locationId: props.location?.id,
-    text: props.location?.data?.text,
+    text: props.location?.text,
   });
 
   return (

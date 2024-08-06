@@ -16,6 +16,8 @@ use Mtvs\EloquentHashids\HashidRouting;
 use Spatie\Onboard\Concerns\GetsOnboarded;
 use Spatie\Onboard\Concerns\Onboardable;
 
+use const _PHPStan_c4c026984\__;
+
 /**
  * @property Event[] $events
  * @property Booking[] $bookings
@@ -42,7 +44,6 @@ class User extends Authenticatable implements MustVerifyEmail, Onboardable
         'event_display_style' => 'card',
         'default_event_language' => Defaults::LANG_EN,
         'theme' => 'system',
-        'profile_message' => 'مرحبا بكم في صفحة الجدولة الخاصة بي.',
         'profile_name' => null,
         'profile_image' => null,
         'onboarding' => [
@@ -68,6 +69,12 @@ class User extends Authenticatable implements MustVerifyEmail, Onboardable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->defaultSettings[] = ['profile_message' => __('defaults.user.profile_message')];
+    }
 
     public function events()
     {

@@ -25,8 +25,8 @@ function EventBookingForm(props: EventBookingFormProps) {
   const page = useTypedPage();
 
   const form = useForm({
-    name: page.props.auth.user ? page.props.auth.user.data.name : '',
-    email: page.props.auth.user ? page.props.auth.user.data.email : '',
+    name: page.props.auth.user ? page.props.auth.user.name : '',
+    email: page.props.auth.user ? page.props.auth.user.email : '',
     phone: '',
     notes: '',
     location: null,
@@ -40,7 +40,7 @@ function EventBookingForm(props: EventBookingFormProps) {
   function onSubmit(e: React.FormEvent) {
     form.clearErrors();
     e.preventDefault();
-    form.post(`/${props.host.data.username}/${props.event.data.slug}`, {
+    form.post(`/${props.host.username}/${props.event.slug}`, {
       preserveScroll: true,
     });
   }
@@ -117,7 +117,7 @@ function EventBookingForm(props: EventBookingFormProps) {
         </Input.Wrapper>
 
         {
-          props.event.data.fields.phone.required && (
+          props.event.fields.phone.required && (
             <Input.Wrapper
               withAsterisk
               label="رقم الهاتف"
@@ -132,9 +132,9 @@ function EventBookingForm(props: EventBookingFormProps) {
         }
 
         {
-          props.event.data.locations.length > 0 && (
+          props.event.locations.length > 0 && (
             <EventLocationSelector
-              locations={props.event.data.locations}
+              locations={props.event.locations}
               setSelectedLocation={(location: string) => {
                 form.setData('location', location);
               }}

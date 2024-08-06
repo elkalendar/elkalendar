@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Public;
 
+use App\Exceptions\UserNotFoundException;
 use App\Repositories\BookingRepository;
 use App\Repositories\UserRepository;
 use App\Services\AvailabilityService;
@@ -22,11 +23,14 @@ class ShowEventController
         public TimezoneService $timezoneService,
     ) {}
 
+    /**
+     * @throws UserNotFoundException
+     */
     public function __invoke(string $username, string $slug)
     {
         $month = $this->getMonth();
 
-        $user = $this->userRepository->getUserByUsername($username, ['events']);
+        $user = $this->userRepository->getUserByUsername($username, 'events');
         $event = $user->events->where('slug', $slug)->firstOrFail();
 
         $event->user = $user;

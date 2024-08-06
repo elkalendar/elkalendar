@@ -12,5 +12,5 @@ function isRTL(): bool
 
 function publicUrl(?string $path): string
 {
-    return config('app.short_domain_with_scheme').'/'.$path;
+    return config('app.domain_with_scheme').'/'.$path;
 }

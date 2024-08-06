@@ -30,9 +30,6 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             BootstrapUser::class,
-
-            // Replace SendEmailVerificationNotification with welcome email
-            //            SendEmailVerificationNotification::class,
         ],
         BookingCreated::class => [
             SendBookingCreatedEmailToHost::class,

@@ -61,7 +61,7 @@ export default function () {
               type="submit"
               color="red"
               onClick={() => {
-                form.post(`/bookings/${page.props.booking.data.id}/cancel-by-guest`, {
+                form.post(`/bookings/${page.props.booking.id}/cancel-by-guest`, {
                   preserveScroll: true,
                   onSuccess: () => {
                     showSuccessToast('تم إلغاء الحجز بنجاح');
@@ -101,7 +101,7 @@ export default function () {
               الاجتماع:
             </Text>
             <Group>
-              {page.props.event.data.name}
+              {page.props.event.name}
             </Group>
           </Flex>
 
@@ -115,7 +115,7 @@ export default function () {
             >
               <Text>
                 {
-                  formatInTimeZone(dayjs(page.props.booking.data.startTimeGuest).toDate(), page.props.booking.data.timezone, DateFnsFormat.DATE, {
+                  formatInTimeZone(dayjs(page.props.booking.startTimeGuest).toDate(), page.props.booking.timezone, DateFnsFormat.DATE, {
                     locale: ar,
                   })
                 }
@@ -123,20 +123,20 @@ export default function () {
               <span>
                 {' '}
                 {
-                  formatInTimeZone(dayjs(page.props.booking.data.startTimeGuest).toDate(), page.props.booking.data.timezone, DateFnsFormat.TIME12, {
+                  formatInTimeZone(dayjs(page.props.booking.startTimeGuest).toDate(), page.props.booking.timezone, DateFnsFormat.TIME12, {
                     locale: ar,
                   })
                 }
                 {' '}
                 -
                 {' '}
-                {formatInTimeZone(dayjs(page.props.booking.data.endTimeGuest).toDate(), page.props.booking.data.timezone, DateFnsFormat.TIME12, {
+                {formatInTimeZone(dayjs(page.props.booking.endTimeGuest).toDate(), page.props.booking.timezone, DateFnsFormat.TIME12, {
                   locale: ar,
                 })}
                 &nbsp;
                 (بتوقيت
                 {' '}
-                {page.props.booking.data.timezone}
+                {page.props.booking.timezone}
                 )
               </span>
             </Flex>
@@ -148,11 +148,11 @@ export default function () {
             </Text>
             <Flex justify="items-start" gap={8}>
               <Group>
-                {getEventLocationIcon(page.props.booking.data.location)}
+                {getEventLocationIcon(page.props.booking.location)}
               </Group>
 
               <Flex direction="column" align="items-start">
-                <Text>{getEventLocationForConfirmation(page.props.booking.data.location, page.props.booking.data.locationData)}</Text>
+                <Text>{getEventLocationForConfirmation(page.props.booking.location, page.props.booking.locationData)}</Text>
               </Flex>
             </Flex>
           </Flex>
@@ -174,17 +174,17 @@ export default function () {
           <Flex direction="column">
             <AddToCalendarButtons
               title="اضافة الاجتماع إلى التقويم"
-              bookingId={page.props.booking.data.id}
-              googleLink={page.props.booking.data.addToCalendarLinksGuest.google}
-              officeLink={page.props.booking.data.addToCalendarLinksGuest.office}
-              outlookLink={page.props.booking.data.addToCalendarLinksGuest.outlook}
+              bookingId={page.props.booking.id}
+              googleLink={page.props.booking.addToCalendarLinksGuest.google}
+              officeLink={page.props.booking.addToCalendarLinksGuest.office}
+              outlookLink={page.props.booking.addToCalendarLinksGuest.outlook}
             />
           </Flex>
 
           <Flex justify='center'>
             <Button
               component="a"
-              href={page.props.host.data.link}
+              href={page.props.host.link}
               variant='subtle'
             >
               العودة إلى صفحة الحجز

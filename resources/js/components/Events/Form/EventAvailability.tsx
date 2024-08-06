@@ -30,12 +30,12 @@ export default function (props: EventAvailabilityProps) {
         label="جدول المواعيد"
         description="اختر جدول المواعيد الذي تريد استخدامه لهذا الاجتماع"
         placeholder="اختر جدول المواعيد"
-        data={page.props.schedules.data.map((schedule: any) => ({
+        data={page.props.schedules.map((schedule: any) => ({
           value: schedule.id,
           label: schedule.name,
           disabled: schedule.id === props.event.scheduleId,
         }))}
-        defaultValue={form.data.scheduleId ?? page.props.schedules.data[0].id}
+        defaultValue={form.data.scheduleId ?? page.props.schedules[0].id}
         onChange={(e) => {
           Inertia.put(`/events/${props.event.id}/update-schedule`, {
             scheduleId: e,
@@ -58,7 +58,7 @@ export default function (props: EventAvailabilityProps) {
           gap={8}
         >
           <BsGlobe2 size={14}/>
-          <Text size="sm">{page.props.event.data.schedule.timezone}</Text>
+          <Text size="sm">{page.props.event.schedule.timezone}</Text>
         </Flex>
         <Button
           target="_blank"
@@ -78,7 +78,7 @@ export default function (props: EventAvailabilityProps) {
         direction="column"
       >
         {
-          Object.keys(page.props.event.data.schedule.intervals).map((weekday: any, index) => (
+          Object.keys(page.props.event.schedule.intervals).map((weekday: any, index) => (
             <Flex
               key={index}
               justify="space-between"
@@ -88,24 +88,24 @@ export default function (props: EventAvailabilityProps) {
             >
               <Group w={52}>{getArabicWeekday(weekday)}</Group>
               <Flex>
-                {page.props.event.data.schedule.intervals[weekday].length < 1 &&
+                {page.props.event.schedule.intervals[weekday].length < 1 &&
                   <Text size="sm">لا يوجد مواعيد</Text>}
 
                 {
-                  page.props.event.data.schedule.intervals[weekday].map((interval: any, index: number) => (
+                  page.props.event.schedule.intervals[weekday].map((interval: any, index: number) => (
                     <Flex
                       align="center"
                       gap={8}
                       key={index}
                     >
                       <div className="interval-start">
-                        {format(convertTimeslotToTime(interval.from), getUserTimeFormat(page.props.auth.user.data.timeFormat), {
+                        {format(convertTimeslotToTime(interval.from), getUserTimeFormat(page.props.auth.user.timeFormat), {
                           locale: ar,
                         })}
                       </div>
                       <div className="interval-separator mx-2">-</div>
                       <div className="interval-end">
-                        {format(convertTimeslotToTime(interval.to), getUserTimeFormat(page.props.auth.user.data.timeFormat), {
+                        {format(convertTimeslotToTime(interval.to), getUserTimeFormat(page.props.auth.user.timeFormat), {
                           locale: ar,
                         })}
                       </div>

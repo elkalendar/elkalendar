@@ -1,13 +1,15 @@
 import {FormEventHandler} from 'react';
 import {Head, useForm} from '@inertiajs/inertia-react';
 import AuthenticationLayout from "@/layouts/AuthenticationLayout";
-import {Alert, Button, Input, Paper, PasswordInput, Stack, Title} from '@mantine/core';
+import {Alert, Button, Paper, PasswordInput, Stack, Title} from '@mantine/core';
+import {useTranslation} from "react-i18next";
 
 interface Props {
   status: string;
 }
 
 export default function ConfirmPassword(props: Props) {
+  const {t} = useTranslation();
   const form = useForm({
     password: '',
   });
@@ -22,14 +24,14 @@ export default function ConfirmPassword(props: Props) {
 
   return (
     <AuthenticationLayout>
-      <Head title="تأكيد كلمة المرور"/>
+      <Head title={t('auth.password.confirm_title')}/>
 
       <Title ta='center'>
-        تأكيد كلمة المرور
+        {t('auth.password.confirm_title')}
       </Title>
 
       <Alert>
-        هذه منطقة آمنة للتطبيق. يرجى تأكيد كلمة المرور الخاصة بك قبل الاستمرار.
+        {t('auth.password.confirm_description')}
       </Alert>
 
       {props.status && (
@@ -45,7 +47,7 @@ export default function ConfirmPassword(props: Props) {
               error={form.errors.password}
               withAsterisk
               size='lg'
-              label='كلمة السر'
+              label={t('auth.login.password')}
               type='password'
               value={form.data.password}
               onChange={(e) => form.setData('password', e.currentTarget.value)}
@@ -58,7 +60,7 @@ export default function ConfirmPassword(props: Props) {
               loading={form.processing}
               size='lg'
             >
-              تأكيد كلمة السر
+              {t('auth.password.btn_confirm')}
             </Button>
           </Stack>
         </Paper>

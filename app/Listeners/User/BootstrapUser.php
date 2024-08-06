@@ -15,7 +15,7 @@ class BootstrapUser
     public function handle(Registered $event)
     {
         $schedule = $event->user->schedules()->create([
-            'name' => 'ساعات العمل',
+            'name' => __('defaults.schedule_name'),
             'timezone' => $event->user->settings()->get('timezone'),
         ]);
 
@@ -33,13 +33,13 @@ class BootstrapUser
         $event->user->events()->create([
             'schedule_id' => $schedule->id,
             'name' => [
-                'ar' => 'استشارة مجانية',
-                'en' => 'Free consultation',
+                'ar' => __('defaults.event_name', locale: 'ar'),
+                'en' => __('defaults.event_name', locale: 'en'),
             ],
             'slug' => 'free-consultation',
             'description' => [
-                'ar' => 'انضم إلي لنتحدث سوياً عن كيف يمكننا تحسين أداء عملك في الفترة المقبلة.',
-                'en' => 'Join me for a free consultation session where we discuss how to improve things.',
+                'ar' => __('defaults.event_description', locale: 'ar'),
+                'en' => __('defaults.event_description', locale: 'en'),
             ],
             'color' => ColorService::generateHex(),
             'duration' => Arr::random([15, 30, 45, 60, 90]),

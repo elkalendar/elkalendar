@@ -43,14 +43,14 @@ readonly class BookEventController
 
             return to_route('booking.show-booking', [
                 'booking' => $booking,
-            ])->with('eventBooked', 'تم الحجز بنجاح.');
+            ])->with('eventBooked', __('messages.event.booked_successfully'));
         } catch (\Exception $exception) {
             Log::error('Cannot create event booking.', [
                 'exceptionMessage' => $exception->getMessage(),
             ]);
 
             return redirect()->back()->withErrors([
-                'messageText' => 'لقد حدث خطأ ما اثناء عملية الحجز. يرجى التواصل مع الدعم الفني.',
+                'messageText' => __('messages.event.booking_error'),
             ]);
         }
     }

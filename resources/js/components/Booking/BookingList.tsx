@@ -8,6 +8,10 @@ interface BookingListProps {
   children?: React.ReactNode;
   bookings: any;
   hasPagination?: boolean;
+  meta?: {
+      lastPage: number;
+      currentPage: number;
+  }
 }
 
 export default function (props: BookingListProps) {
@@ -24,11 +28,10 @@ export default function (props: BookingListProps) {
       {
         hasPagination && (
           <Pagination
-            total={props.bookings.meta.last_page}
-            value={props.bookings.meta.current_page}
+            total={props.meta.lastPage}
+            value={props.meta.currentPage}
             onChange={(value) => Inertia.get(`/bookings?filterBy=${filterBy}&page=${value}`)}
           />
-
         )
       }
     </Flex>

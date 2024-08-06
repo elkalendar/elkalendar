@@ -76,7 +76,7 @@ function EventLocationItem(props: EventLocationItemProps) {
           <ActionIcon
             variant="subtle"
             onClick={() => {
-              if (page.props.event.data.locations.length === 1) {
+              if (page.props.event.locations.length === 1) {
                 showErrorToast('لا يمكن حذف المكان الوحيد');
                 return;
               }

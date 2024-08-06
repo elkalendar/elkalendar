@@ -24,12 +24,12 @@ export function SettingsNavbar() {
       </Button>
 
       <Group>
-        <Avatar size={32} src={page.props.auth.user.data.avatar} alt={`${page.props.auth.user.data.name}'s Avatar`}/>
+        <Avatar size={32} src={page.props.auth.user.avatar} alt={`${page.props.auth.user.name}'s Avatar`}/>
         <p
           className="truncate text-sm font-medium leading-5"
-          title={page.props.auth.user.data.name}
+          title={page.props.auth.user.name}
         >
-          {page.props.auth.user.data.name}
+          {page.props.auth.user.name}
         </p>
       </Group>
 

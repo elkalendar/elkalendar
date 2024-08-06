@@ -17,6 +17,7 @@ import {
   Alert
 } from '@mantine/core';
 import {MdAlternateEmail} from 'react-icons/md';
+import {useTranslation} from "react-i18next";
 
 interface Props {
   status: string;
@@ -28,6 +29,7 @@ export default function Login(props: Props) {
     password: '',
     remember: false,
   });
+  const {t} = useTranslation();
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
@@ -40,17 +42,17 @@ export default function Login(props: Props) {
 
   return (
     <AuthenticationLayout>
-      <Head title="Log in"/>
+      <Head title={t('auth.login.title')}/>
 
       <Title ta='center'>
-        مرحبا بك مجددا
+        {t('auth.login.welcome')}
       </Title>
 
       <Text c='dimmed' size='sm' ta='center' mt={5}>
-        ليس لديك حساب؟
+        {t('auth.login.no_account')}
         {' '}
         <Anchor href='/register' size='sm' component={Link}>
-          تسجيل حساب جديد
+          {t('auth.login.new_account')}
         </Anchor>
       </Text>
 
@@ -67,7 +69,7 @@ export default function Login(props: Props) {
             <Stack justify='space-between'>
               <Input.Wrapper
                 withAsterisk
-                label='البريد الالكتروني'
+                label={t('auth.login.email')}
                 error={form.errors.email}
               >
                 <Input
@@ -83,7 +85,7 @@ export default function Login(props: Props) {
               <PasswordInput
                 error={form.errors.password}
                 withAsterisk
-                label='كلمة السر'
+                label={t('auth.login.password')}
                 type='password'
                 value={form.data.password}
                 onChange={(e) => form.setData('password', e.currentTarget.value)}
@@ -92,14 +94,14 @@ export default function Login(props: Props) {
 
               <Group justify='space-between' my='lg'>
                 <Checkbox
-                  label='تذكرني'
+                  label={t('auth.login.remember_me')}
                   checked={form.data.remember}
                   onChange={(e) => form.setData('remember', e.currentTarget.checked ? true : false)}
                   error={form.errors.remember}
                 />
 
                 <Anchor component={Link} href='forgot-password' size='sm'>
-                  نسيت كلمة السر؟
+                  {t('auth.login.forgot_password')}
                 </Anchor>
               </Group>
 
@@ -109,7 +111,7 @@ export default function Login(props: Props) {
                 disabled={form.processing}
                 type='submit'
               >
-                تسجيل الدخول
+                {t('auth.login.btn_login')}
               </Button>
             </Stack>
           </form>

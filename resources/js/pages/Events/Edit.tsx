@@ -16,15 +16,15 @@ export default function Create(props) {
 
   return (
     <AppLayout
-      title={`تعديل اجتماع:${props.event.data.name}`}
+      title={`تعديل اجتماع:${props.event.name}`}
       renderHeader={() => (
         <PageHeader
-          title={`تعديل اجتماع:${props.event.data.name}`}
+          title={`تعديل اجتماع:${props.event.name}`}
           rightSection={<BackButton href="/events"/>}
           leftSection={(
             <Button
               component="a"
-              href={props.event.data.link}
+              href={props.event.link}
               target="_blank"
               variant="subtle"
               leftSection={<BiLinkExternal/>}
@@ -39,7 +39,7 @@ export default function Create(props) {
         color="teal"
         value={activeTab}
         onChange={(value) => {
-          Inertia.visit(`/events/${props.event.data.id}/edit#${value}`, {
+          Inertia.visit(`/events/${props.event.id}/edit#${value}`, {
             preserveScroll: true,
             preserveState: (page) => Object.keys(page.props.errors).length,
             onSuccess: () => {
@@ -55,15 +55,15 @@ export default function Create(props) {
         </Tabs.List>
 
         <Tabs.Panel value="setup" pt="xs">
-          <Setup event={props.event.data}/>
+          <Setup event={props.event}/>
         </Tabs.Panel>
 
         <Tabs.Panel value="locations" pt="xs">
-          <EventLocations event={props.event.data}/>
+          <EventLocations event={props.event}/>
         </Tabs.Panel>
 
         <Tabs.Panel value="availability" pt="xs">
-          <EventAvailability event={props.event.data}/>
+          <EventAvailability event={props.event}/>
         </Tabs.Panel>
       </Tabs>
 

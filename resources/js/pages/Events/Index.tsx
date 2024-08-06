@@ -74,7 +74,7 @@ export default function Dashboard(props: IndexProps) {
             label="الرابط"
             description="يستخدم الرابط للوصول إلى الاجتماع"
             error={form.errors.slug}
-            prefix={"https://elkalendar.com/" + page.props.auth.user.data.username + "/"}
+            prefix={"https://elkalendar.com/" + page.props.auth.user.username + "/"}
             value={form.data.slug}
             onChange={(e) => form.setData('slug', e.currentTarget.value)}
           />
@@ -117,13 +117,13 @@ export default function Dashboard(props: IndexProps) {
 
       <div className="">
         {
-          props.events.data.length < 1 ? (
+          props.events.length < 1 ? (
             <NoResults
               title="لا يوجد اجتماعات"
               subtitle="تمكّنك الاجتماعات من مشاركة الروابط التي تعرض الأوقات المتاحة في التقويم الخاص بك وتسمح للأشخاص بإجراء الحجوزات معك."
               icon={<BsCalendar size="3rem"/>}
             />
-          ) : <EventsTable events={props.events.data}/>
+          ) : <EventsTable events={props.events}/>
         }
       </div>
     </AppLayout>

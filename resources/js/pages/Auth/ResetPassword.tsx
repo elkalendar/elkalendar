@@ -1,11 +1,11 @@
 import {Head, useForm} from '@inertiajs/inertia-react';
 import React from 'react';
 import {
-  Button, Input, Paper, PasswordInput, Stack,
-  Title,
+  Button, Paper, PasswordInput, Stack, TextInput, Title,
 } from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
 import AuthenticationLayout from '@/layouts/AuthenticationLayout';
+import {useTranslation} from "react-i18next";
 
 interface Props {
   token: string;
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export default function ResetPassword({token, email}: Props) {
+  const {t} = useTranslation();
   const [visible, {toggle}] = useDisclosure(false);
 
   const form = useForm({
@@ -31,35 +32,30 @@ export default function ResetPassword({token, email}: Props) {
   }
 
   return (
-    <AuthenticationLayout
-      title="اعادة ضبط كلمة المرور"
-    >
-      <Head title="اعادة ضبط كلمة المرور"/>
+    <AuthenticationLayout>
+      <Head title={t('auth.password.reset_title')}/>
 
       <Title ta="center">
-        اعادة ضبط كلمة المرور
+        {t('auth.password.reset_title')}
       </Title>
 
       <Paper withBorder shadow="md" p={30} mt={30} radius="md" w="100%">
         <Stack gap={20}>
-          <Input.Wrapper
+          <TextInput
             withAsterisk
-            label="البريد الالكتروني"
+            label={t('auth.password.email')}
             error={form.errors.email}
-          >
-            <Input
-              readOnly
-              disabled
-              type="email"
-              value={form.data.email}
-              onChange={(e) => form.setData('email', e.currentTarget.value)}
-              className="ltr"
-            />
-          </Input.Wrapper>
+            readOnly
+            disabled
+            type="email"
+            value={form.data.email}
+            onChange={(e) => form.setData('email', e.currentTarget.value)}
+            className="ltr"
+          />
 
           <PasswordInput
             withAsterisk
-            label="كلمة السر"
+            label={t('auth.login.password')}
             error={form.errors.password}
             value={form.data.password}
             onChange={(e) => form.setData('password', e.currentTarget.value)}
@@ -71,7 +67,7 @@ export default function ResetPassword({token, email}: Props) {
 
           <PasswordInput
             withAsterisk
-            label="تأكيد كلمة السر"
+            label={t('auth.register.password_confirmation')}
             error={form.errors.password_confirmation}
             value={form.data.password_confirmation}
             onChange={(e) => form.setData('password_confirmation', e.currentTarget.value)}
@@ -86,7 +82,7 @@ export default function ResetPassword({token, email}: Props) {
             disabled={form.processing}
             onClick={onSubmit}
           >
-            اعادة ضبط كلمة السر
+            {t('auth.password.btn_reset')}
           </Button>
         </Stack>
       </Paper>

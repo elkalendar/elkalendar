@@ -80,7 +80,7 @@ function Setup(props: SetupProps) {
             },
           }}
         >
-          {"https://elkalendar.com/" + page.props.auth.user.data.username + "/"}
+          {"https://elkalendar.com/" + page.props.auth.user.username + "/"}
         </Text>
       </>
 

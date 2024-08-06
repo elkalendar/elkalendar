@@ -12,6 +12,7 @@ use App\Http\Controllers\Public\ShowUserProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\PagesController::class, 'home'])->name('home');
+Route::get('i18next/fetch', \App\Http\Controllers\TranslationController::class);
 
 Route::group([
     'domain' => config('app.domain'),

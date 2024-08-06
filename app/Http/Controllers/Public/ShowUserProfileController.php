@@ -20,7 +20,7 @@ class ShowUserProfileController
 
     public function __invoke(string $username)
     {
-        $user = $this->userRepository->getUserByUsername($username, ['events']);
+        $user = $this->userRepository->getUserByUsername($username, 'events');
 
         return Inertia::render('Events/Public/Index', [
             'user' => new \App\Http\Resources\HostResource($user),

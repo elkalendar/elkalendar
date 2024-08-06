@@ -67,13 +67,13 @@ export default function (props: BookingItemProps) {
             </Text>
             <Text size="sm">
               {
-                formatInTimeZone(dayjs(props.booking.startTimeHost).toDate(), props.booking.event.schedule.timezone, `${getUserTimeFormat(page.props.auth.user.data.timeFormat)}`, {
+                formatInTimeZone(dayjs(props.booking.startTimeHost).toDate(), props.booking.event.schedule.timezone, `${getUserTimeFormat(page.props.auth.user.timeFormat)}`, {
                   locale: ar,
                 })
               }
               {' '}
               -
-              {formatInTimeZone(dayjs(props.booking.endTimeHost).toDate(), props.booking.event.schedule.timezone, `${getUserTimeFormat(page.props.auth.user.data.timeFormat)}`, {
+              {formatInTimeZone(dayjs(props.booking.endTimeHost).toDate(), props.booking.event.schedule.timezone, `${getUserTimeFormat(page.props.auth.user.timeFormat)}`, {
                 locale: ar,
               })}
             </Text>
@@ -137,14 +137,14 @@ export default function (props: BookingItemProps) {
             <span>
               {' '}
               {
-                formatInTimeZone(dayjs(props.booking.startTimeGuest).toDate(), props.booking.timezone, `${getUserTimeFormat(page.props.auth.user.data.timeFormat)}`, {
+                formatInTimeZone(dayjs(props.booking.startTimeGuest).toDate(), props.booking.timezone, `${getUserTimeFormat(page.props.auth.user.timeFormat)}`, {
                   locale: ar,
                 })
               }
               {' '}
               -
               {' '}
-              {formatInTimeZone(dayjs(props.booking.endTimeGuest).toDate(), props.booking.timezone, `${getUserTimeFormat(page.props.auth.user.data.timeFormat)}`, {
+              {formatInTimeZone(dayjs(props.booking.endTimeGuest).toDate(), props.booking.timezone, `${getUserTimeFormat(page.props.auth.user.timeFormat)}`, {
                 locale: ar,
               })}
               {' '}
@@ -200,7 +200,7 @@ export default function (props: BookingItemProps) {
                   <span className="text-emphasis">
                     {' '}
                     {
-                      format(dayjs(props.booking.cancelledAt).toDate(), `${getUserTimeFormat(page.props.auth.user.data.timeFormat)} - EEEE - yyy/M/d `, {
+                      format(dayjs(props.booking.cancelledAt).toDate(), `${getUserTimeFormat(page.props.auth.user.timeFormat)} - EEEE - yyy/M/d `, {
                         locale: ar,
                       })
                     }

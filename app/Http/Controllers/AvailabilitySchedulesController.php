@@ -9,6 +9,7 @@ use App\Exceptions\OnlyScheduleDeleteException;
 use App\Http\Requests\Availability\AvailabilityUpdateRequest;
 use App\Models\Schedule;
 use App\Services\AvailabilitySchedule\AvailabilityScheduleService;
+use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
 
 class AvailabilitySchedulesController
@@ -53,8 +54,10 @@ class AvailabilitySchedulesController
 
             return redirect()->route('availability.index');
         } catch (OnlyScheduleDeleteException $e) {
+            Log::error($e->getMessage());
+
             return redirect()->back()->withErrors([
-                'scheduleError' => 'لا يمكن حذف الموعد الافتراضي',
+                'scheduleError' => __('messages.schedule.default_schedule_delete_error'),
             ]);
         }
     }

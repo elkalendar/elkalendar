@@ -38,7 +38,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->index('slug');
+            $table->unique('slug', 'user_id');
         });
     }
 

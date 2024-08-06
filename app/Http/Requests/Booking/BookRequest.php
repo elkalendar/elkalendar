@@ -66,7 +66,7 @@ class BookRequest extends FormRequest
                     });
 
                     if ($timeslots->isEmpty()) {
-                        $fail('هذا التوقيت غير متاح. يرجى اختيار توقيت آخر.');
+                        $fail(__('bookings.errors.slot_already_booked'));
                     }
                 },
             ],
@@ -80,7 +80,6 @@ class BookRequest extends FormRequest
             'location' => [
                 'nullable',
                 new Enum(EventLocationTypes::class),
-                //                new LocationIsAvailable(auth()->user(), $event)
             ],
             'email' => 'required|string|email|max:255',
             'guests' => new Emails,
@@ -111,7 +110,7 @@ class BookRequest extends FormRequest
      */
     public function getTheUserByUsername(): User
     {
-        return $this->userRepository->getUserByUsername($this->route('username'), ['events']);
+        return $this->userRepository->getUserByUsername($this->route('username'), 'events');
     }
 
     /**

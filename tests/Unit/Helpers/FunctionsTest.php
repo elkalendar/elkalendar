@@ -11,7 +11,7 @@ class FunctionsTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        config(['app.short_domain_with_scheme' => 'https://example.com']);
+        config(['app.domain_with_scheme' => 'https://example.com']);
     }
 
     public function testIsRTLReturnsTrueForArabic()

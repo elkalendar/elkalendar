@@ -11,7 +11,7 @@ export default function Appearance() {
   const page = useTypedPage();
 
   const form = useForm({
-    theme: page.props.auth.user.data.theme,
+    theme: page.props.auth.user.theme,
   });
 
   return (

@@ -4,12 +4,14 @@ import {
   Alert, Anchor, Button, Stack, Text,
 } from '@mantine/core';
 import AuthenticationLayout from '@/layouts/AuthenticationLayout';
+import {useTranslation} from "react-i18next";
 
 interface Props {
   status: string;
 }
 
 export default function VerifyEmail({status}: Props) {
+  const {t} = useTranslation();
   const form = useForm({});
   const verificationLinkSent = status === 'verification-link-sent';
 
@@ -20,19 +22,16 @@ export default function VerifyEmail({status}: Props) {
 
   return (
     <AuthenticationLayout>
-      <Head title="تأكيد البريد الالكتروني"/>
+      <Head title={t('auth.email.verify_title')}/>
 
       <Stack justify="space-between">
         <Text size="sm" mb={22}>
-          شكرا لتسجيلك! قبل البدء، هل يمكنك التحقق من حسابك
-          عنوان البريد الإلكتروني من خلال النقر على الرابط الذي أرسلناه إليك عبر البريد الإلكتروني للتو؟ اذا أنت
-          لم نتلق البريد الإلكتروني، سنرسل لك بكل سرور رسالة أخرى.
+          {t('auth.email.description')}
         </Text>
 
         {verificationLinkSent && (
           <Alert variant="light" color="green">
-            تم إرسال رابط تحقق جديد إلى عنوان بريدك الإلكتروني
-            المقدمة أثناء التسجيل.
+            {t('auth.email.link_sent')}
           </Alert>
         )}
 
@@ -41,14 +40,14 @@ export default function VerifyEmail({status}: Props) {
           disabled={form.processing}
           onClick={onSubmit}
         >
-          إعادة ارسال بريد التحقق
+          {t('auth.email.btn_send_verification_link')}
         </Button>
 
         <Anchor
           href="/logout"
           component={Link}
         >
-          تسجيل خروج
+          {t('auth.logout')}
         </Anchor>
       </Stack>
     </AuthenticationLayout>

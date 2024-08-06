@@ -110,7 +110,7 @@ class EventLocationsController
         // TODO: make sure that the location is not the only location for the event
         if ($event->locations()->count() === 1) {
             return redirect()->back()->withErrors([
-                'location' => 'لا يمكن حذف الموقع الوحيد للحدث.',
+                'location' => __('messages.event_location.default_event_location_delete_error'),
             ]);
         }
 

@@ -44,6 +44,4 @@ class IntervalService
             ],
         ];
     }
-
-    public function generatePeriods(ScheduleInterval $intervals) {}
 }

@@ -12,10 +12,10 @@ function Step1() {
   const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'Africa/Cairo';
 
   const form = useForm({
-    username: page.props.auth.user.data.username,
+    username: page.props.auth.user.username,
     timezone: browserTimezone,
-    timeFormat: page.props.auth.user.data.timeFormat,
-    country: page.props.auth.user.data.country,
+    timeFormat: page.props.auth.user.timeFormat,
+    country: page.props.auth.user.country,
   });
 
   return (
@@ -58,7 +58,7 @@ function Step1() {
 
           <Select
             error={form.errors.country}
-            defaultValue={page.props.auth.user.data.country}
+            defaultValue={page.props.auth.user.country}
             searchable
             label="الدولة"
             description="يستخدم هذا الإعداد لتحديد دولتك داخل نظام الكالندر"
@@ -83,7 +83,7 @@ function Step1() {
           <Select
             error={form.errors.timeFormat}
             value={form.data.timeFormat}
-            defaultValue={page.props.auth.user.data.timeFormat}
+            defaultValue={page.props.auth.user.timeFormat}
             allowDeselect={false}
             label="صيغة الوقت"
             description="يعد هذا إعدادًا داخليًا ولن يؤثر على كيفية عرض الأوقات على صفحات الحجز العامة لك أو لأي شخص يقوم بحجزك."

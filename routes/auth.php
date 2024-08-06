@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group([
     'domain' => 'app.'.config('app.domain'),
+    'middleware' => [\App\Http\Middleware\HandleInertiaRequestsPublic::class]
 ], static function () {
     Route::middleware('guest')->group(function () {
         Route::get('register', [RegisteredUserController::class, 'create'])

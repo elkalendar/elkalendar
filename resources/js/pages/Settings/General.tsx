@@ -11,9 +11,9 @@ export default function General() {
   const page = useTypedPage();
 
   const form = useForm({
-    timeFormat: page.props.auth.user.data.timeFormat,
-    allowSeoIndexing: page.props.auth.user.data.allowSeoIndexing,
-    country: page.props.auth.user.data.country,
+    timeFormat: page.props.auth.user.timeFormat,
+    allowSeoIndexing: page.props.auth.user.allowSeoIndexing,
+    country: page.props.auth.user.country,
   });
 
   return (
@@ -29,7 +29,7 @@ export default function General() {
       <Flex gap={22} direction="column">
         <Select
           value={form.data.timeFormat}
-          defaultValue={page.props.auth.user.data.timeFormat}
+          defaultValue={page.props.auth.user.timeFormat}
           allowDeselect={false}
           label="صيغة الوقت"
           description="يعد هذا إعدادًا داخليًا ولن يؤثر على كيفية عرض الأوقات على صفحات الحجز العامة لك أو لأي شخص يقوم بحجزك."
@@ -41,7 +41,7 @@ export default function General() {
         />
 
         <Select
-          defaultValue={page.props.auth.user.data.country}
+          defaultValue={page.props.auth.user.country}
           searchable
           label="الدولة"
           description="يستخدم هذا الإعداد لتحديد دولتك داخل نظام الكالندر"

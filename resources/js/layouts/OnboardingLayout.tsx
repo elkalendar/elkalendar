@@ -6,11 +6,6 @@ import {Toaster} from "react-hot-toast";
 import Confetti from "@/components/Confetti";
 import {Head} from "@inertiajs/inertia-react";
 
-type Step = {
-  title: string;
-  summary: string;
-}
-
 interface Props {
   title?: string;
   children: React.JSX.Element;

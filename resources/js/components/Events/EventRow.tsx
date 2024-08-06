@@ -75,7 +75,7 @@ function EventRow(props: EventRowProps) {
         </Text>
         <Text size="sm">
           https://elkalendar.com/
-          {page.props.auth.user.data.username}
+          {page.props.auth.user.username}
           /
           {props.event.slug}
         </Text>

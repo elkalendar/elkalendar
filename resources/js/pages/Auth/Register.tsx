@@ -1,13 +1,14 @@
-import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import {Head, Link, useForm} from '@inertiajs/inertia-react';
 import React from 'react';
-import { Anchor, Button, Input, Paper, PasswordInput, Stack, Text, Title } from '@mantine/core';
-import { MdAlternateEmail } from 'react-icons/md';
-import { useDisclosure } from '@mantine/hooks';
+import {Anchor, Button, Input, Paper, PasswordInput, Stack, Text, TextInput, Title} from '@mantine/core';
+import {MdAlternateEmail} from 'react-icons/md';
+import {useDisclosure} from '@mantine/hooks';
 import AuthenticationLayout from '@/layouts/AuthenticationLayout';
+import {useTranslation} from "react-i18next";
 
 export default function Register() {
-
-  const [visible, { toggle }] = useDisclosure(false);
+  const {t} = useTranslation();
+  const [visible, {toggle}] = useDisclosure(false);
   const form = useForm({
     name: '',
     email: '',
@@ -17,50 +18,42 @@ export default function Register() {
 
   return (
     <AuthenticationLayout>
-      <Head title='حساب جديد' />
+      <Head title={t('auth.register.title')}/>
 
       <Title ta='center'>
-        مرحبا بك
+        {t('auth.register.welcome')}
       </Title>
 
       <Text c='dimmed' size='sm' ta='center' mt={5}>
-        لديك حساب؟
+        {t('auth.register.have_account')}
         {' '}
         <Anchor href='/login' size='sm' component={Link}>
-          تسجيل الدخول
+          {t('auth.register.login')}
         </Anchor>
       </Text>
 
       <Paper withBorder shadow='md' p={30} mt={30} radius='md' w='100%'>
         <Stack gap={20}>
-          <Input.Wrapper
+          <TextInput
+            dir='auto'
             withAsterisk
-            label='الاسم'
+            label={t('auth.register.name')}
             error={form.errors.name}
-          >
-            <Input
-              dir='auto'
-              error={form.errors.name}
-              value={form.data.name}
-              onChange={(e) => form.setData('name', e.currentTarget.value)}
-            />
-          </Input.Wrapper>
-          <Input.Wrapper
+            value={form.data.name}
+            onChange={(e) => form.setData('name', e.currentTarget.value)}
+          />
+          <TextInput
             withAsterisk
-            label='البريد الالكتروني'
+            label={t('auth.register.email')}
             error={form.errors.email}
-          >
-            <Input
-              error={form.errors.email}
-              value={form.data.email}
-              onChange={(e) => form.setData('email', e.currentTarget.value)}
-              className='ltr'
-              rightSection={<MdAlternateEmail />}
-            />
-          </Input.Wrapper>
+            value={form.data.email}
+            onChange={(e) => form.setData('email', e.currentTarget.value)}
+            className='ltr'
+            rightSection={<MdAlternateEmail/>}
+          />
           <PasswordInput
             withAsterisk
-            label='كلمة السر'
+            label={t('auth.register.password')}
             value={form.data.password}
             error={form.errors.password}
             onChange={(e) => form.setData('password', e.currentTarget.value)}
@@ -72,7 +65,7 @@ export default function Register() {
           <PasswordInput
             value={form.data.password_confirmation}
             withAsterisk
-            label='تأكيد كلمة السر'
+            label={t('auth.register.password_confirmation')}
             error={form.errors.password_confirmation}
             onChange={(e) => form.setData('password_confirmation', e.currentTarget.value)}
             type='password'
@@ -90,7 +83,7 @@ export default function Register() {
               form.post('/register');
             }}
           >
-            تسجيل حساب جديد
+            {t('auth.register.btn_register')}
           </Button>
         </Stack>
       </Paper>

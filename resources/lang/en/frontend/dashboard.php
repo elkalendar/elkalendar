@@ -3,16 +3,13 @@
 declare(strict_types=1);
 
 return [
-    'verifyMsg' => 'Please verify your email address!',
-    'availability' => 'My Schedule',
-    'events' => 'Events',
-    'integrations' => 'Integrations',
-    'upcoming' => 'Upcoming bookings',
-    'noBookings' => 'No upcoming bookings',
-    'boookingsToday' => 'Bookings Today',
-    'boookingsMonth' => 'Bookings this month',
-    'schedule' => [
-        'notAvailable' => 'Not Available',
-        'weeklySchedule' => 'Set your weekly schedule',
+    'greeting' => 'Welcome!',
+    'bookings' => [
+        'today' => 'Bookings Today',
+        'next_week' => 'Bookings next 7 days',
+        'month' => 'Bookings next 30 days',
+        'none' => 'None',
+        'incoming' => 'Incoming Bookings',
+        'show_all' => 'All Bookings',
     ],
 ];

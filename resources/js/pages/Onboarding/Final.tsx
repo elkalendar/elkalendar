@@ -11,7 +11,7 @@ function Intro(props) {
       <h1 className={classes.title}>
         هنيئاً لك يا&nbsp;
         <Text component="span" variant="gradient" gradient={{from: 'blue', to: 'cyan'}} inherit>
-          {props.auth.user.data.name}
+          {props.auth.user.name}
         </Text>{' '}
       </h1>
 

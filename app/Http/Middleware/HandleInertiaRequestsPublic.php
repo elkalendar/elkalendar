@@ -37,8 +37,6 @@ class HandleInertiaRequestsPublic extends Middleware
             'appUrl' => config('app.url'),
             'domain' => config('app.domain'),
             'domainWithScheme' => config('app.domain_with_scheme'),
-            'shortDomain' => config('app.short_domain'),
-            'shortDomainWithScheme' => config('app.short_domain_with_scheme'),
             'accountsDomain' => config('app.accounts_domain_with_scheme'),
             'auth' => [
                 'user' => null,

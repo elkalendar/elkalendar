@@ -14,7 +14,7 @@ class CreateEventLocationForEvent
         $event->event->locations()->create([
             'type' => EventLocationTypes::TEXT,
             'settings' => [
-                'text' => 'عنوان شركتنا',
+                'text' => __('defaults.event_location_text'),
             ],
             'position' => 1,
         ]);

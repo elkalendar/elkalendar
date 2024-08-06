@@ -3,8 +3,10 @@ import {FormEventHandler} from 'react';
 import AuthenticationLayout from "@/layouts/AuthenticationLayout";
 import {Alert, Text, Button, Input, Paper, Stack, Title} from '@mantine/core';
 import {showSuccessToast} from "@/utils/FormHelpers";
+import {useTranslation} from "react-i18next";
 
 export default function ForgotPassword({status}: { status?: string }) {
+  const {t} = useTranslation();
   const form = useForm({
     email: '',
   });
@@ -21,18 +23,15 @@ export default function ForgotPassword({status}: { status?: string }) {
   };
 
   return (
-    <AuthenticationLayout title='استعادة كلمة السر'>
-      <Head title="Forgot Password"/>
+    <AuthenticationLayout>
+      <Head title={t('auth.password.forgot_title')} />
 
       <Title ta='center'>
-        استعادة كلمة المرور
+        {t('auth.password.forgot_title')}
       </Title>
 
       <Text size='sm' my={20}>
-        نسيت كلمة المرور؟
-        لا يوجد مشكلة. فقط دعنا نعرف عنوان بريدك الإلكتروني
-        وسنرسل لك عبر البريد الإلكتروني رابط إعادة تعيين كلمة المرور الذي سيسمح لك
-        باختيار واحدة جديدة.
+        {t('auth.password.forgot_description')}
       </Text>
 
       {status && (
@@ -46,7 +45,7 @@ export default function ForgotPassword({status}: { status?: string }) {
           <Stack gap={20}>
             <Input.Wrapper
               withAsterisk
-              label='البريد الالكتروني'
+              label={t('auth.password.email')}
               error={form.errors.email}
             >
               <Input
@@ -62,7 +61,7 @@ export default function ForgotPassword({status}: { status?: string }) {
               disabled={form.processing}
               loading={form.processing}
             >
-              ارسال رابط إعادة تعيين كلمة المرور
+              {t('auth.password.btn_request')}
             </Button>
           </Stack>
         </form>

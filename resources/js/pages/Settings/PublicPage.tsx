@@ -12,9 +12,9 @@ export default function () {
   const page = useTypedPage();
 
   const form = useForm({
-    name: page.props.auth.user.data.profileName,
-    username: page.props.auth.user.data.username,
-    profileMessage: page.props.auth.user.data.profileMessage,
+    name: page.props.auth.user.profileName,
+    username: page.props.auth.user.username,
+    profileMessage: page.props.auth.user.profileMessage,
     photo: null as File | null,
   });
 
@@ -84,8 +84,8 @@ export default function () {
           </Group>
         ) : (
           <Avatar
-            src={page.props.auth.user.data.profileImage}
-            alt={page.props.auth.user.data.name}
+            src={page.props.auth.user.profileImage}
+            alt={page.props.auth.user.name}
             size="lg"
           />
         )}
@@ -95,7 +95,7 @@ export default function () {
             تغيير الصورة
           </Button>
 
-          {page.props.auth.user.data.profileImage ? (
+          {page.props.auth.user.profileImage ? (
             <Button onClick={deletePhoto} color="red">
               حذف الصورة
             </Button>
@@ -150,7 +150,7 @@ export default function () {
               },
             }}
           >
-            {page.props.shortDomainWithScheme}/{form.data.username}
+            {page.props.shortDomainWithScheme}/{form.username}
           </Text>
         </Flex>
 

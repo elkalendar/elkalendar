@@ -59,14 +59,14 @@ function BookNew(props) {
         }}
       >
         {
-          !props.host.data.settings.allowSeoIndexing ? (
+          !props.host.settings.allowSeoIndexing ? (
             <Head>
-              <title>{props.event.data.name}</title>
+              <title>{props.event.name}</title>
               <meta name="robots" content="noindex, nofollow"/>
               <meta name="googlebot" content="noindex"/>
               <meta name="googlebot-news" content="nosnippet"/>
             </Head>
-          ) : <Head title={props.event.data.name}/>
+          ) : <Head title={props.event.name}/>
         }
 
         <SimpleGrid
@@ -83,29 +83,29 @@ function BookNew(props) {
             gap={12}
           >
             <Group>
-              <Tooltip label={props.host.data.name}>
+              <Tooltip label={props.host.name}>
                 <Avatar
-                  href={props.host.data.link}
+                  href={props.host.link}
                   component={InertiaLink}
-                  src={props.host.data.avatar}
-                  alt={props.host.data.name}
+                  src={props.host.avatar}
+                  alt={props.host.name}
                 />
               </Tooltip>
             </Group>
 
             <Text>
-              {props.host.data.name}
+              {props.host.name}
             </Text>
 
-            <Title mt={22} size="md">{props.event.data.name}</Title>
-            <Text>{props.event.data.description}</Text>
+            <Title mt={22} size="md">{props.event.name}</Title>
+            <Text>{props.event.description}</Text>
 
             <Badge variant="light" color="gray">
               <Tooltip label="مدة الاجتماع">
                 <Flex align="center" gap={4}>
                   <BiTime size={17}/>
                   <Text size="sm" mt={3}>
-                    {props.event.data.duration}
+                    {props.event.duration}
                     {' '}
                     دقيقة
                   </Text>
@@ -153,13 +153,13 @@ function BookNew(props) {
               ) : (
                 <EventBookingCalendar
                   availability={props.availability}
-                  maxDate={props.event.data.maxFutureBookingDate ? dayjs(props.event.data.maxFutureBookingDate).toDate() : null}
+                  maxDate={props.event.maxFutureBookingDate ? dayjs(props.event.maxFutureBookingDate).toDate() : null}
                   selectedDate={selectedDate}
                   selectedMonth={selectedMonth}
                   isLoading={isLoadingAvailabilitiesForDay}
                   onMonthChange={(n) => {
                     setSelectedMonth(n);
-                    Inertia.visit(`/${props.host.data.username}/${props.event.data.slug}?month=${format(n, 'yyy-MM')}`, {
+                    Inertia.visit(`/${props.host.username}/${props.event.slug}?month=${format(n, 'yyy-MM')}`, {
                       onStart: () => {
                         setIsLoadingAvailabilitiesForDay(true);
                       },

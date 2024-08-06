@@ -15,8 +15,8 @@ interface InPersonHostFormProps {
 function InPersonHostForm(props: InPersonHostFormProps) {
   const form = useForm({
     locationId: props.location?.id,
-    address: props.location?.data?.address,
-    showOnBookingPage: props.location?.data?.showOnBookingPage ?? false,
+    address: props.location?.address,
+    showOnBookingPage: props.location?.showOnBookingPage ?? false,
   });
 
   return (

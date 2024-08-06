@@ -8,7 +8,7 @@ use App\Models\Schedule;
 use App\Repositories\BookingRepository;
 use Carbon\Carbon;
 
-readonly class AvailabilityService
+class AvailabilityService
 {
     public function __construct(
         private BookingRepository $bookingRepository,

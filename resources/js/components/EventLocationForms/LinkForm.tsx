@@ -15,8 +15,8 @@ interface LinkFormProps {
 function LinkForm(props: LinkFormProps) {
   const form = useForm({
     locationId: props.location?.id,
-    linkTitle: props.location?.data?.linkTitle,
-    link: props.location?.data?.link,
+    linkTitle: props.location?.linkTitle,
+    link: props.location?.link,
   });
 
   return (

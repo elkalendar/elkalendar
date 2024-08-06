@@ -21,14 +21,6 @@ return [
 
     'domain_with_scheme' => env('APP_ENV') === 'local' ? 'https://elkalendar.test' : 'https://elkalendar.com',
 
-    'short_domain' => env('APP_ENV') === 'local' ? 'elkalendar.test' : 'elkalendar.com',
-
-    'short_domain_with_scheme' => env('APP_ENV') === 'local' ? 'https://elkalendar.test' : 'https://elkalendar.com',
-
-    'accounts_domain' => env('APP_ENV') === 'local' ? 'accounts.yottahq.test' : 'accounts.yottahq.com',
-
-    'accounts_domain_with_scheme' => env('APP_ENV') === 'local' ? 'https://accounts.yottahq.test' : 'https://accounts.yottahq.com',
-
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -94,9 +86,9 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'ar'),
+    'locale' => env('APP_LOCALE', 'en'),
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'ar'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 

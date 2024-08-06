@@ -5,8 +5,17 @@ import PageHeader from '@/components/PageHeader/PageHeader';
 import NoResults from '@/components/NoResults/NoResults';
 import BookingFilters from '@/components/Booking/BookingFilters';
 import BookingTable from '@/components/Booking/BookingList';
+import {Booking} from "@/types/entities";
 
-export default function Dashboard(props) {
+interface Props {
+    Bookings: {
+        data: Booking[];
+        meta: object;
+        links: object;
+    }
+}
+
+export default (props: Props) => {
   return (
     <AppLayout
       title="الحجوزات"
@@ -27,7 +36,14 @@ export default function Dashboard(props) {
               subtitle="ليس لديك أي حجوزات. بمجرد قيام شخص ما بحجز موعد معك، سيظهر هنا."
               icon={<BsCalendar size="3rem" />}
             />
-          ) : <BookingTable hasPagination={true} bookings={props.bookings} />
+          ) : <BookingTable
+              meta={{
+                  currentPage: props.bookings.meta.current_page,
+                  lastPage: props.bookings.meta.last_page,
+              }}
+              hasPagination={true}
+              bookings={props.bookings}
+          />
         }
 
       </div>
