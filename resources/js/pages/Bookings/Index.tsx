@@ -6,6 +6,7 @@ import NoResults from '@/components/NoResults/NoResults';
 import BookingFilters from '@/components/Booking/BookingFilters';
 import BookingTable from '@/components/Booking/BookingList';
 import {Booking} from "@/types/entities";
+import {useTranslation} from "react-i18next";
 
 interface Props {
     Bookings: {
@@ -16,13 +17,15 @@ interface Props {
 }
 
 export default (props: Props) => {
+  const {t} = useTranslation();
+
   return (
     <AppLayout
-      title="الحجوزات"
+      title={t('bookings.title')}
       renderHeader={() => (
         <PageHeader
-          title="الحجوزات"
-          subtitle="شاهد الحجوزات القادمة والماضية التي تم حجزها من خلال روابط الاجتماعات الخاصة بك."
+          title={t('bookings.title')}
+          subtitle={t('bookings.sub_title')}
         />
       )}
     >
@@ -32,8 +35,8 @@ export default (props: Props) => {
         {
           props.bookings.data.length < 1 ? (
             <NoResults
-              title="لا يوجد حجوزات"
-              subtitle="ليس لديك أي حجوزات. بمجرد قيام شخص ما بحجز موعد معك، سيظهر هنا."
+              title={t('bookings.no_bookings')}
+              subtitle={t('bookings.no_bookings_desc')}
               icon={<BsCalendar size="3rem" />}
             />
           ) : <BookingTable

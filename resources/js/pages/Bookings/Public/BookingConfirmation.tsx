@@ -26,11 +26,13 @@ import AddToCalendarButtons from '@/components/AddToCalendarButtons';
 import {showSuccessToast} from "@/utils/FormHelpers";
 import {MdOutlineCancel} from "react-icons/md";
 import {FaX} from "react-icons/fa6";
+import {useTranslation} from "react-i18next";
 
 export default function () {
   const page = useTypedPage();
   const colorScheme = useMantineColorScheme();
   const [cancelModalOpen, setCancelModalOpen] = useState(false);
+  const {t} = useTranslation();
 
   const form = useForm({
     cancel_reason: '',
@@ -38,19 +40,19 @@ export default function () {
 
   return (
     <Center>
-      <Head title="تم تأكيد الحجز"/>
+      <Head title={t('bookings.confirmed_title')}/>
       <Modal
         centered
         opened={cancelModalOpen}
         onClose={() => setCancelModalOpen(false)}
-        title="إلغاء الحجز"
+        title={t('bookings.cancel_title')}
       >
         <Flex gap={22} direction="column">
           <Textarea
             withAsterisk
-            label="سبب الإلغاء"
-            description="سيتم إرسال إشعار بالإلغاء لجميع المدعويين عن طريق البريد الالكتروني."
-            placeholder="مثال: لا يمكنني الحضور لأسباب شخصية."
+            label={t('bookings.cancel_reason')}
+            description={t('bookings.cancel_reason_desc')}
+            placeholder={t('bookings.cancel_reason_placeholder')}
             error={form.errors.cancel_reason}
             value={form.data.cancel_reason}
             onChange={(e) => form.setData('cancel_reason', e.currentTarget.value)}
@@ -64,14 +66,14 @@ export default function () {
                 form.post(`/bookings/${page.props.booking.id}/cancel-by-guest`, {
                   preserveScroll: true,
                   onSuccess: () => {
-                    showSuccessToast('تم إلغاء الحجز بنجاح');
+                    showSuccessToast(t('bookings.cancel_success'));
                     setCancelModalOpen(false);
                   },
                 });
               }}
               leftSection={<MdOutlineCancel/>}
             >
-              إلغاء الحجز
+              {t('btn.cancel_booking')}
             </Button>
           </div>
         </Flex>
@@ -88,17 +90,17 @@ export default function () {
               align="center" justify="center">
           <BsFillCheckCircleFill size={42}/>
           <Title size="md">
-            تمت جدولة هذا الاجتماع
+            {t('bookings.confirmed_h1')}
           </Title>
           <Text>
-            لقد أرسلنا بريدًا إلكترونيًا يتضمن دعوة تقويمية تتضمن التفاصيل للجميع.
+            {t('bookings.confirmed_p')}
           </Text>
         </Flex>
 
         <Stack p={22} gap={22}>
           <Flex direction="column">
             <Text>
-              الاجتماع:
+              {t('bookings.event_name')}
             </Text>
             <Group>
               {page.props.event.name}
@@ -107,7 +109,7 @@ export default function () {
 
           <Flex direction="column">
             <Text>
-              توقيت الاجتماع:
+              {t('bookings.time')}
             </Text>
             <Flex
               direction="column"
@@ -134,17 +136,16 @@ export default function () {
                   locale: ar,
                 })}
                 &nbsp;
-                (بتوقيت
-                {' '}
-                {page.props.booking.timezone}
-                )
+                {t('bookings.timezone')}
+                &nbsp;
+                ({page.props.booking.timezone})
               </span>
             </Flex>
           </Flex>
 
           <Flex direction="column">
             <Text>
-              طريقة الانعقاد:
+              {t('bookings.location')}
             </Text>
             <Flex justify="items-start" gap={8}>
               <Group>
@@ -167,13 +168,13 @@ export default function () {
               size="xs"
               onClick={() => setCancelModalOpen(true)}
             >
-              إلغاء الحجز
+              {t('btn.cancel_booking')}
             </Button>
           </Flex>
 
           <Flex direction="column">
             <AddToCalendarButtons
-              title="اضافة الاجتماع إلى التقويم"
+              title={t('btn.add_to_calendar')}
               bookingId={page.props.booking.id}
               googleLink={page.props.booking.addToCalendarLinksGuest.google}
               officeLink={page.props.booking.addToCalendarLinksGuest.office}
@@ -187,7 +188,7 @@ export default function () {
               href={page.props.host.link}
               variant='subtle'
             >
-              العودة إلى صفحة الحجز
+              {t('btn.back_to_page')}
             </Button>
           </Flex>
         </Stack>
@@ -197,9 +198,9 @@ export default function () {
           <Image w={44} src="/logo.svg"/>
 
           <Text size="sm">
-            مدعم من قبل&nbsp;
+            {t('bookings.confirmed_footer')}
             <Anchor target="_blank" href="https://elkalendar.com">
-              الكالندر
+              {t('app.name')}
             </Anchor>
           </Text>
         </Flex>
