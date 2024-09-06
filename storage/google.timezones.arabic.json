@@ -1,0 +1,642 @@
+[
+    {
+        "timezone": "Pacific\/Pago_Pago",
+        "name": "(GMT-11:00) توقيت ساموا الرسمي"
+    },
+    {
+        "timezone": "Pacific\/Tahiti",
+        "name": "(GMT-10:00) توقيت تاهيتي"
+    },
+    {
+        "timezone": "Pacific\/Honolulu",
+        "name": "(GMT-10:00) توقيت هاواي ألوتيان الرسمي"
+    },
+    {
+        "timezone": "Pacific\/Gambier",
+        "name": "(GMT-09:00) توقيت جامبير"
+    },
+    {
+        "timezone": "America\/Anchorage",
+        "name": "(GMT-08:00) توقيت ألاسكا - أنشوراج"
+    },
+    {
+        "timezone": "America\/Sitka",
+        "name": "(GMT-08:00) توقيت ألاسكا - سيتكا"
+    },
+    {
+        "timezone": "America\/Nome",
+        "name": "(GMT-08:00) توقيت ألاسكا - نوم"
+    },
+    {
+        "timezone": "Pacific\/Pitcairn",
+        "name": "(GMT-08:00) توقيت بيتكيرن"
+    },
+    {
+        "timezone": "America\/Fort_Nelson",
+        "name": "(GMT-07:00) التوقيت الجبلي الرسمي لأمريكا الشمالية - فورت نيلسون"
+    },
+    {
+        "timezone": "America\/Tijuana",
+        "name": "(GMT-07:00) توقيت المحيط الهادي - تيخوانا"
+    },
+    {
+        "timezone": "America\/Los_Angeles",
+        "name": "(GMT-07:00) توقيت المحيط الهادي - لوس انجلوس"
+    },
+    {
+        "timezone": "America\/Dawson",
+        "name": "(GMT-07:00) توقيت يوكون - داوسان"
+    },
+    {
+        "timezone": "America\/Ojinaga",
+        "name": "(GMT-06:00) التوقيت الجبلي لأمريكا الشمالية - أوجيناجا"
+    },
+    {
+        "timezone": "America\/Inuvik",
+        "name": "(GMT-06:00) التوقيت الجبلي لأمريكا الشمالية - اينوفيك"
+    },
+    {
+        "timezone": "America\/Denver",
+        "name": "(GMT-06:00) التوقيت الجبلي لأمريكا الشمالية - دنفر"
+    },
+    {
+        "timezone": "America\/Yellowknife",
+        "name": "(GMT-06:00) التوقيت الجبلي لأمريكا الشمالية - يلونيف"
+    },
+    {
+        "timezone": "America\/Belize",
+        "name": "(GMT-06:00) التوقيت الرسمي المركزي لأمريكا الشمالية - بليز"
+    },
+    {
+        "timezone": "America\/Regina",
+        "name": "(GMT-06:00) التوقيت الرسمي المركزي لأمريكا الشمالية - ريجينا"
+    },
+    {
+        "timezone": "America\/Guatemala",
+        "name": "(GMT-06:00) التوقيت الرسمي المركزي لأمريكا الشمالية - غواتيمالا"
+    },
+    {
+        "timezone": "America\/Managua",
+        "name": "(GMT-06:00) التوقيت الرسمي المركزي لأمريكا الشمالية - ماناغوا"
+    },
+    {
+        "timezone": "America\/Mazatlan",
+        "name": "(GMT-06:00) توقيت المحيط الهادي للمكسيك - مازاتلان"
+    },
+    {
+        "timezone": "America\/Panama",
+        "name": "(GMT-05:00) التوقيت الرسمي الشرقي لأمريكا الشمالية - بنما"
+    },
+    {
+        "timezone": "America\/Cancun",
+        "name": "(GMT-05:00) التوقيت الرسمي الشرقي لأمريكا الشمالية - كانكون"
+    },
+    {
+        "timezone": "America\/North_Dakota\/Beulah",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - بيولا، داكوتا الشمالية"
+    },
+    {
+        "timezone": "America\/Rainy_River",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - راني ريفر"
+    },
+    {
+        "timezone": "America\/North_Dakota\/Center",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - سنتر"
+    },
+    {
+        "timezone": "America\/Indiana\/Knox",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - كونكس"
+    },
+    {
+        "timezone": "America\/Indiana\/Tell_City",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - مدينة تل، إنديانا"
+    },
+    {
+        "timezone": "America\/Monterrey",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - مونتيري"
+    },
+    {
+        "timezone": "America\/Menominee",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - مينوميني"
+    },
+    {
+        "timezone": "America\/Winnipeg",
+        "name": "(GMT-05:00) التوقيت المركزي لأمريكا الشمالية - وينيبيج"
+    },
+    {
+        "timezone": "America\/Eirunepe",
+        "name": "(GMT-05:00) توقيت ايرونبي"
+    },
+    {
+        "timezone": "Pacific\/Easter",
+        "name": "(GMT-05:00) توقيت جزيرة استر"
+    },
+    {
+        "timezone": "America\/Bogota",
+        "name": "(GMT-05:00) توقيت كولومبيا الرسمي"
+    },
+    {
+        "timezone": "America\/Barbados",
+        "name": "(GMT-04:00) التوقيت الرسمي الأطلسي - بربادوس"
+    },
+    {
+        "timezone": "America\/Santo_Domingo",
+        "name": "(GMT-04:00) التوقيت الرسمي الأطلسي - سانتو دومينغو"
+    },
+    {
+        "timezone": "America\/Iqaluit",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - اكويلت"
+    },
+    {
+        "timezone": "America\/Port-au-Prince",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - بورت أو برنس"
+    },
+    {
+        "timezone": "America\/Toronto",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - تورونتو"
+    },
+    {
+        "timezone": "America\/Detroit",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - ديترويت"
+    },
+    {
+        "timezone": "America\/Indiana\/Vevay",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - فيفاي"
+    },
+    {
+        "timezone": "America\/Kentucky\/Louisville",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - لويس فيل"
+    },
+    {
+        "timezone": "America\/Kentucky\/Monticello",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - مونتيسيلو"
+    },
+    {
+        "timezone": "America\/New_York",
+        "name": "(GMT-04:00) التوقيت الشرقي لأمريكا الشمالية - نيويورك"
+    },
+    {
+        "timezone": "America\/Boa_Vista",
+        "name": "(GMT-04:00) توقيت الأمازون الرسمي - باو فيستا"
+    },
+    {
+        "timezone": "America\/Campo_Grande",
+        "name": "(GMT-04:00) توقيت الأمازون الرسمي - كومبو جراند"
+    },
+    {
+        "timezone": "America\/Manaus",
+        "name": "(GMT-04:00) توقيت الأمازون الرسمي - ماناوس"
+    },
+    {
+        "timezone": "America\/La_Paz",
+        "name": "(GMT-04:00) توقيت بوليفيا"
+    },
+    {
+        "timezone": "America\/Caracas",
+        "name": "(GMT-04:00) توقيت فنزويلا"
+    },
+    {
+        "timezone": "America\/Montevideo",
+        "name": "(GMT-03:00) توقيت أوروغواي الرسمي"
+    },
+    {
+        "timezone": "America\/Argentina\/Buenos_Aires",
+        "name": "(GMT-03:00) توقيت الأرجنتين الرسمي - بوينوس أيرس"
+    },
+    {
+        "timezone": "America\/Argentina\/Jujuy",
+        "name": "(GMT-03:00) توقيت الأرجنتين الرسمي - جوجو"
+    },
+    {
+        "timezone": "America\/Argentina\/Salta",
+        "name": "(GMT-03:00) توقيت الأرجنتين الرسمي - سالطا"
+    },
+    {
+        "timezone": "America\/Argentina\/San_Luis",
+        "name": "(GMT-03:00) توقيت الأرجنتين الرسمي - سان لويس"
+    },
+    {
+        "timezone": "America\/Argentina\/Cordoba",
+        "name": "(GMT-03:00) توقيت الأرجنتين الرسمي - كوردوبا"
+    },
+    {
+        "timezone": "America\/Argentina\/Mendoza",
+        "name": "(GMT-03:00) توقيت الأرجنتين الرسمي - ميندوزا"
+    },
+    {
+        "timezone": "America\/Thule",
+        "name": "(GMT-03:00) توقيت الأطلسي - ثيل"
+    },
+    {
+        "timezone": "America\/Goose_Bay",
+        "name": "(GMT-03:00) توقيت الأطلسي - جوس باي"
+    },
+    {
+        "timezone": "America\/Moncton",
+        "name": "(GMT-03:00) توقيت الأطلسي - وينكتون"
+    },
+    {
+        "timezone": "America\/Araguaina",
+        "name": "(GMT-03:00) توقيت برازيليا الرسمي - أروجوانيا"
+    },
+    {
+        "timezone": "America\/Belem",
+        "name": "(GMT-03:00) توقيت برازيليا الرسمي - بلم"
+    },
+    {
+        "timezone": "America\/Santarem",
+        "name": "(GMT-03:00) توقيت برازيليا الرسمي - سانتاريم"
+    },
+    {
+        "timezone": "America\/Fortaleza",
+        "name": "(GMT-03:00) توقيت برازيليا الرسمي - فورتاليزا"
+    },
+    {
+        "timezone": "America\/Punta_Arenas",
+        "name": "(GMT-03:00) توقيت بونتا أريناز"
+    },
+    {
+        "timezone": "Atlantic\/Stanley",
+        "name": "(GMT-03:00) توقيت جزر فوكلاند الرسمي"
+    },
+    {
+        "timezone": "America\/Paramaribo",
+        "name": "(GMT-03:00) توقيت سورينام"
+    },
+    {
+        "timezone": "America\/St_Johns",
+        "name": "(GMT-02:30) توقيت نيوفاوندلاند"
+    },
+    {
+        "timezone": "America\/Miquelon",
+        "name": "(GMT-02:00) توقيت سانت بيير وميكولون"
+    },
+    {
+        "timezone": "America\/Noronha",
+        "name": "(GMT-02:00) توقيت فرناندو دي نورونها الرسمي"
+    },
+    {
+        "timezone": "UTC",
+        "name": "(GMT+00:00) التوقيت العالمي المنسق"
+    },
+    {
+        "timezone": "America\/Scoresbysund",
+        "name": "(GMT+00:00) توقيت شرق غرينلاند"
+    },
+    {
+        "timezone": "Africa\/Abidjan",
+        "name": "(GMT+00:00) توقيت غرينتش - أبيدجان"
+    },
+    {
+        "timezone": "America\/Danmarkshavn",
+        "name": "(GMT+00:00) توقيت غرينتش - دانمرك شافن"
+    },
+    {
+        "timezone": "Africa\/Monrovia",
+        "name": "(GMT+00:00) توقيت غرينتش - مونروفيا"
+    },
+    {
+        "timezone": "Africa\/El_Aaiun",
+        "name": "(GMT+01:00) توقيت الصحراء الغربية"
+    },
+    {
+        "timezone": "Europe\/London",
+        "name": "(GMT+01:00) توقيت المملكة المتحدة"
+    },
+    {
+        "timezone": "Africa\/Ndjamena",
+        "name": "(GMT+01:00) توقيت غرب أفريقيا الرسمي - نجامينا"
+    },
+    {
+        "timezone": "Atlantic\/Canary",
+        "name": "(GMT+01:00) توقيت غرب أوروبا - كناري"
+    },
+    {
+        "timezone": "Atlantic\/Madeira",
+        "name": "(GMT+01:00) توقيت غرب أوروبا - ماديرا"
+    },
+    {
+        "timezone": "Africa\/Tunis",
+        "name": "(GMT+01:00) توقيت وسط أوروبا الرسمي - تونس"
+    },
+    {
+        "timezone": "Africa\/Johannesburg",
+        "name": "(GMT+02:00) توقيت جنوب أفريقيا"
+    },
+    {
+        "timezone": "Africa\/Tripoli",
+        "name": "(GMT+02:00) توقيت شرق أوروبا الرسمي - طرابلس"
+    },
+    {
+        "timezone": "Africa\/Khartoum",
+        "name": "(GMT+02:00) توقيت وسط أفريقيا - الخرطوم"
+    },
+    {
+        "timezone": "Africa\/Maputo",
+        "name": "(GMT+02:00) توقيت وسط أفريقيا - مابوتو"
+    },
+    {
+        "timezone": "Europe\/Andorra",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - أندورا"
+    },
+    {
+        "timezone": "Europe\/Prague",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - براغ"
+    },
+    {
+        "timezone": "Europe\/Brussels",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - بروكسل"
+    },
+    {
+        "timezone": "Europe\/Budapest",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - بودابست"
+    },
+    {
+        "timezone": "Europe\/Gibraltar",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - جبل طارق"
+    },
+    {
+        "timezone": "Europe\/Zurich",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - زيورخ"
+    },
+    {
+        "timezone": "Europe\/Vienna",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - فيينا"
+    },
+    {
+        "timezone": "Europe\/Madrid",
+        "name": "(GMT+02:00) توقيت وسط أوروبا - مدريد"
+    },
+    {
+        "timezone": "Asia\/Riyadh",
+        "name": "(GMT+03:00) التوقيت العربي الرسمي - الرياض"
+    },
+    {
+        "timezone": "Asia\/Qatar",
+        "name": "(GMT+03:00) التوقيت العربي الرسمي - قطر"
+    },
+    {
+        "timezone": "Europe\/Istanbul",
+        "name": "(GMT+03:00) توقيت تركيا"
+    },
+    {
+        "timezone": "Europe\/Uzhgorod",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (أوزجرود)"
+    },
+    {
+        "timezone": "Europe\/Athens",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (اليونان)"
+    },
+    {
+        "timezone": "Europe\/Tallinn",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (تالين)"
+    },
+    {
+        "timezone": "Europe\/Bucharest",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (رومانيا)"
+    },
+    {
+        "timezone": "Europe\/Zaporozhye",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (زابوروزي)"
+    },
+    {
+        "timezone": "Asia\/Gaza",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (غزة)"
+    },
+    {
+        "timezone": "Europe\/Vilnius",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (فيلنيوس)"
+    },
+    {
+        "timezone": "Europe\/Kiev",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (كييف)"
+    },
+    {
+        "timezone": "Asia\/Hebron",
+        "name": "(GMT+03:00) توقيت شرق أوروبا (هيبرون (مدينة الخليل))"
+    },
+    {
+        "timezone": "Europe\/Volgograd",
+        "name": "(GMT+03:00) توقيت فولغوغراد الرسمي"
+    },
+    {
+        "timezone": "Europe\/Simferopol",
+        "name": "(GMT+03:00) توقيت موسكو الرسمي - سيمفروبول"
+    },
+    {
+        "timezone": "Europe\/Minsk",
+        "name": "(GMT+03:00) توقيت موسكو الرسمي - مينسك"
+    },
+    {
+        "timezone": "Asia\/Yerevan",
+        "name": "(GMT+04:00) توقيت أرمينيا الرسمي"
+    },
+    {
+        "timezone": "Europe\/Ulyanovsk",
+        "name": "(GMT+04:00) توقيت أوليانوفسك"
+    },
+    {
+        "timezone": "Asia\/Tbilisi",
+        "name": "(GMT+04:00) توقيت جورجيا الرسمي"
+    },
+    {
+        "timezone": "Europe\/Samara",
+        "name": "(GMT+04:00) توقيت سمارا"
+    },
+    {
+        "timezone": "Asia\/Kabul",
+        "name": "(GMT+04:30) توقيت أفغانستان"
+    },
+    {
+        "timezone": "Asia\/Samarkand",
+        "name": "(GMT+05:00) توقيت أوزبكستان الرسمي - سمرقند"
+    },
+    {
+        "timezone": "Asia\/Karachi",
+        "name": "(GMT+05:00) توقيت باكستان الرسمي"
+    },
+    {
+        "timezone": "Indian\/Maldives",
+        "name": "(GMT+05:00) توقيت جزر المالديف"
+    },
+    {
+        "timezone": "Asia\/Atyrau",
+        "name": "(GMT+05:00) توقيت غرب كازاخستان - أتيراو"
+    },
+    {
+        "timezone": "Asia\/Aqtobe",
+        "name": "(GMT+05:00) توقيت غرب كازاخستان - أكتوب"
+    },
+    {
+        "timezone": "Asia\/Qyzylorda",
+        "name": "(GMT+05:00) توقيت غرب كازاخستان - كيزيلوردا"
+    },
+    {
+        "timezone": "Asia\/Yekaterinburg",
+        "name": "(GMT+05:00) توقيت يكاترينبورغ الرسمي"
+    },
+    {
+        "timezone": "Asia\/Colombo",
+        "name": "(GMT+05:30) توقيت الهند - كولومبو"
+    },
+    {
+        "timezone": "Asia\/Urumqi",
+        "name": "(GMT+06:00) توقيت أرومكي"
+    },
+    {
+        "timezone": "Indian\/Chagos",
+        "name": "(GMT+06:00) توقيت المحيط الهندي"
+    },
+    {
+        "timezone": "Asia\/Thimphu",
+        "name": "(GMT+06:00) توقيت بوتان"
+    },
+    {
+        "timezone": "Asia\/Qostanay",
+        "name": "(GMT+06:00) توقيت شرق كازاخستان - قوستاناي"
+    },
+    {
+        "timezone": "Asia\/Yangon",
+        "name": "(GMT+06:30) توقيت ميانمار"
+    },
+    {
+        "timezone": "Asia\/Ho_Chi_Minh",
+        "name": "(GMT+07:00) توقيت الهند الصينية - مدينة هو تشي منة"
+    },
+    {
+        "timezone": "Asia\/Tomsk",
+        "name": "(GMT+07:00) توقيت تومسك"
+    },
+    {
+        "timezone": "Asia\/Pontianak",
+        "name": "(GMT+07:00) توقيت غرب إندونيسيا - بونتيانك"
+    },
+    {
+        "timezone": "Asia\/Krasnoyarsk",
+        "name": "(GMT+07:00) توقيت كراسنويارسك الرسمي - كراسنويارسك"
+    },
+    {
+        "timezone": "Asia\/Novosibirsk",
+        "name": "(GMT+07:00) توقيت نوفوسيبيرسك الرسمي"
+    },
+    {
+        "timezone": "Asia\/Ulaanbaatar",
+        "name": "(GMT+08:00) توقيت أولان باتور الرسمي - آلانباتار"
+    },
+    {
+        "timezone": "Asia\/Irkutsk",
+        "name": "(GMT+08:00) توقيت إركوتسك الرسمي"
+    },
+    {
+        "timezone": "Asia\/Macau",
+        "name": "(GMT+08:00) توقيت الصين الرسمي - ماكاو"
+    },
+    {
+        "timezone": "Asia\/Taipei",
+        "name": "(GMT+08:00) توقيت تايبيه الرسمي"
+    },
+    {
+        "timezone": "Australia\/Perth",
+        "name": "(GMT+08:00) توقيت غرب أستراليا الرسمي"
+    },
+    {
+        "timezone": "Asia\/Hong_Kong",
+        "name": "(GMT+08:00) توقيت هونغ كونغ الرسمي"
+    },
+    {
+        "timezone": "Australia\/Eucla",
+        "name": "(GMT+08:45) توقيت غرب وسط أستراليا الرسمي"
+    },
+    {
+        "timezone": "Pacific\/Palau",
+        "name": "(GMT+09:00) توقيت بالاو"
+    },
+    {
+        "timezone": "Asia\/Jayapura",
+        "name": "(GMT+09:00) توقيت شرق إندونيسيا"
+    },
+    {
+        "timezone": "Asia\/Seoul",
+        "name": "(GMT+09:00) توقيت كوريا الرسمي - سول"
+    },
+    {
+        "timezone": "Asia\/Khandyga",
+        "name": "(GMT+09:00) توقيت ياكوتسك الرسمي - خانديجا"
+    },
+    {
+        "timezone": "Australia\/Adelaide",
+        "name": "(GMT+09:30) توقيت وسط أستراليا - أديليد"
+    },
+    {
+        "timezone": "Australia\/Darwin",
+        "name": "(GMT+09:30) توقيت وسط أستراليا الرسمي"
+    },
+    {
+        "timezone": "Pacific\/Guam",
+        "name": "(GMT+10:00) توقيت تشامورو"
+    },
+    {
+        "timezone": "Antarctica\/Macquarie",
+        "name": "(GMT+10:00) توقيت شرق أستراليا - ماكواري"
+    },
+    {
+        "timezone": "Australia\/Hobart",
+        "name": "(GMT+10:00) توقيت شرق أستراليا - هوبارت"
+    },
+    {
+        "timezone": "Australia\/Lindeman",
+        "name": "(GMT+10:00) توقيت شرق أستراليا الرسمي - ليندمان"
+    },
+    {
+        "timezone": "Asia\/Vladivostok",
+        "name": "(GMT+10:00) توقيت فلاديفوستوك الرسمي - فلاديفوستك"
+    },
+    {
+        "timezone": "Pacific\/Bougainville",
+        "name": "(GMT+11:00) توقيت بوغانفيل"
+    },
+    {
+        "timezone": "Pacific\/Norfolk",
+        "name": "(GMT+11:00) توقيت جزيرة نورفولك"
+    },
+    {
+        "timezone": "Asia\/Srednekolymsk",
+        "name": "(GMT+11:00) توقيت سريدنكوليمسك"
+    },
+    {
+        "timezone": "Antarctica\/Casey",
+        "name": "(GMT+11:00) توقيت كاساي"
+    },
+    {
+        "timezone": "Pacific\/Kosrae",
+        "name": "(GMT+11:00) توقيت كوسرا"
+    },
+    {
+        "timezone": "Asia\/Anadyr",
+        "name": "(GMT+12:00) توقيت أنادير الرسمي"
+    },
+    {
+        "timezone": "Pacific\/Tarawa",
+        "name": "(GMT+12:00) توقيت جزر جيلبرت"
+    },
+    {
+        "timezone": "Pacific\/Fiji",
+        "name": "(GMT+12:00) توقيت فيجي"
+    },
+    {
+        "timezone": "Pacific\/Auckland",
+        "name": "(GMT+12:00) توقيت نيوزيلندا"
+    },
+    {
+        "timezone": "Pacific\/Apia",
+        "name": "(GMT+13:00) التوقيت الرسمي لآبيا"
+    },
+    {
+        "timezone": "Pacific\/Tongatapu",
+        "name": "(GMT+13:00) توقيت تونغا الرسمي"
+    },
+    {
+        "timezone": "Pacific\/Kiritimati",
+        "name": "(GMT+14:00) توقيت جزر لاين"
+    }
+]

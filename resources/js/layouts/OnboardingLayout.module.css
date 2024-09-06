@@ -1,0 +1,15 @@
+.wrapper {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.inner {
+    position: relative;
+    padding-top: rem(50px);
+    padding-bottom: rem(120px);
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        padding-bottom: rem(80px);
+        padding-top: rem(80px);
+    }
+}

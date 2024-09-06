@@ -1,0 +1,15 @@
+.spinner {
+  top: 20px !important;
+  left: 135px !important;
+}
+
+html:dir(rtl) .spinner {
+    top: 20px !important;
+    right: 135px !important;
+}
+
+.ltr .mantine-Input-input {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
