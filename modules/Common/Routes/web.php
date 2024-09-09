@@ -11,7 +11,7 @@ use Modules\Common\Http\Controllers\TranslationController;
 Route::group([
     'domain' => config('app.domain'),
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => ['web', 'localizationRedirect', 'localeViewPath'],
+    'middleware' => ['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
 ], function () {
     Route::get('/', [PagesController::class, 'home'])->name('home');
 });
