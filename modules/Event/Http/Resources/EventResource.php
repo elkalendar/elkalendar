@@ -14,8 +14,6 @@ class EventResource extends JsonResource
     {
         $eventSchedule = $this->schedule;
 
-        dd($eventSchedule);
-
         return [
             'id' => $this->hashid,
             'userId' => $this->user->hashid,
