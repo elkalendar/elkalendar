@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use Mcamara\LaravelLocalization\LaravelLocalization;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Common\Http\Controllers\DashboardController;
 use Modules\Common\Http\Controllers\PagesController;
 use Modules\Common\Http\Controllers\TranslationController;
