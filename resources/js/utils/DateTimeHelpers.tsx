@@ -71,7 +71,3 @@ export const formatDate = (date: Date, timezone: string, formatType: DateFormatT
     locale: ar,
   })
 }
-
-export const getDayJsLocale = (locale: string = 'en') => {
-  console.log(locale);
-}

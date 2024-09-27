@@ -28,9 +28,6 @@ export default function () {
     photoRef.current?.click();
   }
 
-  console.log(form.data)
-  console.log(page.props)
-
   function updatePhotoPreview() {
     const photo = photoRef.current?.files?.[0];
 
