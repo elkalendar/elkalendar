@@ -7,7 +7,7 @@
   <title>{{ config('app.name') }}</title>
 
   <!-- Styles -->
-  @vite('resources/css/landing.css')
+  @vite('resources/css/landing.css', 'build/landing')
   @viteReactRefresh
 
   {{
