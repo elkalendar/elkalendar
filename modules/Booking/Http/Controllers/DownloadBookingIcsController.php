@@ -5,24 +5,15 @@ declare(strict_types=1);
 namespace Modules\Booking\Http\Controllers;
 
 use App\Models\Booking;
-use Modules\Booking\Services\ICalendarService;
+use Modules\Booking\Actions\DownloadBookingIcsAction;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class DownloadBookingIcsController
 {
-    public function __construct(
-        private readonly ICalendarService $ICalendarService,
-    ) {
-    }
-
-    public function __invoke(Booking $booking)
+    public function __invoke(Booking $booking, DownloadBookingIcsAction $action): BinaryFileResponse
     {
-        $ics = $this->ICalendarService->generate($booking);
-
-        $tempFileName = sys_get_temp_dir().'/'.$booking->id;
-
-        file_put_contents($tempFileName, $ics);
-
-        $downloadFileName = 'elkalendar-invite-'.now()->toIso8601String().'.ics';
+        $tempFileName = $action->execute($booking);
+        $downloadFileName = $action::getDownloadName();
 
         return response()->download($tempFileName, $downloadFileName);
     }

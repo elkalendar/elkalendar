@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\User\Http\Controllers;
+namespace Modules\Public\Http\Controllers;
 
 use App\Exceptions\UserNotFoundException;
 use App\Services\TimezoneService;

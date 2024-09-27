@@ -18,7 +18,7 @@ export default function AuthenticationLayout(props: any) {
         pos='absolute'
         left={20}
         top={20}
-        leftSection={page.props.isRtl ? <FaArrowRight /> : <FaArrowLeft />}
+        leftSection={page.props.isRtl ? <FaArrowRight/> : <FaArrowLeft/>}
         component='a'
         href={page.props.appUrl}
       >
@@ -33,7 +33,9 @@ export default function AuthenticationLayout(props: any) {
         maw={450}
       >
         <Box mb={22}>
-          <Image h={60} src="/logo.svg" alt="elkalendar logo svg" />
+          <a href={page.props.appUrl}>
+            <Image h={60} src="/logo.svg" alt="elkalendar logo svg"/>
+          </a>
         </Box>
 
         {props.children}

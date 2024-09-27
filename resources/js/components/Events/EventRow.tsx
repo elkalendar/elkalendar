@@ -10,8 +10,8 @@ import {
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
-import {BiCopy, BiDotsHorizontalRounded, BiLinkExternal} from 'react-icons/bi';
-import {FaClock, FaEdit} from 'react-icons/fa';
+import {BiCopy, BiDotsHorizontalRounded, BiDuplicate, BiLinkExternal} from 'react-icons/bi';
+import {FaClock, FaCopy, FaEdit} from 'react-icons/fa';
 import {FaX} from 'react-icons/fa6';
 import {InertiaLink} from '@inertiajs/inertia-react';
 import {useClipboard} from '@mantine/hooks';
@@ -37,9 +37,7 @@ export default (props: EventRowProps) => {
 
   const openDeleteModal = () => modals.openConfirmModal({
     centered: true,
-    children: <Text size="sm">
-      لن يتمكن أي شخص شاركت هذا الاجتماع معه من الحجز باستخدامه بعد الآن.
-    </Text>,
+    children: <Text size="sm">{t('modals.event.delete_desc')}</Text>,
     confirmProps: {
       color: 'red',
     },
@@ -55,7 +53,7 @@ export default (props: EventRowProps) => {
         },
       });
     },
-    title: 'حذف الاجتماع',
+    title: t('modals.event.delete_title'),
   });
 
   return (
@@ -142,6 +140,18 @@ export default (props: EventRowProps) => {
           </Menu.Target>
 
           <Menu.Dropdown>
+            <Menu.Item
+              leftSection={<BiDuplicate/>}
+              onClick={() => {
+                Inertia.post(`/events/${props.event.id}/duplicate`, {}, {
+                  onSuccess: () => {
+                    successToast();
+                  }
+                })
+              }}
+            >
+              {t('btn.duplicate')}
+            </Menu.Item>
             <Menu.Item
               component={InertiaLink}
               href={`/events/${props.event.id}/edit`}

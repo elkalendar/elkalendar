@@ -7,6 +7,7 @@ namespace Modules\Booking\Http\Resources;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Modules\Event\Http\Resources\EventResource;
+use Modules\User\Http\Resources\UserResource;
 use Spatie\CalendarLinks\Link;
 
 class BookingResource extends JsonResource
@@ -63,9 +64,10 @@ class BookingResource extends JsonResource
         return [
             'id' => $this->hashid,
             'createdAt' => $this->created_at->toIso8601String(),
-            'isCancelled' => (bool) $this->cancelled_at,
+            'isCancelled' => (bool)$this->cancelled_at,
             'cancelledAt' => $this->cancelled_at ? Carbon::parse($this->cancelled_at)->toIso8601String() : null,
             'cancelReason' => $this->cancel_reason,
+            'cancelledBy' => $this->cancelled_by ? 'user' : 'guest',
             'isPastHost' => $startTimeHost->isPast(),
             'isPastGuest' => $startTimeGuest->isPast(),
             'startTimeHost' => $startTimeHost->toIso8601String(),

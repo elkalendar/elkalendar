@@ -24,6 +24,8 @@ return new class () extends Migration {
             $table->text('settings')->nullable();
             $table->integer('position')->default(0);
             $table->timestamps();
+
+            $table->unique(['event_id', 'type']);
         });
     }
 

@@ -10,6 +10,7 @@ return [
     'confirm' => 'تأكيد',
     'preview' => 'معاينة',
     'back' => 'العودة',
+    'duplicate' => 'نسخ',
     'change_avatar' => 'تغيير الصورة',
     'copy_event_link' => 'نسخ رابط الاجتماع',
     'back_to_page' => 'العودة إلى صفحة الحجز',

@@ -28,6 +28,9 @@ export default function () {
     photoRef.current?.click();
   }
 
+  console.log(form.data)
+  console.log(page.props)
+
   function updatePhotoPreview() {
     const photo = photoRef.current?.files?.[0];
 
@@ -47,11 +50,12 @@ export default function () {
   }
 
   function deletePhoto() {
-    Inertia.delete('/user/profile-photo', {
+    Inertia.delete('/user/public-avatar', {
       preserveScroll: true,
       onSuccess: () => {
         setPhotoPreview(null);
         clearPhotoFileInput();
+        successToast();
       },
     });
   }
@@ -105,15 +109,7 @@ export default function () {
           ) : null}
         </Flex>
 
-        {
-          form.errors.photo && (
-            <Text c="red.4" my={12}>
-              {form.errors.photo}
-            </Text>
-          )
-        }
-
-        {form.errors.photo && <Alert>{form.errors.photo}</Alert>}
+        {form.errors.photo && <Alert title='Error' color='red'>{form.errors.photo}</Alert>}
 
         <TextInput
           withAsterisk

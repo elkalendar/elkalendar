@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {Flex, Modal, Select} from '@mantine/core';
-import {Event} from '@/types/entities';
+import {ComboboxData, Flex, Modal, Select} from '@mantine/core';
+import {AllowedLocationType, Event} from '@/types/entities';
 import EventLocationTypes from '@/enums/EventLocationTypes';
-import {getEventLocationLabel} from '@/utils/EventLocationTypeHelpers';
 import CustomTextForm from '@/components/EventLocationForms/CustomTextForm';
 import LinkForm from '@/components/EventLocationForms/LinkForm';
 import InPersonHostForm from '@/components/EventLocationForms/InPersonHostForm';
@@ -13,6 +12,7 @@ import useSuccessToast from "@/hooks/useSuccessToast";
 
 interface EventLocationsProps {
   event: Event;
+  allowedLocationTypes: AllowedLocationType[];
 }
 
 function EventLocations(props: EventLocationsProps) {
@@ -51,7 +51,7 @@ function EventLocations(props: EventLocationsProps) {
       case EventLocationTypes.IN_PERSON_GUEST:
         return <InPersonGuestForm event={event} onSuccess={onSuccess}/>;
       default:
-        throw new Error('Invalid location type');
+        console.error('Invalid location type');
     }
   };
 
@@ -59,13 +59,26 @@ function EventLocations(props: EventLocationsProps) {
     return locations.find((location) => location.type === locationType);
   }
 
-  return (
+  const locationsHasLocationType = (locationType: string): boolean => {
+    return locations.find((location) => location.type === locationType) !== undefined;
+  }
 
+  const enabledLocations = (): ComboboxData => {
+    return props.allowedLocationTypes.map(locationType => {
+      return {
+        value: locationType.key,
+        label: locationType.title,
+        disabled: locationsHasLocationType(locationType.key),
+      }
+    });
+  }
+
+  return (
     <Flex direction="column" gap={22}>
       <Modal
         centered
         size='lg'
-        title={getEventLocationLabel(selectedLocationType)}
+        title={t('location_types_user.title.' + selectedLocationType)}
         opened={modalOpen}
         onClose={() => {
           setSelectedLocationType(null);
@@ -94,36 +107,7 @@ function EventLocations(props: EventLocationsProps) {
           setSelectedLocationType(event);
           setModalOpen(true);
         }}
-        data={[
-          {
-            group: t('forms.event.locations.group_in_person'),
-            items: [
-              {
-                value: EventLocationTypes.IN_PERSON_HOST,
-                label: getEventLocationLabel(EventLocationTypes.IN_PERSON_HOST),
-                disabled: locations.find((location) => location.type === EventLocationTypes.IN_PERSON_HOST),
-              }, {
-                value: EventLocationTypes.IN_PERSON_GUEST,
-                label: getEventLocationLabel(EventLocationTypes.IN_PERSON_GUEST),
-                disabled: locations.find((location) => location.type === EventLocationTypes.IN_PERSON_GUEST),
-              },
-            ],
-          },
-          {
-            group: t('forms.event.locations.group_other'),
-            items: [
-              {
-                value: EventLocationTypes.TEXT,
-                label: getEventLocationLabel(EventLocationTypes.TEXT),
-                disabled: locations.find((location) => location.type === EventLocationTypes.TEXT),
-              }, {
-                value: EventLocationTypes.CUSTOM_LINK,
-                label: getEventLocationLabel(EventLocationTypes.CUSTOM_LINK),
-                disabled: locations.find((location) => location.type === EventLocationTypes.CUSTOM_LINK),
-              },
-            ],
-          },
-        ]}
+        data={enabledLocations()}
       />
     </Flex>
   );

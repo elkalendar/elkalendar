@@ -8,12 +8,13 @@ import Setup from '@/components/Events/Form/Setup';
 import EventLocations from '@/components/Events/Form/EventLocations';
 import EventAvailability from '@/components/Events/Form/EventAvailability';
 import BackButton from '@/components/BackButton';
-import {Event, Schedule} from "@/types/entities";
+import {AllowedLocationType, Event, Schedule} from "@/types/entities";
 import {useTranslation} from "react-i18next";
 
 interface Props {
   event: Event;
   schedules: Schedule[];
+  allowedLocationTypes: AllowedLocationType[];
 }
 
 export default function Create(props: Props) {
@@ -72,7 +73,7 @@ export default function Create(props: Props) {
         </Tabs.Panel>
 
         <Tabs.Panel value="locations" pt="xs">
-          <EventLocations event={props.event}/>
+          <EventLocations event={props.event} allowedLocationTypes={props.allowedLocationTypes}/>
         </Tabs.Panel>
 
         <Tabs.Panel value="availability" pt="xs">

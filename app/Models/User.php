@@ -40,7 +40,7 @@ class User extends Authenticatable implements MustVerifyEmail, Onboardable
         'default_event_language' => Defaults::LANG_EN,
         'theme' => 'system',
         'profile_name' => null,
-        'profile_image' => null,
+        'public-avatar' => null,
         'profile_message' => null,
         'onboarding' => [
             'intro' => [

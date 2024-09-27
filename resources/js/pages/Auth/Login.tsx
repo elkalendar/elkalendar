@@ -24,12 +24,12 @@ interface Props {
 }
 
 export default function Login(props: Props) {
+  const {t} = useTranslation();
   const form = useForm({
     email: '',
     password: '',
     remember: false,
   });
-  const {t} = useTranslation();
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();

@@ -14,7 +14,7 @@ return new class () extends Migration {
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('events', static function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -28,8 +28,6 @@ return new class () extends Migration {
             $table->json('description')->nullable();
             $table->string('slug', 255);
             $table->char('color', 7)->nullable();
-            $table->integer('break_before')->default(0);
-            $table->integer('break_after')->default(0);
             $table->integer('duration')->nullable();
             $table->tinyInteger('is_active')->default(1);
             $table->tinyInteger('show_in_profile')->default(1);

@@ -20,7 +20,7 @@ class UserResource extends JsonResource
             'hasPassword' => (bool) $this->password,
             'link' => publicUrl($this->username),
             'profileMessage' => $this->settings()->get('profile_message'),
-            'profileImage' => $this->settings()->get('profile_image') ? Storage::url($this->settings()->get('profile_image')) : null,
+            'profileImage' => $this->settings()->get('public-avatar') ? Storage::url($this->settings()->get('public-avatar')) : null,
             'profileName' => $this->settings()->get('profile_name') ?? $this->name,
             'createdAt' => $this->created_at,
             'isVerified' => (bool) $this->email_verified_at,

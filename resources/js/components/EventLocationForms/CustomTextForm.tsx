@@ -17,7 +17,7 @@ function CustomTextForm(props: CustomTextFormProps) {
   const {t} = useTranslation();
   const form = useForm({
     locationId: props.location?.id,
-    text: props.location?.text,
+    text: props.location?.data?.text,
   });
 
   return (

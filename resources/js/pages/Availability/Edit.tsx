@@ -16,10 +16,10 @@ import weekdays from '@/utils/WeekdaysHelpers';
 import {convertTimeslotToTime, getUserTimeFormat} from '@/utils/DateTimeHelpers';
 import {DefaultInterval} from '@/enums/Time';
 import BackButton from '@/components/BackButton';
-import TimezoneSelector from '@/components/TimezoneSelector';
 import {useTranslation} from "react-i18next";
 import useDateFnsLocale from "@/hooks/useDateFnsLocale";
 import useSuccessToast from "@/hooks/useSuccessToast";
+import TimezoneSelector from '@/components/TimezoneSelector';
 
 interface EditScheduleProps {
   schedule: Schedule;

@@ -51,7 +51,7 @@ export default (props: EventLocationItemProps) => {
           gap={12}
         >
           {getEventLocationIcon(location.type)}
-          {getEventLocationLabel(location.type)}
+          {t('location_types_user.title.' + location.type)}
         </Flex>
         <Flex>
           <Text size="sm">

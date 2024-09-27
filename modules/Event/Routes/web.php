@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use Modules\Event\Http\Controllers\DuplicateEventController;
 use Modules\Event\Http\Controllers\EventLocationsController;
 use Modules\Event\Http\Controllers\EventsController;
 use Modules\Event\Http\Controllers\UpdateEventScheduleController;
@@ -14,6 +15,8 @@ Route::group([
     Route::resource('events', EventsController::class, [
         'except' => ['create', 'show'],
     ]);
+
+    Route::post('events/{event}/duplicate', DuplicateEventController::class);
 
     Route::put('events/{event}/update-schedule', UpdateEventScheduleController::class)
         ->name('events.update-schedule');

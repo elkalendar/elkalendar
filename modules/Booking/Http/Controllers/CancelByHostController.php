@@ -17,7 +17,5 @@ class CancelByHostController
             auth()->user()->id,
             $request->get('cancel_reason'),
         );
-
-        return redirect()->back();
     }
 }

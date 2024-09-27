@@ -23,7 +23,6 @@ import {Inertia} from '@inertiajs/inertia';
 import {format, isPast} from 'date-fns';
 import qs from 'query-string';
 import {EventBookingCalendar} from '@/components/EventBookingCalendar';
-import TimezoneSelector from '@/components/TimezoneSelector';
 import EventBookingForm from '@/components/Forms/EventBookingForm';
 import {formatInTimeZone, toZonedTime} from "date-fns-tz";
 import {DateFnsFormat} from "@/enums/Time";
@@ -31,6 +30,7 @@ import {Host, Event} from "@/types/entities";
 import {useTranslation} from "react-i18next";
 import {TimeFormatSwitcher} from "@/components/TimeFormatSwitcher";
 import useDateFnsLocale from "@/hooks/useDateFnsLocale";
+import TimezoneSelector from '@/components/TimezoneSelector';
 
 interface Props {
   currentMonth: any;

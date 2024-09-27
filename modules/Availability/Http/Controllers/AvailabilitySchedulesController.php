@@ -5,19 +5,18 @@ declare(strict_types=1);
 namespace Modules\Availability\Http\Controllers;
 
 use App\Enum\Timezones;
-use App\Exceptions\OnlyScheduleDeleteException;
+use App\Exceptions\OnlyAvailableScheduleDeleteException;
 use App\Models\Schedule;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
+use Modules\Availability\Actions\CreateScheduleAction;
+use Modules\Availability\Actions\DeleteScheduleAction;
+use Modules\Availability\Actions\UpdateScheduleAction;
+use Modules\Availability\Http\Requests\AvailabilityCreateRequest;
 use Modules\Availability\Http\Requests\AvailabilityUpdateRequest;
-use Modules\Availability\Services\AvailabilityScheduleService;
 
 class AvailabilitySchedulesController
 {
-    public function __construct(private AvailabilityScheduleService $availabilityScheduleService)
-    {
-    }
-
     public function index(): \Inertia\Response
     {
         $schedules = auth()->user()->schedules()->with(['intervals'])->orderBy('is_default', 'desc')->get();
@@ -25,6 +24,15 @@ class AvailabilitySchedulesController
         return Inertia::render('Availability/Index', [
             'schedules' => \Modules\User\Http\Resources\ScheduleResource::collection($schedules),
         ]);
+    }
+
+    public function store(
+        AvailabilityCreateRequest $request,
+        CreateScheduleAction $createAvailabilityAction,
+    ): \Illuminate\Http\RedirectResponse {
+        $schedule = $createAvailabilityAction->execute($request->validated('name'));
+
+        return redirect()->route('availability.edit', $schedule->hashid);
     }
 
     public function edit(Schedule $schedule): \Inertia\Response
@@ -42,20 +50,24 @@ class AvailabilitySchedulesController
         ]);
     }
 
-    public function update(Schedule $schedule, AvailabilityUpdateRequest $request): \Illuminate\Http\RedirectResponse
-    {
-        $this->availabilityScheduleService->update($schedule, $request->validated());
-
-        return redirect()->back();
+    public function update(
+        Schedule $schedule,
+        AvailabilityUpdateRequest $request,
+        UpdateScheduleAction $action,
+    ) {
+        $action->execute(
+            $schedule,
+            $request->validated('name'),
+            $request->validated('timezone'),
+            $request->validated('isDefault'),
+        );
     }
 
-    public function delete(Schedule $schedule): \Illuminate\Http\RedirectResponse
+    public function destroy(Schedule $schedule, DeleteScheduleAction $action)
     {
         try {
-            $this->availabilityScheduleService->delete($schedule);
-
-            return redirect()->route('availability.index');
-        } catch (OnlyScheduleDeleteException $e) {
+            $action->execute($schedule);
+        } catch (OnlyAvailableScheduleDeleteException $e) {
             Log::error($e->getMessage());
 
             return redirect()->back()->withErrors([

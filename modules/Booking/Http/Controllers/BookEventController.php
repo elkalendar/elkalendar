@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\User\Http\Controllers;
+namespace Modules\Booking\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;

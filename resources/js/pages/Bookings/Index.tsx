@@ -9,7 +9,7 @@ import {Booking} from "@/types/entities";
 import {useTranslation} from "react-i18next";
 
 interface Props {
-    Bookings: {
+    bookings: {
         data: Booking[];
         meta: object;
         links: object;

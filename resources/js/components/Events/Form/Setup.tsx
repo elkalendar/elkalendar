@@ -31,10 +31,10 @@ function Setup(props: SetupProps) {
   const page = useTypedPage();
   const form = useForm({
     name: props.event.name ?? null,
+    description: props.event.description ?? null,
     slug: props.event.slug ?? null,
     visible: props.event.visible ?? true,
     duration: props.event.duration ?? 30,
-    description: props.event.description ?? null,
     color: props.event.color ?? '#20aedd',
   });
 
@@ -58,31 +58,21 @@ function Setup(props: SetupProps) {
         minRows={3}
       />
 
-      <>
+      <Group gap={6}>
         <TextInput
+          w='100%'
           withAsterisk
-          label={t('forms.event.setup.slug_label')}
-          description={t('forms.event.setup.slug_description')}
+          label={t('forms.event.new.slug_name')}
+          description={t('forms.event.new.slug_desc')}
           error={form.errors.slug}
           value={form.data.slug}
           onChange={(e) => form.setData('slug', e.currentTarget.value)}
-          className='ltr'
         />
 
-        <Text
-          size="sm"
-          c="gray.3"
-          styles={{
-            root: {
-              textAlign: 'left',
-              padding: '0.5rem 0',
-              direction: 'ltr'
-            },
-          }}
-        >
-          {"https://elkalendar.com/" + page.props.auth.user.username + "/"}
+        <Text size='sm'>
+          {page.props.appUrl + "/" + page.props.auth.user.username + "/" + form.data.slug}
         </Text>
-      </>
+      </Group>
 
       <Input.Wrapper
         withAsterisk
@@ -105,23 +95,26 @@ function Setup(props: SetupProps) {
         </Text>
       </Input.Wrapper>
 
-      <Switch
-        checked={form.data.visible}
-        onChange={(e) => {
-          form.setData('visible', e.currentTarget.checked);
-        }}
-        color="teal"
-        size="md"
+      <Input.Wrapper
         label={t('forms.event.setup.visible_label')}
-        thumbIcon={
-          form.data.visible ? (
-            <TbCheck size={12} className="text-green-600"/>
-          ) : (
-            <TbX size={12} className="text-red-600"/>
-          )
-        }
-        error={form.errors.visible}
-      />
+      >
+        <Switch
+          checked={form.data.visible}
+          onChange={(e) => {
+            form.setData('visible', e.currentTarget.checked);
+          }}
+          color="teal"
+          size="md"
+          thumbIcon={
+            form.data.visible ? (
+              <TbCheck size={12}/>
+            ) : (
+              <TbX size={12}/>
+            )
+          }
+          error={form.errors.visible}
+        />
+      </Input.Wrapper>
 
       <Input.Wrapper
         label={t('forms.event.setup.color_label')}

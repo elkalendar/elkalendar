@@ -26,7 +26,7 @@ export function SettingsNavbar() {
       </Button>
 
       <Group>
-        <Avatar size={32} src={page.props.auth.user.avatar} alt={`${page.props.auth.user.name}'s Avatar`}/>
+        <Avatar size={32} src={page.props.auth.user.profileImage} alt={`${page.props.auth.user.name}'s Avatar`}/>
         <p
           className="truncate text-sm font-medium leading-5"
           title={page.props.auth.user.name}

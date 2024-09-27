@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use Modules\Common\Http\Controllers\DashboardController;
-use Modules\Common\Http\Controllers\TranslationController;
 
 Route::group([
     'domain' => 'app.'.config('app.domain'),
@@ -17,5 +16,3 @@ Route::group([
             ->name('dashboard');
     });
 });
-
-Route::middleware(['web', 'user.locale'])->get('i18next/fetch', TranslationController::class);

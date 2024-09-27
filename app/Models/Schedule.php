@@ -46,6 +46,10 @@ class Schedule extends Model
         'hashid',
     ];
 
+    protected $casts = [
+        'is_default' => 'bool',
+    ];
+
     public function getRouteKeyName()
     {
         return 'hashid';

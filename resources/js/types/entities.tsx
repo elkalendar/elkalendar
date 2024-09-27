@@ -21,6 +21,12 @@ export interface User {
   language: string;
 }
 
+export interface AllowedLocationType {
+  key: string;
+  title: string;
+  description: string;
+}
+
 export interface OnboardingStep {
   complete: boolean;
   cta: string;

@@ -36,6 +36,8 @@ class Booking extends Model
     use HashidRouting;
     use HasSettingsField;
 
+    public const PER_PAGE = 10;
+
     protected $guarded = [];
 
     protected $casts = [

@@ -10,7 +10,7 @@ use League\Period\Sequence;
 
 class SequenceService
 {
-    public function __construct(private PeriodService $periodService)
+    public function __construct(private readonly PeriodService $periodService)
     {
     }
 

@@ -8,7 +8,7 @@ return [
         'description' => 'The text that will be displayed/sent to visitors after booking',
     ],
     'in_person_guest' => [
-        'description' => 'When this option is activated, the calendar will ask the invitee to enter their address during booking',
+        'description' => 'When this option is activated, we will ask the invitee to enter their address during booking',
     ],
     'in_person_host' => [
         'input_label' => 'Address',

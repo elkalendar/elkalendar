@@ -20,13 +20,13 @@ class SavePublicPageAction
         $user = auth()->user();
 
         if ($photo) {
-            $photo->storePublicly('profile-photos');
+            $photo->storePublicly('public-avatars');
 
-            if ($user->avatar) {
-                Storage::delete($user->avatar);
+            if ($user->settings()->get('public-avatar')) {
+                Storage::delete($user->settings()->get('public-avatar'));
             }
 
-            $user->avatar = 'profile-photos/' . $photo->hashName();
+            $user->settings()->set('public-avatar', 'public-avatars/' . $photo->hashName());
         }
 
         $user->settings()->setMultiple([

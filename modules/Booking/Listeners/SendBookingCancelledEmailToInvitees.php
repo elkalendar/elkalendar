@@ -11,7 +11,7 @@ use Modules\Booking\Events\BookingCancelled;
 use Modules\Booking\Notifications\BookingCancelledNotification;
 use Modules\Booking\Support\Guest;
 
-class SendBookingCancelledEmail implements ShouldQueue
+class SendBookingCancelledEmailToInvitees implements ShouldQueue
 {
     public function __construct(public BookingCancelled $event)
     {
@@ -19,12 +19,6 @@ class SendBookingCancelledEmail implements ShouldQueue
 
     public function handle()
     {
-        if (! $this->event->booking->user->hasVerifiedEmail()) {
-            Log::info('Notification not send because host email is not verified');
-
-            return;
-        }
-
         try {
             Notification::route('mail', $this->event->booking->invitee_email)->notify(
                 new BookingCancelledNotification($this->event->booking)

@@ -10,6 +10,7 @@ return [
     'confirm' => 'Confirm',
     'preview' => 'Preview',
     'back' => 'Back',
+    'duplicate' => 'Duplicate',
     'change_avatar' => 'Change Avatar',
     'copy_event_link' => 'Copy Meeting Link',
     'back_to_page' => 'Back to Booking Page',

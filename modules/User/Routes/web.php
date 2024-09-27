@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use Modules\User\Http\Controllers\AuthenticatedSessionController;
-use Modules\User\Http\Controllers\BookEventController;
 use Modules\User\Http\Controllers\ConfirmablePasswordController;
 use Modules\User\Http\Controllers\EmailController;
 use Modules\User\Http\Controllers\EmailVerificationNotificationController;
@@ -14,10 +13,9 @@ use Modules\User\Http\Controllers\OnboardingController;
 use Modules\User\Http\Controllers\PasswordController;
 use Modules\User\Http\Controllers\PasswordResetLinkController;
 use Modules\User\Http\Controllers\PersonalInformationController;
+use Modules\User\Http\Controllers\PublicProfileController;
 use Modules\User\Http\Controllers\RegisteredUserController;
 use Modules\User\Http\Controllers\SettingsController;
-use Modules\User\Http\Controllers\ShowEventController;
-use Modules\User\Http\Controllers\ShowUserProfileController;
 use Modules\User\Http\Controllers\UserController;
 use Modules\User\Http\Controllers\VerifyEmailController;
 
@@ -73,6 +71,8 @@ Route::group([
 
         Route::delete('logout', [AuthenticatedSessionController::class, 'destroy'])
             ->name('logout');
+
+        Route::delete('user/public-avatar', [PublicProfileController::class, 'destroyPublicAvatar']);
     });
 });
 
@@ -129,20 +129,5 @@ Route::group([
 
             Route::get('password', [PasswordController::class, 'show'])->name('user.password.show');
             Route::put('password', [PasswordController::class, 'update'])->name('user.password.update');
-        });
-});
-
-Route::group([
-    'domain' => config('app.domain'),
-    'middleware' => ['web', 'inertia.public'],
-], static function () {
-    Route::name('user.')
-        ->group(static function () {
-            Route::get('{username}', ShowUserProfileController::class)
-                ->name('events');
-            Route::get('{username}/{slug}', ShowEventController::class)
-                ->name('event');
-            Route::post('{username}/{slug}', BookEventController::class)
-                ->name('event.book');
         });
 });

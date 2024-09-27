@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Common\Http\Controllers;
+namespace App\Http\Controllers;
 
 use DirectoryIterator;
 use RuntimeException;

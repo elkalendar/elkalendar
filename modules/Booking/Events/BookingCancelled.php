@@ -16,21 +16,10 @@ class BookingCancelled
     use InteractsWithSockets;
     use SerializesModels;
 
-    /**
-     * Create a new event instance.
-     *
-     * @return void
-     */
     public function __construct(public Booking $booking)
     {
-        //
     }
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
-     */
     public function broadcastOn()
     {
         return new PrivateChannel('channel-name');

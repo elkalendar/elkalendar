@@ -1,7 +1,10 @@
-import {Group, Select, SelectProps} from '@mantine/core';
-import React, {forwardRef, useState} from 'react';
-import {formatTime} from '@/utils/DateTimeHelpers';
+import {Group, Select, SelectProps, useMantineTheme} from '@mantine/core';
+import React, {useEffect, useState} from 'react';
+import {formatTime, getTimeFormat} from '@/utils/DateTimeHelpers';
 import {useTranslation} from "react-i18next";
+import {formatInTimeZone} from "date-fns-tz";
+import {ar} from "date-fns/locale";
+import useDateFnsLocale from "@/hooks/useDateFnsLocale";
 
 export interface Timezone {
   value: string;
@@ -17,35 +20,39 @@ export interface TimezoneSelectorProps {
   error?: string;
 }
 
-interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
-  label: string;
-}
-
 export default function (props: TimezoneSelectorProps) {
+  const dateFnsLocale = useDateFnsLocale();
   const {t} = useTranslation();
   const [selectedTimezone, setSelectedTimezone] = useState(props.selectedTimezone);
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const theme = useMantineTheme();
 
-  const Item = forwardRef<HTMLDivElement, ItemProps>(
-    ({label, ...others}: ItemProps, ref) => (
-      <div
-        {...others}
-        ref={ref}
-        className={`flex justify-between p-2 rounded-sm hover:cursor-pointer ${selectedTimezone === label ? 'bg-amber-100 dark:bg-amber-900' : 'hover:bg-amber-50 dark:hover:bg-amber-700 mb-0.5'}`}
-      >
-        <span className="text-sm">{label}</span>
-        <span
-          className="text-sm text-slate-400 dark:text-white"
-        >
-          {formatTime(new Date(), label, props.is24Hours)}
-        </span>
-      </div>
-    ),
-  );
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentTime(new Date());
+    }, 1000)
+  }, [currentTime])
 
-  const renderSelectOption: SelectProps['renderOption'] = ({ option, checked }) => (
-    <Group flex="1" gap="xs" justify='space-between'>
+  const selectedStyle = {
+    backgroundColor: theme.colors.gray[2]
+  };
+
+  const renderSelectOption: SelectProps['renderOption'] = ({option, checked}) => (
+    <Group
+      flex="1"
+      gap="xs"
+      justify='space-between'
+      style={checked ? selectedStyle : {}}
+
+    >
       <span>{option.label}</span>
-      <span>{formatTime(new Date(), option.label, props.is24Hours)}</span>
+      <span>
+        {
+          formatInTimeZone(currentTime, option.value, getTimeFormat(props.is24Hours), {
+            locale: dateFnsLocale,
+          })
+        }
+      </span>
     </Group>
   );
 

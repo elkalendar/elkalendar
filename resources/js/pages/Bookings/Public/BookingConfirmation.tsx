@@ -14,13 +14,12 @@ import {
   Title,
   useMantineColorScheme,
 } from '@mantine/core';
-import {BsFillCheckCircleFill} from 'react-icons/bs';
+import {BsArrowLeft, BsFillCheckCircleFill} from 'react-icons/bs';
 import {formatInTimeZone} from 'date-fns-tz';
 import dayjs from 'dayjs';
 import {Head, useForm} from '@inertiajs/inertia-react';
 import {DateFnsFormat} from '@/enums/Time';
 import {getEventLocationForConfirmation, getEventLocationIcon,} from '@/utils/EventLocationTypeHelpers';
-import useTypedPage from '@/hooks/useTypedPage';
 import AddToCalendarButtons from '@/components/AddToCalendarButtons';
 import {MdOutlineCancel} from "react-icons/md";
 import {FaX} from "react-icons/fa6";
@@ -34,6 +33,7 @@ interface Props {
   booking: Booking;
   event: Event;
 }
+
 
 export default function (props: Props) {
   const successToast = useSuccessToast();
@@ -195,6 +195,7 @@ export default function (props: Props) {
               component="a"
               href={props.host.link}
               variant='subtle'
+              leftSection={<BsArrowLeft/>}
             >
               {t('btn.back_to_page')}
             </Button>

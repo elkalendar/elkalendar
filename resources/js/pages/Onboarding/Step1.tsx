@@ -4,10 +4,10 @@ import classes from "@/pages/Onboarding/classes.module.css";
 import {Button, Flex, Group, Select, Text, TextInput, Title} from "@mantine/core";
 import {useForm} from "@inertiajs/inertia-react";
 import useTypedPage from "@/hooks/useTypedPage";
-import TimezoneSelector from "@/components/TimezoneSelector";
 import useSuccessToast from "@/hooks/useSuccessToast";
 import {Country, OnboardingStep} from "@/types/entities";
 import {useTranslation} from "react-i18next";
+import TimezoneSelector from '@/components/TimezoneSelector';
 
 interface Props {
   countries: Country[];

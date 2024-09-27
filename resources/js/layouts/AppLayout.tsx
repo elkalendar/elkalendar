@@ -16,7 +16,7 @@ import {
 } from '@mantine/core';
 import {IoIosArrowDown} from 'react-icons/io';
 import {LuExternalLink} from 'react-icons/lu';
-import {BiCog, BiLinkExternal} from 'react-icons/bi';
+import {BiCog} from 'react-icons/bi';
 import {Head, InertiaLink, useForm} from '@inertiajs/inertia-react';
 import {FiLogOut, FiMoon, FiSun} from 'react-icons/fi';
 import React from 'react';
@@ -48,15 +48,13 @@ export default function (props: Props) {
     return (
         <AppShell
             header={{height: 60}}
-            navbar={{width: 230, breakpoint: 'sm', collapsed: {mobile: !opened}}}
+            navbar={{width: 240, breakpoint: 'sm', collapsed: {mobile: !opened}}}
             padding="md"
         >
             <Head title={props.title}/>
-            <Toaster
-                position="bottom-right"
-            />
+            <Toaster position="bottom-right"/>
             <AppShell.Header style={{
-                backgroundColor: colorScheme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.blue[1],
+                backgroundColor: colorScheme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
             }}
             >
                 <Flex
@@ -68,7 +66,9 @@ export default function (props: Props) {
                     <Flex gap={4} align="center">
                         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm"/>
 
+                      <a href={page.props.appUrl}>
                         <Image src="/logo.svg" alt="logo" h={26}/>
+                      </a>
                     </Flex>
 
                     <Flex gap={4} align="center">
@@ -152,7 +152,7 @@ export default function (props: Props) {
             <AppShell.Navbar
                 p="md"
                 style={{
-                    backgroundColor: colorScheme.colorScheme === 'dark' ? theme.colors.gray[9] : theme.colors.blue[0],
+                    backgroundColor: colorScheme.colorScheme === 'dark' ? theme.colors.gray[9] : theme.white,
                 }}
             >
                 <AppNavbar/>

@@ -8,6 +8,7 @@ import NoResults from '@/components/NoResults/NoResults';
 import BookingsList from '@/components/Booking/BookingList';
 import {Booking} from "@/types/entities";
 import {useTranslation} from "react-i18next";
+import useTypedPage from "@/hooks/useTypedPage";
 
 interface DashboardProps {
   bookingsToday: number;
@@ -19,6 +20,7 @@ interface DashboardProps {
 export default (props: DashboardProps) => {
   const {t} = useTranslation();
   const direction = useDirection();
+  const page = useTypedPage();
 
   const paperIconStyle = direction.dir === 'ltr' ? {
     position: 'absolute',
@@ -30,10 +32,10 @@ export default (props: DashboardProps) => {
 
   return (
     <AppLayout
-      title="لوحة التحكم"
+      title={t('menu.dashboard')}
       renderHeader={() => (
         <PageHeader
-          title={t('dashboard.greeting')}
+          title={t('dashboard.greeting') + ' ' + page.props.auth.user.name + ','}
         />
       )}
     >

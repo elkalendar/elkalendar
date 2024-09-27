@@ -1,10 +1,10 @@
 import React from 'react';
-import { useForm } from '@inertiajs/inertia-react';
+import {useForm} from '@inertiajs/inertia-react';
 import {
-  Button, Flex, Group, Input, Switch,
+  Button, Flex, Group, Input, Switch, Textarea,
 } from '@mantine/core';
-import { FaPlus } from 'react-icons/fa';
-import { Event } from '@/types/entities';
+import {FaPlus} from 'react-icons/fa';
+import {Event} from '@/types/entities';
 import {useTranslation} from "react-i18next";
 
 interface InPersonHostFormProps {
@@ -17,8 +17,8 @@ function InPersonHostForm(props: InPersonHostFormProps) {
   const {t} = useTranslation();
   const form = useForm({
     locationId: props.location?.id,
-    address: props.location?.address,
-    showOnBookingPage: props.location?.showOnBookingPage ?? false,
+    address: props.location?.data.address,
+    showOnBookingPage: props.location?.data.showOnBookingPage ?? false,
   });
 
   return (
@@ -26,19 +26,15 @@ function InPersonHostForm(props: InPersonHostFormProps) {
       direction="column"
       gap={22}
     >
-      <Input.Wrapper
+      <Textarea
         withAsterisk
         label={t('forms.in_person_host.input_label')}
         description={t('forms.in_person_host.input_description')}
+        required
+        value={form.data.address}
+        onChange={(e) => form.setData('address', e.target.value)}
         error={form.errors.address}
-      >
-        <Input
-          required
-          value={form.data.address}
-          onChange={(e) => form.setData('address', e.target.value)}
-          error={form.errors.address}
-        />
-      </Input.Wrapper>
+      />
 
       <Switch
         label={t('forms.in_person_host.switch_label')}
@@ -49,7 +45,7 @@ function InPersonHostForm(props: InPersonHostFormProps) {
       <Group>
         <Button
           type="submit"
-          leftSection={<FaPlus />}
+          leftSection={<FaPlus/>}
           onClick={() => {
             form.post(`/events/${props.event.id}/locations/in-person-host`, {
               preserveScroll: true,

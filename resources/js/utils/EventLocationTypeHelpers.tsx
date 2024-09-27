@@ -141,11 +141,5 @@ export const getEventLocationTypeDisplayValue = (location: EventLocation): strin
       return location.data?.text ?? '';
     case EventLocationTypes.IN_PERSON_HOST:
       return location.data?.address ?? '';
-    case EventLocationTypes.IN_PERSON_GUEST:
-      return 'سيتم توفير عنوان اللقاء من قبل المدعو اثناء الحجز';
-    case EventLocationTypes.GOOGLE_MEET:
-      return 'سيقوم الكالندر بإنشاء رابط مقابلة Google Meet تلقائياً وارفاقه بالحجز.';
-    case EventLocationTypes.ZOOM:
-      return 'سيقوم الكالندر بإنشاء رابط مقابلة زووم Zoom تلقائياً وارفاقه بالحجز.';
   }
 };

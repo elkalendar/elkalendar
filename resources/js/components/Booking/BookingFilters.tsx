@@ -5,16 +5,16 @@ import qs from "query-string";
 import {useTranslation} from "react-i18next";
 
 export default function () {
-  const query = qs.parse(location.search);
-  const filterBy: string = query.filterBy ?? 'future';
   const {t} = useTranslation();
+  const query = qs.parse(location.search);
+  const filter: string = query.filter ?? 'future';
 
   return (
     <Group mb={32}>
       <SegmentedControl
-        value={filterBy}
+        value={filter}
         onChange={(value) => {
-          Inertia.visit(`/bookings?filterBy=${value}`, {
+          Inertia.visit(`/bookings?filter=${value}`, {
             preserveScroll: true,
           });
         }}
