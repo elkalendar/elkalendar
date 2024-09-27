@@ -17,7 +17,7 @@ use Modules\Public\Http\Controllers\ShowUserProfileController;
 Route::group([
     'domain' => config('app.domain'),
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => ['web', 'localizationRedirect', 'localeViewPath'],
+    'middleware' => ['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
 ], static function () {
     Route::get('/', [PagesController::class, 'home'])->name('home');
 });
