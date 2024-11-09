@@ -27,8 +27,8 @@ function CustomTextForm(props: CustomTextFormProps) {
     >
       <Textarea
         withAsterisk
-        label={t('form.text.label')}
-        description={t('form.text.description')}
+        label={t('forms.text.label')}
+        description={t('forms.text.description')}
         value={form.data.text}
         onChange={(e) => form.setData('text', e.target.value)}
         error={form.errors.text}
