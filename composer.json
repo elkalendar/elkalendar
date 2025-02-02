@@ -4,21 +4,23 @@
   "description": "Free and open-source scheduling system built with Laravel.",
   "keywords": [
     "laravel",
+    "calendar",
     "scheduling",
     "appointments",
     "booking"
   ],
   "license": "MIT",
   "require": {
-    "php": "^8.2",
+    "php": "^8.4",
     "ext-pdo": "*",
     "aws/aws-sdk-php": "^3.316",
     "doctrine/dbal": "^4.0",
     "glorand/laravel-model-settings": "^7.0",
     "google/apiclient": "^2.17",
     "guzzlehttp/guzzle": "^7.8",
-    "inertiajs/inertia-laravel": "^1.3",
+    "inertiajs/inertia-laravel": "2.x-dev",
     "laravel/framework": "^11.9",
+    "laravel/reverb": "^1.0",
     "laravel/sanctum": "^4.0",
     "laravel/socialite": "*",
     "laravel/tinker": "^2.9",
@@ -27,6 +29,7 @@
     "mcamara/laravel-localization": "^2.0",
     "microsoft/microsoft-graph": "^2.12",
     "mtvs/eloquent-hashids": "^3.5",
+    "openai-php/laravel": "^0.10.1",
     "sentry/sentry-laravel": "^4.7",
     "socialiteproviders/manager": "^4.6",
     "socialiteproviders/microsoft": "^4.5",
@@ -34,7 +37,9 @@
     "spatie/calendar-links": "^1.11",
     "spatie/icalendar-generator": "^2.8",
     "spatie/laravel-onboard": "^2.6",
-    "spatie/laravel-translatable": "^6.7"
+    "spatie/laravel-query-builder": "^6.2",
+    "spatie/laravel-translatable": "^6.7",
+    "tucker-eric/eloquentfilter": "^3.4"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.13",
@@ -106,7 +111,8 @@
     "sort-packages": true,
     "allow-plugins": {
       "pestphp/pest-plugin": true,
-      "php-http/discovery": true
+      "php-http/discovery": true,
+      "tbachert/spi": true
     }
   },
   "minimum-stability": "stable",
